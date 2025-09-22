@@ -18,6 +18,12 @@ nav{
     display: flex;
     justify-content: center;
 }
+#HW{
+    display: none;
+}
+#image{
+    display: none;
+}
 #image img{
     margin: 0 auto;
     border: 2px solid #ccc;
@@ -25,13 +31,13 @@ nav{
     width: auto;
     height: 200px;
     transition: transform 0.3s, box-shadow 0.3s;
-    display: block;
 }
 #image img:hover{
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 #formulario{
+    display: none;
     background-color: #ffffff;
     padding: 20px;
     margin: 20px;

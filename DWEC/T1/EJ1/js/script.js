@@ -12,14 +12,16 @@ function showText(){
 };
 
 function showImage(){
-    btnHM.style.display = "none";
-    btnImg.style.display = "block";
-    btnForm.style.display = "none";
+    HW.style.display = "none";
+    image.style.display = "block";
+    form.style.display = "none";
 }
 function showForm(){
-    btnHM.style.display = "none";
-    btnImg.style.display = "none";
-    btnForm.style.display = "block";
+    HW.style.display = "none";
+    image.style.display = "none";
+    form.style.display = "block";
 }
 
-btnHM.addEventListener("click", showImage);
+btnHM.addEventListener("click", showText);
+btnImg.addEventListener("click",showImage);
+btnForm.addEventListener("click", showForm);
