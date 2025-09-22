@@ -16,7 +16,7 @@ header{
 }
 nav{
     display: flex;
-    justify-content: right;
+    justify-content: center;
 }
 #image img{
     margin: 0 auto;
