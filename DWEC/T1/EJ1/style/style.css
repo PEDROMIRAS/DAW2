@@ -1,56 +1,114 @@
-body{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+/* ====== ESTILO GENERAL ====== */
+body {
+    font-family: Arial, sans-serif; /* Fuente por defecto */
+    margin: 0; /* Quita márgenes */
+    padding: 0; /* Quita padding */
+    background-color: #3e4c55; /* Color de fondo general */
+    color: #ffffff; /* Texto en blanco */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Elementos en columna */
+    align-items: center; /* Centra elementos */
 }
-header{
-    background-color: #3e4c55;
-    color: #ffffff;
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
+
+/* ====== ENCABEZADO INTEGRADO (TÍTULO + NAVBAR) ====== */
+header {
+    background: linear-gradient(90deg, #2e3a42, #3e4c55); /* Degradado en todo el header */
+    color: #ffffff; /* Texto blanco */
+    padding: 20px 0; /* Espaciado arriba y abajo */
+    text-align: center; /* Centra el título */
+    width: 100%; /* Ocupa todo el ancho */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Sombra general debajo del header */
+    position: sticky; /* Fijo arriba */
+    top: 0;
+    z-index: 1000;
 }
-nav{
-    display: flex;
-    justify-content: center;
+
+header h1 {
+    margin: 0 0 10px 0; /* Espacio justo entre título y nav */
+    font-size: 28px;
 }
-#HW{
-    display: none;
+
+/* ====== NAVBAR ====== */
+nav {
+    display: flex; /* Flexbox para los botones */
+    justify-content: flex-end; /* Centra los botones */
+    gap: 10px; /* Espacio entre botones */
+    padding: 10px 15px; /* Espacio a los lados */
 }
-#image{
-    display: none;
+
+nav button {
+    background: transparent; /* Fondo transparente */
+    border: 2px solid #ffffff; /* Borde blanco */
+    color: #ffffff; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 25px; /* Bordes redondeados estilo píldora */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cursor tipo mano */
+    transition: all 0.3s ease; /* Animación suave */
 }
-#image img{
-    margin: 0 auto;
-    border: 2px solid #ccc;
-    border-radius: 15px;
-    width: auto;
-    height: 200px;
-    transition: transform 0.3s, box-shadow 0.3s;
+
+nav button:hover {
+    background: #ffffff; /* Fondo blanco al pasar el ratón */
+    color: #3e4c55; /* Texto oscuro */
+    transform: scale(1.05); /* Aumenta un poco el tamaño */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Resplandor */
 }
-#image img:hover{
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+/* ====== SECCIÓN "HOLA MUNDO" ====== */
+#HW {
+    display: none; /* Oculto por defecto */
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000; /* Texto negro */
+    padding: 20px; /* Espaciado interno */
+    margin: 20px; /* Separación exterior */
+    border-radius: 8px; /* Bordes redondeados */
+    text-align: center; /* Texto centrado */
 }
-#formulario{
-    display: none;
-    background-color: #ffffff;
+
+/* ====== SECCIÓN IMAGEN ====== */
+#image {
+    display: none; /* Oculto por defecto */
+    background-color: #ffffff; /* Fondo blanco */
     padding: 20px;
     margin: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
-footer{
-    background-color: #3e4c55;
-    color: #ffffff;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+}
+
+#image img {
+    margin: 0 auto; /* Centra la imagen */
+    border: 2px solid #ccc; /* Borde gris */
+    border-radius: 15px; /* Esquinas redondeadas */
+    width: auto; /* Ajusta ancho automáticamente */
+    height: 200px; /* Altura fija */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animación suave */
+}
+
+#image img:hover {
+    transform: scale(1.05); /* Agranda la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+}
+
+/* ====== SECCIÓN FORMULARIO ====== */
+#formulario {
+    display: none; /* Oculto por defecto */
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    margin: 20px; /* Separación externa */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 300px; /* Ancho fijo */
+    color: #000; /* Texto negro */
+}
+
+/* ====== FOOTER ====== */
+footer {
+    background: linear-gradient(90deg, #2e3a42, #3e4c55); /* Degradado en todo el footer */
+    color: #ffffff; /* Texto blanco */
+    text-align: center; /* Texto centrado */
+    padding: 10px 0; /* Espaciado arriba y abajo */
+    position: fixed; /* Fijo abajo de la pantalla */
+    bottom: 0; /* Pegado al borde inferior */
+    width: 100%; /* Ocupa todo el ancho */
 }

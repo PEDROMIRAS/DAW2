@@ -1,37 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Define el documento como HTML5 -->
+<html lang="en"> <!-- Idioma del contenido: inglés -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EJ1</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Garantiza un diseño responsive -->
+    <title>EJ1</title> <!-- Título que se mostrará en la pestaña del navegador -->
+    <link rel="stylesheet" href="./style/style.css"> <!-- Enlace al archivo de estilos CSS -->
 </head>
 <body>
-    <Header>
-        <h1>Ejercicio 1</h1>
-        <nav id="navbar">
-            <button id="btnHM">HM</button>
-            <button id="btnImg">Imagen</button>
-            <button id="btnForm">Formulario</button>
+    <!-- ====== ENCABEZADO ====== -->
+    <header> <!-- Encabezado principal de la página -->
+        <h1>Ejercicio 1</h1>  <!--Título principal -->
+
+        <!-- ====== BARRA DE NAVEGACIÓN ====== -->
+        <nav id="navbar"> <!-- Barra de navegación con tres botones -->
+            <button id="btnHM">HM</button> <!-- Botón que muestra el texto "Hola Mundo" -->
+            <button id="btnImg">Imagen</button> <!-- Botón que muestra la sección de imagen -->
+            <button id="btnForm">Formulario</button> <!-- Botón que muestra la sección de formulario -->
+            <button id="btnHide">Ocultar todo</button>
         </nav>
-    </Header>
-        <div id="HW">
-            <h1>HOLA MUNDO!</h1>
-        </div>
-        <div id="image">
-            <img src="./assets/images/001-Agile-Hello-World.webp" alt="holaMundo">
-        </div>
-        <div id="formulario">
-            <form action=""></form>
-            <input type="text" placeholder="Escribe tu nombre...">
-            <button>Enviar</button>
-        </div>
-        <div id="texto-fomulario">
+    </header>
+
+    <!-- ====== SECCIÓN "HOLA MUNDO" ====== -->
+    <div id="HW"> <!-- Contenedor oculto por defecto; se muestra al pulsar el botón HM -->
+        <h1>HOLA MUNDO!</h1> <!-- Texto de ejemplo -->
+    </div>
+
+    <!-- ====== SECCIÓN IMAGEN ====== -->
+    <div id="image"> <!-- Contenedor oculto por defecto; se muestra al pulsar el botón Imagen -->
+        <img src="./assets/images/001-Agile-Hello-World.webp" alt="holaMundo"> <!-- Imagen con ruta relativa -->
+    </div>
+
+    <!-- ====== SECCIÓN FORMULARIO ====== -->
+    <div id="formulario"> <!-- Contenedor oculto por defecto; se muestra al pulsar el botón Formulario -->
+        <form action=""> <!-- Formulario vacío por ahora; puede usarse para procesar datos -->
+            <input type="text" id="inputName" placeholder="Escribe tu nombre..."> <!-- Campo de texto con placeholder -->
+            <button type="submit">Enviar</button> <!-- Botón para enviar el formulario -->
+        </form>
+        <br>
+        <!-- ====== TEXTO DEL FORMULARIO ====== -->
+        <div id="texto-formulario"> <!-- Contenedor destinado a mostrar mensajes o resultados del formulario -->
 
         </div>
-    <footer>
-        <p>© Pedro Miras - Copyright 2025</p>
+    </div>
+
+    <!-- ====== PIE DE PÁGINA ====== -->
+    <footer> <!-- Sección final de la página -->
+        <p>© Pedro Miras - Copyright 2025</p> <!-- Texto del pie de página -->
     </footer>
-    <script src="./js/script.js"></script>
+
+    <!-- ====== SCRIPT JAVASCRIPT ====== -->
+    <script src="./js/script.js"></script> <!-- Archivo externo JS que contiene la lógica de interacción -->
 </body>
 </html>
