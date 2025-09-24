@@ -1,0 +1,24 @@
+body{
+    background-color: #ff7e5f; /* Color de fondo general */
+    color: #ffffff; /* Texto en blanco */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente por defecto */
+    margin: 0; /* Quita márgenes */
+    padding: 0; /* Quita padding */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Elementos en columna */
+    align-items: center;/* Centra elementos */
+}
+header{ /* Encabezado */
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+footer{/* Pie de página */
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
