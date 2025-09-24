@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 8</title>
 </head>
 <body>
     <?php 
-        define('PI', 3.1416);
-        $radio = 3.5;
-        $area = PI*pow($radio, 2); 
+        function saludo($nombre){
+            echo ('Hola, ' .$nombre);
+        }
+        saludo("Pedro");
     ?>
-    <p>El area del circulo es <?php echo $area?></p>
 </body>
 </html>
