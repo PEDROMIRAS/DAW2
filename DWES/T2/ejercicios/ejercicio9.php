@@ -11,6 +11,8 @@
             while($x <= $y){
                 if ($x!=$y) {
                     echo $x."-";
+                }elseif($x==$y){
+                    echo ('Los números son iguales.');
                 }else{
                     echo $x;
                 }
