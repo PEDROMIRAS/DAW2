@@ -1,0 +1,131 @@
+/* ============================
+   PALETA: #333333 / #474747 / #FD105E
+   - Fondo principal: #333333 (gris muy oscuro)
+   - Secciones:       #474747 (gris medio)
+   - Acentos:         #FD105E (rosa vibrante)
+   ============================ */
+
+/* ====== ESTILO GENERAL DEL BODY ====== */
+body {
+    font-family: Arial, sans-serif; /* Fuente base legible y estándar */
+    margin: 0;                      /* Elimina márgenes por defecto del navegador */
+    padding: 0;                     /* Elimina padding por defecto */
+    background-color: #333333;      /* Fondo gris muy oscuro */
+    color: #ffffff;                 /* Texto blanco para contraste */
+    display: flex;                  /* Activa flexbox para layout principal */
+    flex-direction: column;         /* Coloca los elementos en columna */
+    align-items: center;            /* Centra horizontalmente los elementos hijos */
+    min-height: 100vh;              /* Cubre toda la altura de la ventana */
+    box-sizing: border-box;         /* Calcula ancho/alto incluyendo borde y padding */
+}
+
+/* ====== ENCABEZADO ====== */
+header {
+    background: linear-gradient(90deg, #333333, #474747); /* Degradado de gris oscuro → gris medio */
+    color: #ffffff;            /* Texto blanco sobre degradado oscuro */
+    padding: 20px 0;           /* Espaciado superior e inferior */
+    text-align: center;        /* Centra el título */
+    width: 100%;               /* Ocupa todo el ancho disponible */
+    /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Sombra inferior para destacar */
+    position: sticky;          /* Fijo en la parte superior al hacer scroll */
+    top: 0;                    /* Se pega al borde superior */
+    z-index: 1000;             /* Se asegura de estar por encima de otros elementos */
+}
+
+header h1 {
+    margin: 0 0 10px 0; /* Margen inferior entre el título y la barra de navegación */
+    font-size: 28px;    /* Tamaño del título principal */
+    line-height: 1;     /* Altura de línea ajustada para evitar exceso de espacio */
+}
+
+/* ====== BARRA DE NAVEGACIÓN ====== */
+nav {
+    display: flex;              /* Organiza los botones en fila */
+    justify-content: flex-end;  /* Alinea los botones a la derecha */
+    gap: 10px;                  /* Separación uniforme entre botones */
+    padding: 10px 15px;         /* Espaciado interno de la barra */
+    align-items: center;        /* Centra verticalmente los botones */
+}
+
+/* ====== BOTONES DE NAVBAR ====== */
+nav button {
+    background: transparent;       /* Fondo transparente por defecto */
+    border: 2px solid #FD105E;     /* Borde rosa vibrante */
+    color: #FD105E;                /* Texto rosa vibrante */
+    padding: 10px 20px;            /* Espaciado interno */
+    border-radius: 25px;           /* Bordes redondeados estilo píldora */
+    font-size: 16px;               /* Tamaño de fuente legible */
+    font-weight: bold;             /* Texto en negrita */
+    cursor: pointer;               /* Cursor en forma de mano al pasar */
+    transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+                                   /* Transiciones suaves en hover/focus */
+}
+
+/* Estado hover y foco */
+nav button:hover,
+nav button:focus {
+    background: #FD105E;              /* Fondo rosa al interactuar */
+    color: #ffffff;                   /* Texto blanco sobre rosa */
+    transform: scale(1.05);           /* Ligero agrandamiento */
+    box-shadow: 0 0 10px rgba(253,16,94,0.6); /* Resplandor rosa */
+    outline: none;                    /* Elimina borde nativo al hacer focus */
+}
+
+/* Accesibilidad: foco visible para usuarios de teclado */
+nav button:focus-visible {
+    outline: 3px solid rgba(253,16,94,0.4); /* Anillo de foco rosa semitransparente */
+    outline-offset: 3px;
+}
+
+/* ====== SECCIONES PLANAS Y DIVS ====== */
+section, div {
+    width: 90%;                 /* Ocupan el 90% del ancho disponible */
+    max-width: 1000px;          /* Ancho máximo para legibilidad */
+    padding: 20px;              /* Espaciado interno */
+    margin: 20px 0;             /* Separación vertical entre bloques */
+    background-color: #474747;  /* Gris medio para diferenciar secciones */
+    border-radius: 8px;         /* Bordes suavemente redondeados */
+    box-sizing: border-box;     /* Incluye padding y borde en el cálculo del ancho */
+    min-height: 30vh;           /* Altura mínima para visibilidad */
+}
+
+/* Tipografía interna de contenedores */
+section p, div p {
+    margin: 0 0 1em 0;          /* Espaciado entre párrafos */
+    line-height: 1.5;           /* Mejor lectura */
+}
+
+/* ====== PIE DE PÁGINA ====== */
+footer {
+    background: linear-gradient(90deg, #333333, #474747); /* Mismo degradado que el header */
+    color: #ffffff;            /* Texto blanco */
+    text-align: center;        /* Centra el contenido */
+    padding: 10px 0;           /* Espaciado superior e inferior */
+    position: fixed;           /* Siempre fijo abajo */
+    bottom: 0;                 /* Pegado al borde inferior */
+    width: 100%;               /* Ocupa todo el ancho disponible */
+    /*box-shadow: 0 -2px 8px rgba(0,0,0,0.25); /*Sombra superior para separación */
+}
+/* ====== UTILIDADES PEQUEÑAS (opcional, útiles en plantillas) ====== */
+
+/* Centrar contenido interno en ambos ejes (horizontal y vertical). 
+   Se puede aplicar a cualquier contenedor para no repetir flexbox cada vez */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Margen superior pequeño (0.5rem ≈ 8px). 
+   Útil para dar un poco de espacio arriba de un elemento */
+.mt-1 { margin-top: 0.5rem; }
+
+/* Margen inferior pequeño (0.5rem ≈ 8px). 
+   Útil para separar elementos sin necesidad de escribir estilos extra */
+.mb-1 { margin-bottom: 0.5rem; }
+
+/* Recordatorio:
+    Estas utilidades se pueden aplicar directamente en el HTML usando la propiedad "class".
+    Ejemplo:
+    <div class="center mt-1">Contenido centrado con margen arriba</div>
+*/

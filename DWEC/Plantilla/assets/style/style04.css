@@ -1,0 +1,128 @@
+/* ============================
+    PALETA: #0F2027 / #2C5364 / Blanco
+    - Fondo principal: #0F2027 (azul muy oscuro)
+    - Secciones:       #2C5364 (azul medio)
+    - Acentos:         blanco para botones y resaltes
+   ============================ */
+
+/* ====== ESTILO GENERAL DEL BODY ====== */
+body {
+    font-family: Arial, sans-serif; /* Fuente base legible y estándar */
+    margin: 0;                      /* Elimina márgenes por defecto del navegador */
+    padding: 0;                     /* Elimina padding por defecto */
+    background-color: #0F2027;      /* Fondo azul muy oscuro */
+    color: #ffffff;                 /* Texto blanco para contraste */
+    display: flex;                  /* Activa flexbox para layout principal */
+    flex-direction: column;         /* Coloca los elementos en columna */
+    align-items: center;            /* Centra horizontalmente los elementos hijos */
+    min-height: 100vh;              /* Cubre toda la altura de la ventana */
+    box-sizing: border-box;         /* Calcula ancho/alto incluyendo borde y padding */
+}
+
+/* ====== ENCABEZADO ====== */
+header {
+    background: linear-gradient(90deg, #0F2027, #2C5364); /* Degradado azul oscuro → azul medio */
+    color: #ffffff;            /* Texto blanco */
+    padding: 20px 0;           /* Espaciado superior e inferior */
+    text-align: center;        /* Centra el título */
+    width: 100%;               /* Ocupa todo el ancho */
+    background-attachment: fixed; /* El fondo se desplaza con el contenido */
+    position:sticky;          /* Fijo en la parte superior */
+    top: 0;                    /* Pegado al borde superior */
+    z-index: 1000;             /* Se asegura de estar por encima de otros elementos */
+}
+
+header h1 {
+    margin: 0 0 10px 0; /* Margen inferior entre título y barra de navegación */
+    font-size: 28px;    /* Tamaño del título principal */
+    line-height: 1;     /* Altura de línea ajustada */
+}
+
+/* ====== BARRA DE NAVEGACIÓN ====== */
+nav {
+    display: flex;              /* Organiza los botones en fila */
+    justify-content: flex-end;  /* Alinea los botones a la derecha */
+    gap: 10px;                  /* Separación uniforme entre botones */
+    padding: 10px 15px;         /* Espaciado interno de la barra */
+    align-items: center;        /* Centra verticalmente los botones */
+}
+
+/* ====== BOTONES DE NAVBAR (blanco sobre azul) ====== */
+nav button {
+    background: transparent;       /* Fondo transparente por defecto */
+    border: 3px solid #ffffff;     /* Borde blanco más marcado */
+    color: #ffffff;                /* Texto blanco */
+    font-weight: 700;              /* Negrita para destacar */
+    padding: 12px 24px;            /* Espaciado mayor para presencia */
+    border-radius: 25px;           /* Bordes redondeados tipo píldora */
+    font-size: 16px;               /* Tamaño de fuente legible */
+    cursor: pointer;               /* Cursor tipo mano */
+    transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Hover/focus */
+nav button:hover,
+nav button:focus {
+    background: #ffffff;           /* Fondo blanco al interactuar */
+    color: #0F2027;                /* Texto azul oscuro */
+    transform: scale(1.08);        /* Ligero agrandamiento */
+    box-shadow: 0 0 12px rgba(255,255,255,0.7); /* Resplandor blanco */
+    outline: none;                 /* Elimina borde nativo */
+}
+
+/* Accesibilidad: foco visible para teclado */
+nav button:focus-visible {
+    outline: 3px solid rgba(255,255,255,0.5); /* Anillo blanco semitransparente */
+    outline-offset: 3px;
+}
+
+/* ====== SECCIONES PLANAS Y DIVS ====== */
+section, div {
+    width: 90%;                 /* Ocupan el 90% del ancho disponible */
+    max-width: 1000px;          /* Ancho máximo para legibilidad */
+    padding: 20px;              /* Espaciado interno */
+    margin: 20px 0;             /* Separación vertical entre bloques */
+    background-color: #2C5364;  /* Azul medio para diferenciar secciones */
+    border-radius: 8px;         /* Bordes suavemente redondeados */
+    box-sizing: border-box;     /* Incluye padding y borde en el cálculo del ancho */
+    min-height: 30vh;           /* Altura mínima */
+    color: #ffffff;             /* Texto blanco para contraste */
+}
+
+/* Tipografía interna de contenedores */
+section p, div p {
+    margin: 0 0 1em 0;          /* Espaciado entre párrafos */
+    line-height: 1.5;           /* Mejor lectura */
+}
+
+/* ====== PIE DE PÁGINA ====== */
+footer {
+    background: linear-gradient(90deg, #0F2027, #2C5364); /* Mismo degradado que el header */
+    color: #ffffff;            /* Texto blanco */
+    text-align: center;        /* Centra el contenido */
+    padding: 10px 0;           /* Espaciado superior e inferior */
+    position: fixed;           /* Siempre fijo abajo */
+    bottom: 0;                 /* Pegado al borde inferior */
+    width: 100%;               /* Ocupa todo el ancho */
+}
+
+/* ====== UTILIDADES PEQUEÑAS (opcional, útiles en plantillas) ====== */
+
+/* Centrar contenido interno en ambos ejes */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Margen superior pequeño (0.5rem ≈ 8px) */
+.mt-1 { margin-top: 0.5rem; }
+
+/* Margen inferior pequeño (0.5rem ≈ 8px) */
+.mb-1 { margin-bottom: 0.5rem; }
+
+/* Recordatorio:
+    Estas utilidades se pueden aplicar directamente en el HTML usando la propiedad "class".
+        Ejemplo:
+            <div class="center mt-1">Contenido centrado con margen arriba</div>
+*/

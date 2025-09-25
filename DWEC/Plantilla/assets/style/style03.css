@@ -1,0 +1,133 @@
+/* ============================
+   PALETA: #EAEFFE / #9787FE / #2D274B
+   - Fondo claro:  #EAEFFE (lavanda claro)
+   - Secciones:     #9787FE (morado medio)
+   - Acentos/hover: #2D274B (morado oscuro)
+   ============================ */
+
+/* ====== ESTILO GENERAL DEL BODY ====== */
+body {
+    font-family: Arial, sans-serif; /* Fuente legible por defecto */
+    margin: 0;                        /* Elimina márgenes del navegador */
+    padding: 0;                       /* Elimina padding por defecto */
+    background-color: #EAEFFE;        /* Fondo lavanda claro para la página */
+    color: #2D274B;                   /* Color del texto principal (oscuro) para buen contraste */
+    display: flex;                    /* Activa flexbox para la estructura principal */
+    flex-direction: column;           /* Organiza los elementos en columna */
+    align-items: center;              /* Centra horizontalmente los elementos hijos */
+    min-height: 100vh;                /* Asegura que el body cubra al menos la altura de la ventana */
+    box-sizing: border-box;           /* Incluye padding y borde dentro del tamaño total */
+}
+
+/* ====== ENCABEZADO ====== */
+header {
+    background: linear-gradient(90deg,#2D274B, #9787FE); /* Degradado morado medio → oscuro */
+    color: #EAEFFE;            /* Texto claro para contraste sobre el degradado */
+    padding: 20px 0;           /* Espaciado arriba y abajo */
+    text-align: center;        /* Centra el título */
+    width: 100%;               /* Ocupa todo el ancho de la página */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para separación */
+    position: sticky;          /* Mantiene el header visible al hacer scroll */
+    top: 0;                    /* Posición superior cuando está sticky */
+    z-index: 1000;             /* Asegura que esté por encima de otros elementos */
+}
+
+header h1 {
+    margin: 0 0 10px 0; /* Margen inferior entre título y navbar */
+    font-size: 28px;    /* Tamaño del título principal */
+    line-height: 1;     /* Ajuste de altura de línea para mejor alineación */
+}
+
+/* ====== BARRA DE NAVEGACIÓN ====== */
+nav {
+    display: flex;               /* Organiza los botones horizontalmente */
+    justify-content: flex-end;   /* Alinea los botones a la derecha del header */
+    gap: 10px;                   /* Separación entre botones */
+    padding: 10px 15px;          /* Espaciado interno de la barra */
+    align-items: center;         /* Centra verticalmente los botones */
+}
+
+/* ====== BOTONES DE NAVBAR ====== */
+nav button {
+    background: transparent;     /* Fondo transparente por defecto (sin relleno) */
+    border: 2px solid #2D274B;   /* Borde morado oscuro para consistencia con acentos */
+    color: #2D274B;              /* Texto morado oscuro para visibilidad sobre el fondo claro */
+    padding: 10px 20px;          /* Espaciado interno cómodo */
+    border-radius: 25px;         /* Bordes redondeados tipo píldora */
+    font-size: 16px;             /* Tamaño de letra legible */
+    font-weight: bold;           /* Texto en negrita para jerarquía visual */
+    cursor: pointer;             /* Cursor tipo mano al pasar */
+    transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+                                 /* Transiciones suaves solo en propiedades necesarias */
+}
+
+/* Estado hover / foco para accesibilidad */
+nav button:hover,
+nav button:focus {
+    background: #2D274B;         /* Fondo morado oscuro al pasar el ratón / foco */
+    color: #EAEFFE;              /* Texto claro sobre fondo oscuro */
+    transform: scale(1.03);      /* Pequeño escalado para feedback */
+    box-shadow: 0 6px 18px rgba(45, 39, 75, 0.25); /* Sombra para resaltar */
+    outline: none;               /* Evita contorno nativo, usar :focus-visible si quieres accesibilidad extra */
+}
+
+/* Mejor práctica: mostrar indicación de foco para teclado (accesibilidad) */
+nav button:focus-visible {
+    outline: 3px solid rgba(151,135,254,0.25); /* Anillo de foco suave */
+    outline-offset: 3px;
+}
+
+/* ====== SECCIONES PLANAS Y DIVS (CONTENEDORES GENÉRICOS) ====== */
+section, div {
+    width: 90%;                 /* Ocupa la mayor parte del ancho disponible */
+    max-width: 1000px;          /* Ancho máximo para lecturabilidad en pantallas grandes */
+    padding: 20px;              /* Espaciado interno cómodo */
+    margin: 20px 0;             /* Separación vertical entre bloques */
+    background-color: #9787FE;  /* Morado medio para secciones (contrasta con el fondo) */
+    border-radius: 8px;         /* Esquinas redondeadas */
+    box-sizing: border-box;     /* Incluye padding en el cálculo de ancho */
+    color: #EAEFFE;             /* Texto claro dentro de las secciones */
+    min-height: 30vh;          /* Altura mínima útil para que visualmente se noten las secciones */
+}
+
+/* Opcional: pequeño ajuste tipográfico dentro de los contenedores */
+section p, div p {
+    margin: 0 0 1em 0;          /* Separación entre párrafos */
+    line-height: 1.5;           /* Mejor lectura */
+}
+
+/* ====== PIE DE PÁGINA ====== */
+footer {
+    background: linear-gradient(90deg,#2D274B, #9787FE); /* Mismo degradado que el header para coherencia */
+    color: #EAEFFE;            /* Texto claro para contraste */
+    text-align: center;        /* Centra el contenido del footer */
+    padding: 10px 0;           /* Espaciado arriba y abajo */
+    position: sticky;           /* Fijo en la parte inferior de la ventana */
+    bottom: 0;                 /* Pegado al borde inferior */
+    width: 100%;               /* Ocupa todo el ancho */
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.08); /* Sombra sutil hacia arriba */
+}
+
+/* ====== UTILIDADES PEQUEÑAS (opcional, útiles en plantillas) ====== */
+
+/* Centrar contenido interno en ambos ejes (horizontal y vertical). 
+   Se puede aplicar a cualquier contenedor para no repetir flexbox cada vez */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Margen superior pequeño (0.5rem ≈ 8px). 
+   Útil para dar un poco de espacio arriba de un elemento */
+.mt-1 { margin-top: 0.5rem; }
+
+/* Margen inferior pequeño (0.5rem ≈ 8px). 
+   Útil para separar elementos sin necesidad de escribir estilos extra */
+.mb-1 { margin-bottom: 0.5rem; }
+
+/* Recordatorio:
+    Estas utilidades se pueden aplicar directamente en el HTML usando la propiedad "class".
+    Ejemplo:
+    <div class="center mt-1">Contenido centrado con margen arriba</div>
+*/
