@@ -33,7 +33,7 @@ header {
 }
 
 header h1 {
-    margin: 0 0 10px 0; /* Margen inferior entre título y barra de navegación */
+    margin: 0 0 15px 0; /* Margen inferior entre título y barra de navegación */
     font-size: 28px;    /* Tamaño del título principal */
     line-height: 1;     /* Altura de línea ajustada */
 }
@@ -101,7 +101,7 @@ footer {
     color: #ffffff;            /* Texto blanco */
     text-align: center;        /* Centra el contenido */
     padding: 10px 0;           /* Espaciado superior e inferior */
-    position: fixed;           /* Siempre fijo abajo */
+    position: sticky;           /* Siempre fijo abajo */
     bottom: 0;                 /* Pegado al borde inferior */
     width: 100%;               /* Ocupa todo el ancho */
 }
