@@ -24,7 +24,9 @@ header {
     background: linear-gradient(90deg, #0F2027, #2C5364); /* Degradado azul oscuro → azul medio */
     color: #ffffff;            /* Texto blanco */
     padding: 20px 0;           /* Espaciado superior e inferior */
-    text-align: center;        /* Centra el título */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;               /* Ocupa todo el ancho */
     background-attachment: fixed; /* El fondo se desplaza con el contenido */
     position:sticky;          /* Fijo en la parte superior */
@@ -33,7 +35,8 @@ header {
 }
 
 header h1 {
-    margin: 0 0 15px 0; /* Margen inferior entre título y barra de navegación */
+    margin: 0; /* Margen inferior entre el título y la barra de navegación */
+    margin-left: 30px;
     font-size: 28px;    /* Tamaño del título principal */
     line-height: 1;     /* Altura de línea ajustada */
 }

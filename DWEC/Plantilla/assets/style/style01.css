@@ -23,9 +23,12 @@ body {
 header {
     background: linear-gradient(90deg, #141E30, #243B55); /* Degradado azul oscuro → azul intermedio */
     color: #ffffff;            /* Texto blanco sobre degradado */
-    padding: 20px 0;           /* Espaciado superior e inferior */
-    text-align: center;        /* Centra el título */
+    padding: 10px 50px;           /* Espaciado superior e inferior */
+    align-items: center;
     width: 100%;               /* Ocupa todo el ancho disponible */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra inferior opcional */
     position: sticky;          /* Fijo en la parte superior al hacer scroll */
     top: 0;                    /* Se pega al borde superior */
@@ -33,7 +36,8 @@ header {
 }
 
 header h1 {
-    margin: 0 0 10px 0; /* Margen inferior entre el título y la barra de navegación */
+    margin: 0; /* Margen inferior entre el título y la barra de navegación */
+    margin-left: 30px;
     font-size: 28px;    /* Tamaño del título principal */
     line-height: 1;     /* Altura de línea ajustada */
 }
@@ -64,8 +68,8 @@ nav button {
 /* Estado hover y foco */
 nav button:hover,
 nav button:focus {
-    background: #243B55;              /* Fondo azul intermedio al interactuar */
-    color: #ffffff;                   /* Texto blanco sobre azul */
+    background:#ffffff ;              /* Fondo azul intermedio al interactuar */
+    color: #243B55;                   /* Texto blanco sobre azul */
     transform: scale(1.05);           /* Ligero agrandamiento */
     box-shadow: 0 0 10px rgba(36,59,85,0.6); /* Resplandor azul */
     outline:none;                    /* Elimina borde nativo al hacer focus */
