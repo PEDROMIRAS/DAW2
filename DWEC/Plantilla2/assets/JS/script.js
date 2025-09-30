@@ -44,3 +44,5 @@ window.addEventListener('resize', handleResize);
 
 // ====== TAMAÑO INICIAL ======
 handleResize(); // comprobar tamaño al cargar la página
+
+// Fin script.js
