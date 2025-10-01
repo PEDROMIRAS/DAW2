@@ -5,7 +5,6 @@
     - Sidebar: degradado de #101828 → #1f3a55
     - Hover: degradado inverso #1f3a55 → #101828
 */
-
 /* ====== ESTILO GENERAL DEL BODY ====== */
 body {
     margin: 0; /* eliminar márgenes predeterminados del navegador */
@@ -15,7 +14,6 @@ body {
     display: flex; /* layout flexbox para contenido y sidebar */
     transition: background 0.3s; /* transición suave si se cambia fondo */
 }
-
 /* ====== SIDEBAR ====== */
 .sidebar {
     position: fixed; /* fija la sidebar al viewport */
@@ -27,11 +25,9 @@ body {
     padding-top: 20px; /* espacio arriba para el menú */
     overflow: hidden; /* ocultar contenido que sobrepase el contenedor */
     z-index: 100; /* por encima del contenido principal */
-
     display: flex;
     flex-direction: column; /* organizar menú arriba y footer abajo */
     justify-content: space-between;
-
     /* Transiciones suaves al colapsar/ocultar */
     transition: width 0.4s ease, transform 0.4s ease;
 }
@@ -43,7 +39,6 @@ body {
 .sidebar.hidden {
     transform: translateX(-100%); /* desplaza la sidebar fuera de pantalla */
 }
-
 /* ====== HAMBURGER BUTTON ====== */
 .hamburger {
     position: fixed; /* fijo en la pantalla */
@@ -67,7 +62,6 @@ body {
 .hamburger.active i {
     transform: rotate(90deg); /* rota icono al cambiar estado */
 }
-
 /* ====== MENU ====== */
 .menu {
     list-style: none; /* quitar viñetas */
@@ -116,13 +110,11 @@ body {
     color: #fff;
     z-index: 300;
 }
-
 /* ====== SEPARADOR ====== */
 .separator {
     border-top: 1px solid rgba(255, 255, 255, 0.2); /* línea sutil */
     margin: 10px 0; /* separación vertical */
 }
-
 /* ====== FOOTER EN SIDEBAR ====== */
 .sidebar-footer {
     padding: 15px 20px; /* espacio interno */
@@ -139,7 +131,6 @@ body {
     opacity: 0; /* desaparecer */
     transform: translateX(-20px); /* movimiento lateral al desaparecer */
 }
-
 /* ====== CONTENIDO PRINCIPAL ====== */
 .content {
     margin-left: 250px; /* espacio para sidebar expandida */
@@ -153,7 +144,6 @@ body {
 .sidebar.hidden ~ .content {
     margin-left: 60px; /* espacio para botón fijo al ocultar */
 }
-
 /* ====== DIV y SECTION (BOXES) ====== */
 .box {
     background: rgba(255, 255, 255, 0.1); /* fondo semi-transparente */
@@ -168,7 +158,6 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); /* sombra más intensa */
     background: rgba(255, 255, 255, 0.15); /* cambio ligero de fondo */
 }
-
 /* ====== UTILIDADES PEQUEÑAS ====== */
 .center {
     display: flex;
@@ -177,7 +166,6 @@ body {
 }
 .mt-1 { margin-top: 0.5rem; } /* margen superior pequeño */
 .mb-1 { margin-bottom: 0.5rem; } /* margen inferior pequeño */
-
 /* ====== MEDIA QUERIES (RESPONSIVE) ====== */
 @media (max-width: 768px) {
     .content {
@@ -187,7 +175,6 @@ body {
         width: 200px; /* ancho completo del sidebar */
     }
 }
-
 /* Recordatorio:
 Todo comentado para entender cada bloque. Se pueden aplicar clases utilitarias directamente en HTML:
 <div class="center mt-1">Contenido centrado con margen arriba</div>
