@@ -1,30 +1,33 @@
-/*Escribir un fragmento de codigo donde se aprecie 
-la diferencia de usar los tipos de variables let, var y const*/
 // var
 var nombre = "Juan";
 console.log("Var antes del bloque: " + nombre);
 
 if (true) {
-    var nombre = "Pedro";
+    var nombre = "Pedro"; // 'var' NO respeta el ámbito de bloque
     console.log("Var dentro del bloque: " + nombre);
 }
 
-console.log("Var despues del bloque: " + nombre);
+console.log("Var después del bloque: " + nombre); // Se mantiene como "Pedro"
 
 // let
-let apellido = "Perez";
+let apellido = "Pérez";
 console.log("Let antes del bloque: " + apellido);
 
 if (true) {
-    let apellido = "Garcia";
-    console.log("Let dentro de la funcion: " + apellido);
+    let apellido = "García"; // 'let' SÍ respeta el ámbito de bloque
+    console.log("Let dentro del bloque: " + apellido);
 }
 
-console.log("Let despues del bloque: " + apellido);
+console.log("Let después del bloque: " + apellido); // Sigue siendo "Pérez"
 
 // const
 const PI = 3.14;
-console.log("Const antes del cambio: " + PI);
+console.log("Const antes del intento de cambio: " + PI);
 
-PI = 3.1416; // Esto causaria un error al intentar cambiar el valor de una constante
-console.log("Const despues del cambio: " + PI);
+try {
+    PI = 3.1416; // Esto lanzará un error
+} catch (error) {
+    console.log("Error al intentar cambiar una constante: " + error.message);
+}
+
+console.log("Const después del intento de cambio: " + PI); // Sigue siendo 3.14

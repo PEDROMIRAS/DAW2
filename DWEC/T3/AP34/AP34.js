@@ -18,7 +18,7 @@ const nombresEquipos = [
 ];
 
 // Creamos un array vacío que contendrá los datos de la clasificación.
-const equipos = [];
+const equipos = [nombresEquipos.length];
 
 // Usamos un bucle 'for' para recorrer la lista de nombres y crear los datos para cada equipo.
 for (let i = 0; i < nombresEquipos.length; i++) {
@@ -46,7 +46,7 @@ for (let i = 0; i < nombresEquipos.length; i++) {
     ];
 
     // Añadimos el array del equipo actual al array principal 'equipos'
-    equipos.push(equipoActual);
+    equipos[i] = equipoActual;
 }
 
 // Ordenar los equipos por puntos (índice 1) de mayor a menor.
