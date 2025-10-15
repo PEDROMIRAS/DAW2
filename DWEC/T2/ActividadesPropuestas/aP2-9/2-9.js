@@ -1,15 +1,15 @@
-let inicial = prompt("Introduce un número inicial:");
+const inicial = prompt("Introduce un número inicial:");
 //Inicial del dia de la semana (L,M,X,J,V,S,D)
 function horario(inicial) {
     // Validar la entrada de datos
-    if (inicial === null) {
+    if (inicial === null) {//Que no sea vacio
         return "No se ha introducido ningún valor.";
-    }else if (inicial.length !== 1) {
+    }else if (inicial.length !== 1) {//Que solo haya un caracter
         return "Por favor, introduce solo un carácter.";
-    }else if (!"LMXJVSD".includes(inicial.toUpperCase())) {
+    }else if (!"LMXJVSD".includes(inicial.toUpperCase())) {//Que el caracter introducido sea una de las opciones 
         return "Carácter no válido. Introduce L, M, X, J, V, S o D.";
     }else {
-        switch (inicial.toUpperCase()) {
+        switch (inicial.toUpperCase()) {//Switch para manejar diferentes opciones y establecemos la variable a mayuculas
             case "L":
                 return "El horario del Lunes es de 8 a 15h.";
             case "M":
@@ -29,4 +29,5 @@ function horario(inicial) {
         }
     }
 }
+//Mostramos la salida por consola llamando a la funcion
 console.log(horario(inicial));
