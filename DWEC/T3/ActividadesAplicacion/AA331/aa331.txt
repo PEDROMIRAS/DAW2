@@ -1,0 +1,10 @@
+3.31 Teniendo en cuenta la naturaleza de los conjuntos, podrían ser la estructura de datos indicada para, por ejemplo,
+gestionar las categorías o etiquetas de un blog, una lista de la compra o una lista de tareas. Reflexiona y escribe 
+otras cinco tareas que podría gestionar un conjunto mejor que un array.
+
+Cinco ejemplos de tareas donde un conjunto sería mejor que un array son:
+	1.	Gestión de nombres de usuarios registrados en una aplicación, para evitar duplicados.
+	2.	Almacenamiento de permisos o roles únicos asignados a un usuario (por ejemplo: admin, editor, lector).
+	3.	Control de direcciones IP únicas que han accedido a un sitio web.
+	4.	Gestión de materias o asignaturas cursadas por un alumno, sin repetir ninguna.
+	5.	Listado de productos disponibles en stock sin duplicados (solo importa si un producto está o no, no cuántas veces aparece).
