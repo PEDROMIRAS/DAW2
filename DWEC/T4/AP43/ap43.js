@@ -1,5 +1,5 @@
 //Declaramos una palabra clave como variable
-const palabraClave = "murcielago";
+const palabraClave = "sargento";
 
 //Definimos la funcion
 function palabreja(...letras) {
@@ -16,4 +16,4 @@ function palabreja(...letras) {
     console.log(resultado);
 }
 //Llamamos a la funcion, le indicamos unos parametros variables
-palabreja("m", "r", "l", "a", "t", "e", "o");
+palabreja("a","e","i","o","u","d","n");
