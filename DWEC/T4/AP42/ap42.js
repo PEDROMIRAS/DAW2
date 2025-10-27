@@ -7,7 +7,7 @@ function jugar(rondas = 5){
         let dado1 = Math.floor(Math.random() * 6) + 1;
         let dado2 = Math.floor(Math.random() * 6) + 1;
         Jugador1 += dado1 + dado2;
-        console.log(`Jugador1: Ronda ${i + 1}: Dado 1 = ${dado1}, Dado 2 = ${dado2}`);
+        //console.log(`Jugador1: Ronda ${i + 1}: Dado 1 = ${dado1}, Dado 2 = ${dado2}`);
 
     }
     let Jugador2 = 0;
@@ -15,7 +15,7 @@ function jugar(rondas = 5){
         let dado1 = Math.floor(Math.random() * 6)+1;
         let dado2 = Math.floor(Math.random() * 6)+1;
         Jugador2 += dado1 + dado2;
-        console.log(`Jugador2: Ronda ${i + 1}: Dado 1 = ${dado1}, Dado 2 = ${dado2}`);
+        //console.log(`Jugador2: Ronda ${i + 1}: Dado 1 = ${dado1}, Dado 2 = ${dado2}`);
     }
     console.log(`Jugador1: ${Jugador1}`);
     console.log(`Jugador2: ${Jugador2}`);
