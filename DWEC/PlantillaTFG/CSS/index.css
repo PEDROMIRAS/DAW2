@@ -100,20 +100,37 @@ main {
 
 /* BANNER */
 .banner {
-    background: linear-gradient(180deg, var(--verde-pastel), var(--verde-claro)); /* Gradiente vertical */
-    border-radius: 16px;                        /* Bordes muy redondeados */
-    text-align: center;                         /* Texto centrado */
+    background: transparent;                    /* Sin fondo, se integra con el body */
+    border-radius: 0;                           /* Sin bordes redondeados */
     padding: 40px 20px;                         /* Espaciado interno */
     margin-bottom: 40px;                        /* Espacio inferior */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    box-shadow: none;                           /* Sin sombra */
+    display: flex;                              /* Layout flexible */
+    align-items: center;                        /* Centra verticalmente */
+    gap: 40px;                                  /* Espacio entre imagen y contenido */
+    flex-wrap: wrap;                            /* Permite salto de línea en pantallas pequeñas */
+}
+
+/* Contenedor de la imagen del banner */
+.imgBanner {
+    flex: 1;                                    /* Ocupa espacio disponible */
+    min-width: 300px;                           /* Ancho mínimo */
+    display: flex;                              /* Layout flexible */
+    justify-content: center;                    /* Centra la imagen */
 }
 
 /* Imagen del banner */
 .imgBanner img {
     width: 100%;                                /* Ancho completo del contenedor */
-    max-width: 700px;                           /* Ancho máximo de 700px */
+    max-width: 500px;                           /* Ancho máximo reducido */
     border-radius: 12px;                        /* Bordes redondeados */
-    margin-bottom: 20px;                        /* Espacio inferior */
+}
+
+/* Contenedor del texto del banner */
+.banner-content {
+    flex: 1;                                    /* Ocupa espacio disponible */
+    min-width: 300px;                           /* Ancho mínimo */
+    text-align: left;                           /* Texto alineado a la izquierda */
 }
 
 /* Título del banner */
@@ -126,16 +143,16 @@ main {
 .banner p {
     font-size: 18px;                            /* Tamaño de fuente mediano */
     opacity: 0.8;                               /* Ligeramente transparente */
+    line-height: 1.6;                           /* Altura de línea para mejor lectura */
 }
 
 /* BÚSQUEDA */
 .busqueda {
     display: flex;                              /* Layout flexible */
-    justify-content: center;                    /* Centra horizontalmente */
-    align-items: center;                        /* Centra verticalmente */
-    gap: 20px;                                  /* Espacio entre elementos */
+    flex-direction: column;                     /* Elementos en columna (uno encima del otro) */
+    align-items: center;                        /* Centra horizontalmente */
+    gap: 15px;                                  /* Espacio entre botón y barra de búsqueda */
     margin-bottom: 40px;                        /* Espacio inferior */
-    flex-wrap: wrap;                            /* Permite salto de línea en pantallas pequeñas */
 }
 
 /* Botón de búsqueda */
@@ -156,6 +173,12 @@ main {
     transform: scale(1.05);                     /* Aumenta el tamaño */
 }
 
+/* Contenedor del formulario de búsqueda */
+#busqueda {
+    display: flex;                              /* Layout flexible */
+    gap: 10px;                                  /* Espacio entre input y botón */
+}
+
 /* Input de búsqueda */
 .busqueda input {
     padding: 10px 15px;                         /* Espaciado interno */
@@ -171,7 +194,60 @@ main {
     border-color: var(--verde-oscuro);          /* Borde verde oscuro al hacer focus */
 }
 
+/* CARDS DE RESTAURANTES */
+.card-container {
+    margin-bottom: 50px;                        /* Espacio inferior */
+    padding: 0 10px;                            /* Pequeño padding lateral */
+}
 
+/* Contenedor grid de las cards */
+.cards {
+    display: grid;                              /* Layout de cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas responsivas */
+    gap: 25px;                                  /* Espacio entre cards */
+    width: 100%;                                /* Ancho completo */
+}
+
+/* Card individual de restaurante */
+.card {
+    position: relative;                         /* Para posicionar el nombre absoluto */
+    border-radius: 12px;                        /* Bordes redondeados */
+    overflow: hidden;                           /* Oculta contenido que sobresale */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+    cursor: pointer;                            /* Cursor de mano */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animación suave */
+    background-color: white;                    /* Fondo blanco */
+}
+
+/* Efecto hover en la card */
+.card:hover {
+    transform: translateY(-8px);                /* Eleva la card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Imagen del restaurante */
+.card img {
+    width: 100%;                                /* Ancho completo de la card */
+    height: 200px;                              /* Altura fija */
+    object-fit: cover;                          /* Recorta la imagen para llenar el espacio */
+    display: block;                             /* Elimina espacio inferior de imagen */
+}
+
+/* Nombre del restaurante (superpuesto) */
+.card p {
+    position: absolute;                         /* Posicionamiento absoluto */
+    top: 10px;                                  /* 10px desde arriba */
+    left: 50%;                                  /* Centrado horizontal */
+    transform: translateX(-50%);                /* Ajuste fino del centrado */
+    background-color: rgba(18, 50, 26, 0.85);  /* Fondo semi-transparente oscuro */
+    color: white;                               /* Texto blanco */
+    padding: 8px 16px;                          /* Espaciado interno */
+    border-radius: 6px;                         /* Bordes redondeados */
+    font-weight: 600;                           /* Texto semi-negrita */
+    font-size: 15px;                            /* Tamaño de fuente */
+    margin: 0;                                  /* Sin margen */
+    white-space: nowrap;                        /* Evita saltos de línea */
+}
 
 /* NOSOTROS */
 .nosotros {
@@ -212,25 +288,56 @@ main {
 footer {
     background-color: var(--verde-medio);       /* Fondo verde medio */
     color: var(--verde-oscuro);                 /* Color del texto */
-    text-align: center;                         /* Texto centrado */
-    padding: 30px 20px;                         /* Espaciado interno */
+    padding: 30px 40px;                         /* Espaciado interno */
     margin-top: 50px;                           /* Espacio superior */
 }
 
+/* Contenedor principal del footer */
+.footer-content {
+    max-width: 1200px;                          /* Ancho máximo igual al main */
+    margin: 0 auto;                             /* Centra el contenedor */
+    display: flex;                              /* Layout flexible */
+    justify-content: space-between;             /* Espacia los elementos a los extremos */
+    align-items: center;                        /* Centra verticalmente */
+    gap: 30px;                                  /* Espacio entre secciones */
+    flex-wrap: wrap;                            /* Permite salto de línea en pantallas pequeñas */
+}
+
+/* Sección del logo en el footer */
+.logo-footer {
+    display: flex;                              /* Layout flexible */
+    align-items: center;                        /* Centra verticalmente */
+    gap: 15px;                                  /* Espacio entre logo y texto */
+}
+
 /* Logo del footer */
-footer img {
+.logo-footer img {
     border-radius: 50%;                         /* Forma circular */
     border: 2px solid var(--verde-oscuro);      /* Borde verde oscuro */
 }
 
-/* Lista del footer */
-footer ul {
-    list-style: none;                           /* Sin viñetas */
+/* Título del logo en footer */
+.logo-footer h3 {
+    margin: 0;                                  /* Sin margen */
+    font-size: 22px;                            /* Tamaño de fuente */
+    font-weight: 600;                           /* Semi-negrita */
+}
+
+/* Sección de enlaces del footer */
+.footer-links {
+    flex: 1;                                    /* Ocupa el espacio disponible */
     display: flex;                              /* Layout flexible */
+    justify-content: flex-end;                  /* Alinea a la derecha */
+}
+
+/* Lista del footer */
+.footer-links ul {
+    list-style: none;                           /* Sin viñetas */
+    display: flex;                              /* Layout flexible horizontal */
     flex-wrap: wrap;                            /* Permite salto de línea */
-    gap: 15px;                                  /* Espacio entre elementos */
-    justify-content: center;                    /* Centra horizontalmente */
-    margin-top: 15px;                           /* Espacio superior */
+    gap: 20px;                                  /* Espacio entre elementos */
+    margin: 0;                                  /* Sin margen */
+    padding: 0;                                 /* Sin padding */
 }
 
 /* Enlaces del footer */
@@ -238,6 +345,7 @@ footer a {
     color: var(--verde-oscuro);                 /* Color del texto */
     text-decoration: none;                      /* Sin subrayado */
     transition: opacity 0.3s;                   /* Animación suave de opacidad */
+    font-weight: 500;                           /* Peso de fuente medio */
 }
 
 /* Efecto hover en enlaces del footer */
@@ -257,6 +365,16 @@ footer a:hover {
         justify-content: center;                /* Centra los elementos */
     }
 
+    /* Banner en columna en tablets */
+    .banner {
+        flex-direction: column;                 /* Apila imagen y texto verticalmente */
+        text-align: center;                     /* Texto centrado */
+    }
+
+    .banner-content {
+        text-align: center;                     /* Texto centrado en móviles */
+    }
+
     .banner h2 {
         font-size: 24px;                        /* Título más pequeño */
     }
@@ -264,11 +382,44 @@ footer a:hover {
     .banner p {
         font-size: 16px;                        /* Párrafo más pequeño */
     }
+
+    /* Cards en 2 columnas en tablets */
+    .cards {
+        grid-template-columns: repeat(2, 1fr);  /* Dos columnas fijas */
+        gap: 20px;                              /* Menos espacio entre cards */
+    }
+
+    /* Footer en columna en tablets */
+    .footer-content {
+        flex-direction: column;                 /* Elementos en columna */
+        text-align: center;                     /* Texto centrado */
+    }
+
+    .footer-links {
+        justify-content: center;                /* Centra los enlaces */
+    }
 }
 
 /* RESPONSIVE - Móviles */
 @media (max-width: 480px) {
     .busqueda input {
         width: 200px;                           /* Input más estrecho */
+    }
+
+    /* Cards en 1 columna en móviles */
+    .cards {
+        grid-template-columns: 1fr;             /* Una columna */
+        gap: 20px;                              /* Espacio entre cards */
+    }
+
+    .card img {
+        height: 180px;                          /* Imágenes un poco más pequeñas */
+    }
+
+    /* Footer más compacto en móviles */
+    .footer-links ul {
+        flex-direction: column;                 /* Enlaces en columna */
+        align-items: center;                    /* Centra los enlaces */
+        gap: 10px;                              /* Menos espacio entre enlaces */
     }
 }
