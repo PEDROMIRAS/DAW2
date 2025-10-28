@@ -1,356 +1,274 @@
-/* ==========================================================
-   PALETA DE COLORES
-   #F2FBF6 → Verde muy claro (fondo general)
-   #E6F7EA → Verde pastel suave
-   #D6EFD7 → Verde menta claro
-   #A8D6A3 → Verde medio natural
-   #12321A → Verde oscuro (texto, bordes y acentos)
-========================================================== */
+/* PALETA DE COLORES - Variables reutilizables en todo el documento */
+:root {
+    --verde-claro: #F2FBF6;      /* Color de fondo principal */
+    --verde-pastel: #E6F7EA;     /* Para secciones destacadas */
+    --verde-menta: #D6EFD7;      /* Efectos hover y secundarios */
+    --verde-medio: #A8D6A3;      /* Botones y footer */
+    --verde-oscuro: #12321A;     /* Textos y bordes */
+}
 
-/* ====== ESTILO GENERAL ====== */
+/* Reset básico para eliminar estilos por defecto del navegador */
+* {
+    margin: 0;                   /* Elimina márgenes por defecto */
+    padding: 0;                  /* Elimina padding por defecto */
+    box-sizing: border-box;      /* Incluye padding y border en el ancho total */
+}
+
+/* Estilos generales del body */
 body {
-    font-family: "Poppins", Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #F2FBF6;
-    color: #12321A;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;  /* Fuente principal con fallback */
+    background-color: var(--verde-claro);       /* Fondo verde claro */
+    color: var(--verde-oscuro);                 /* Color de texto principal */
+    min-height: 100vh;                          /* Mínimo altura de ventana completa */
 }
 
 /* ====== HEADER ====== */
 header {
-    background: linear-gradient(90deg, #A8D6A3 0%, #D6EFD7 50%, #E6F7EA 100%);
-    color: #12321A;
-    padding: 10px 40px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 6px rgba(18, 50, 26, 0.2);
+    background: linear-gradient(90deg, var(--verde-medio), var(--verde-menta), var(--verde-pastel)); /* Gradiente horizontal */
+    padding: 15px 40px;                         /* Espaciado interno */
+    display: flex;                              /* Layout flexible */
+    justify-content: space-between;             /* Espacia elementos a los extremos */
+    align-items: center;                        /* Centra verticalmente */
+    position: sticky;                           /* Se mantiene fijo al hacer scroll */
+    top: 0;                                     /* Pegado a la parte superior */
+    z-index: 1000;                              /* Aparece sobre otros elementos */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
 }
 
-header .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
+/* Logo del header */
 header .logo img {
-    border-radius: 50%;
-    border: 2px solid #12321A;
+    border-radius: 50%;                         /* Hace la imagen circular */
+    border: 2px solid var(--verde-oscuro);      /* Borde verde oscuro */
 }
 
-/* ====== NAVBAR ====== */
+/* Lista de navegación */
 nav ul {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    display: flex;                              /* Elementos en línea */
+    gap: 15px;                                  /* Espacio entre elementos */
+    list-style: none;                           /* Sin viñetas */
+    align-items: center;                        /* Alinea verticalmente todos los items */
 }
 
+/* Elementos de lista para mejor alineación */
+nav li {
+    display: flex;                              /* Hace que el contenido se alinee mejor */
+    align-items: center;                        /* Centra verticalmente el contenido */
+}
+
+/* Enlaces de navegación */
 nav a {
-    text-decoration: none;
-    color: #12321A;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: background 0.3s ease;
+    text-decoration: none;                      /* Sin subrayado */
+    color: var(--verde-oscuro);                 /* Color del texto */
+    font-weight: 600;                           /* Texto semi-negrita */
+    padding: 10px 16px;                         /* Espaciado interno (igual que botones) */
+    border-radius: 8px;                         /* Bordes redondeados */
+    transition: background 0.3s;                /* Animación suave del fondo */
+    display: inline-block;                      /* Para que el padding funcione correctamente */
 }
 
+/* Efecto hover en enlaces */
 nav a:hover {
-    background-color: #D6EFD7;
+    background-color: var(--verde-menta);       /* Cambia el fondo al pasar el mouse */
 }
 
+/* Botones de navegación */
 nav button {
-    background-color: #A8D6A3;
-    border: none;
-    color: #12321A;
-    font-weight: 600;
-    padding: 8px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    background-color: var(--verde-medio);       /* Fondo verde medio */
+    border: none;                               /* Sin borde */
+    color: var(--verde-oscuro);                 /* Color del texto */
+    font-weight: 600;                           /* Texto semi-negrita */
+    padding: 10px 16px;                         /* Espaciado interno (igual que enlaces) */
+    border-radius: 8px;                         /* Bordes redondeados */
+    cursor: pointer;                            /* Cursor de mano al pasar */
+    transition: all 0.3s;                       /* Animación suave de todas las propiedades */
+    font-size: 16px;                            /* Mismo tamaño de fuente que los enlaces */
+    font-family: inherit;                       /* Hereda la fuente del body */
 }
 
+/* Efecto hover en botones */
 nav button:hover {
-    background-color: #D6EFD7;
-    transform: scale(1.05);
+    background-color: var(--verde-menta);       /* Cambia el fondo */
+    transform: scale(1.05);                     /* Aumenta ligeramente el tamaño */
 }
 
 /* ====== MAIN ====== */
 main {
-    width: 100%;
-    max-width: 1200px;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+    max-width: 1200px;                          /* Ancho máximo del contenido */
+    margin: 0 auto;                             /* Centra horizontalmente */
+    padding: 30px 20px;                         /* Espaciado interno */
 }
 
-/* ----- BANNER ----- */
+/* BANNER */
 .banner {
-    background: linear-gradient(180deg, #E6F7EA 0%, #F2FBF6 100%);
-    border-radius: 16px;
-    text-align: center;
-    padding: 60px 20px;
-    box-shadow: 0 4px 10px rgba(18, 50, 26, 0.1);
+    background: linear-gradient(180deg, var(--verde-pastel), var(--verde-claro)); /* Gradiente vertical */
+    border-radius: 16px;                        /* Bordes muy redondeados */
+    text-align: center;                         /* Texto centrado */
+    padding: 40px 20px;                         /* Espaciado interno */
+    margin-bottom: 40px;                        /* Espacio inferior */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra suave */
 }
 
+/* Imagen del banner */
+.imgBanner img {
+    width: 100%;                                /* Ancho completo del contenedor */
+    max-width: 700px;                           /* Ancho máximo de 700px */
+    border-radius: 12px;                        /* Bordes redondeados */
+    margin-bottom: 20px;                        /* Espacio inferior */
+}
+
+/* Título del banner */
 .banner h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 32px;                            /* Tamaño de fuente grande */
+    margin-bottom: 10px;                        /* Espacio inferior */
 }
 
+/* Párrafo del banner */
 .banner p {
-    font-size: 18px;
-    color: #1b3d21;
+    font-size: 18px;                            /* Tamaño de fuente mediano */
+    opacity: 0.8;                               /* Ligeramente transparente */
 }
 
-/* ----- BUSCADOR ----- */
+/* BÚSQUEDA */
 .busqueda {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: flex;                              /* Layout flexible */
+    justify-content: center;                    /* Centra horizontalmente */
+    align-items: center;                        /* Centra verticalmente */
+    gap: 20px;                                  /* Espacio entre elementos */
+    margin-bottom: 40px;                        /* Espacio inferior */
+    flex-wrap: wrap;                            /* Permite salto de línea en pantallas pequeñas */
 }
 
+/* Botón de búsqueda */
 .busqueda button {
-    background-color: #A8D6A3;
-    border: none;
-    color: #12321A;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    background-color: var(--verde-medio);       /* Fondo verde medio */
+    border: none;                               /* Sin borde */
+    color: var(--verde-oscuro);                 /* Color del texto */
+    font-weight: 600;                           /* Texto semi-negrita */
+    padding: 10px 20px;                         /* Espaciado interno */
+    border-radius: 8px;                         /* Bordes redondeados */
+    cursor: pointer;                            /* Cursor de mano */
+    transition: all 0.3s;                       /* Animación suave */
 }
 
+/* Efecto hover en botón de búsqueda */
 .busqueda button:hover {
-    background-color: #D6EFD7;
-    transform: scale(1.05);
+    background-color: var(--verde-menta);       /* Cambia el fondo */
+    transform: scale(1.05);                     /* Aumenta el tamaño */
 }
 
-.busqueda input[type="search"] {
-    padding: 10px 15px;
-    border: 2px solid #A8D6A3;
-    border-radius: 8px;
-    width: 250px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s ease;
+/* Input de búsqueda */
+.busqueda input {
+    padding: 10px 15px;                         /* Espaciado interno */
+    border: 2px solid var(--verde-medio);       /* Borde verde medio */
+    border-radius: 8px;                         /* Bordes redondeados */
+    width: 250px;                               /* Ancho fijo */
+    font-size: 16px;                            /* Tamaño de fuente */
+    outline: none;                              /* Sin contorno al hacer focus */
 }
 
-.busqueda input[type="search"]:focus {
-    border-color: #12321A;
+/* Input con focus */
+.busqueda input:focus {
+    border-color: var(--verde-oscuro);          /* Borde verde oscuro al hacer focus */
 }
 
-/* ----- CARRUSEL MANUAL ----- */
-.carrusel-wrapper {
-    width: 100%;
-    position: relative;
-    padding: 10px 0;
-}
 
-.carrusel {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto; /* permite scroll horizontal */
-    scroll-behavior: smooth;
-    padding-bottom: 10px;
-}
 
-/* Ocultar scroll bar */
-.carrusel::-webkit-scrollbar {
-    display: none;
-}
-.carrusel {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.restaurante {
-    min-width: 220px;
-    flex-shrink: 0;
-    position: relative;
-    text-align: center;
-    cursor: pointer;
-}
-
-.restaurante img {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(18, 50, 26, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.restaurante:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(18, 50, 26, 0.2);
-}
-
-.restaurante p {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(18, 50, 26, 0.7);
-    color: #F2FBF6;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 16px;
-}
-
-/* Botones de navegación del carrusel */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(18, 50, 26, 0.7);
-    border: none;
-    color: #F2FBF6;
-    font-size: 24px;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10;
-    transition: background 0.3s ease;
-}
-
-.carousel-btn:hover {
-    background-color: rgba(18, 50, 26, 0.9);
-}
-
-.carousel-btn.prev { left: 10px; }
-.carousel-btn.next { right: 10px; }
-
-/* ----- NOSOTROS ----- */
+/* NOSOTROS */
 .nosotros {
-    background-color: #E6F7EA;
-    border-radius: 16px;
-    padding: 40px 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(18, 50, 26, 0.1);
+    background-color: var(--verde-pastel);      /* Fondo verde pastel */
+    border-radius: 16px;                        /* Bordes muy redondeados */
+    padding: 40px 20px;                         /* Espaciado interno */
+    text-align: center;                         /* Texto centrado */
+    margin-bottom: 50px;                        /* Espacio inferior */
 }
 
+/* Título principal de Nosotros */
 .nosotros h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 28px;                            /* Tamaño de fuente grande */
+    margin-bottom: 10px;                        /* Espacio inferior */
 }
 
+/* Subtítulo de Nosotros */
 .nosotros h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 22px;                            /* Tamaño de fuente mediano */
+    margin-bottom: 20px;                        /* Espacio inferior */
 }
 
+/* Párrafo de Nosotros */
 .nosotros p {
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
+    max-width: 700px;                           /* Ancho máximo para mejor legibilidad */
+    margin: 0 auto 20px;                        /* Centrado con espacio inferior */
+    line-height: 1.6;                           /* Altura de línea para mejor lectura */
 }
 
+/* Imagen de Nosotros */
 .nosotros img {
-    width: 300px;
-    height: auto;
-    border-radius: 12px;
-    margin-top: 20px;
+    max-width: 300px;                           /* Ancho máximo */
+    width: 100%;                                /* Ancho completo hasta el máximo */
+    border-radius: 12px;                        /* Bordes redondeados */
 }
 
-/* ----- FOOTER ----- */
+/* FOOTER */
 footer {
-    background-color: #A8D6A3;
-    color: #12321A;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
-    border-top: 3px solid #D6EFD7;
+    background-color: var(--verde-medio);       /* Fondo verde medio */
+    color: var(--verde-oscuro);                 /* Color del texto */
+    text-align: center;                         /* Texto centrado */
+    padding: 30px 20px;                         /* Espaciado interno */
+    margin-top: 50px;                           /* Espacio superior */
 }
 
+/* Logo del footer */
 footer img {
-    border-radius: 50%;
-    border: 2px solid #12321A;
+    border-radius: 50%;                         /* Forma circular */
+    border: 2px solid var(--verde-oscuro);      /* Borde verde oscuro */
 }
 
+/* Lista del footer */
 footer ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 10px;
+    list-style: none;                           /* Sin viñetas */
+    display: flex;                              /* Layout flexible */
+    flex-wrap: wrap;                            /* Permite salto de línea */
+    gap: 15px;                                  /* Espacio entre elementos */
+    justify-content: center;                    /* Centra horizontalmente */
+    margin-top: 15px;                           /* Espacio superior */
 }
 
+/* Enlaces del footer */
 footer a {
-    color: #12321A;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: var(--verde-oscuro);                 /* Color del texto */
+    text-decoration: none;                      /* Sin subrayado */
+    transition: opacity 0.3s;                   /* Animación suave de opacidad */
 }
 
+/* Efecto hover en enlaces del footer */
 footer a:hover {
-    color: #000;
+    opacity: 0.7;                               /* Más transparente al pasar el mouse */
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 1024px) {
-    .carrusel {
-        justify-content: center;
-    }
-}
-
+/* RESPONSIVE - Tablets y pantallas medianas */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
+        flex-direction: column;                 /* Elementos en columna */
+        padding: 15px 20px;                     /* Menos padding horizontal */
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
+        flex-wrap: wrap;                        /* Permite salto de línea */
+        justify-content: center;                /* Centra los elementos */
     }
 
-    .busqueda {
-        flex-direction: column;
-    }
-
-    .nosotros img {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 480px) {
     .banner h2 {
-        font-size: 24px;
+        font-size: 24px;                        /* Título más pequeño */
     }
 
     .banner p {
-        font-size: 16px;
+        font-size: 16px;                        /* Párrafo más pequeño */
     }
+}
 
-    .busqueda input[type="search"] {
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .restaurante img {
-        width: 180px;
-        height: 180px;
+/* RESPONSIVE - Móviles */
+@media (max-width: 480px) {
+    .busqueda input {
+        width: 200px;                           /* Input más estrecho */
     }
 }
