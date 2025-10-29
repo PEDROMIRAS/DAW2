@@ -68,27 +68,7 @@ nav a {
 
 /* Efecto hover en enlaces */
 nav a:hover {
-    background-color: var(--verde-menta);       /* Cambia el fondo al pasar el mouse */
-}
-
-/* Botones de navegación */
-nav button {
-    background-color: var(--verde-medio);       /* Fondo verde medio */
-    border: none;                               /* Sin borde */
-    color: var(--verde-oscuro);                 /* Color del texto */
-    font-weight: 600;                           /* Texto semi-negrita */
-    padding: 10px 16px;                         /* Espaciado interno (igual que enlaces) */
-    border-radius: 8px;                         /* Bordes redondeados */
-    cursor: pointer;                            /* Cursor de mano al pasar */
-    transition: all 0.3s;                       /* Animación suave de todas las propiedades */
-    font-size: 16px;                            /* Mismo tamaño de fuente que los enlaces */
-    font-family: inherit;                       /* Hereda la fuente del body */
-}
-
-/* Efecto hover en botones */
-nav button:hover {
-    background-color: var(--verde-menta);       /* Cambia el fondo */
-    transform: scale(1.05);                     /* Aumenta ligeramente el tamaño */
+    background-color: var(--verde-medio);       /* Cambia el fondo al pasar el mouse */
 }
 
 /* ====== MAIN ====== */
@@ -235,7 +215,7 @@ main {
 
 /* Nombre del restaurante (superpuesto) */
 .card p {
-    position: absolute;                         /* Posicionamiento absoluto */
+    position:absolute;                         /* Posicionamiento absoluto */
     top: 10px;                                  /* 10px desde arriba */
     left: 50%;                                  /* Centrado horizontal */
     transform: translateX(-50%);                /* Ajuste fino del centrado */
@@ -351,75 +331,4 @@ footer a {
 /* Efecto hover en enlaces del footer */
 footer a:hover {
     opacity: 0.7;                               /* Más transparente al pasar el mouse */
-}
-
-/* RESPONSIVE - Tablets y pantallas medianas */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;                 /* Elementos en columna */
-        padding: 15px 20px;                     /* Menos padding horizontal */
-    }
-
-    nav ul {
-        flex-wrap: wrap;                        /* Permite salto de línea */
-        justify-content: center;                /* Centra los elementos */
-    }
-
-    /* Banner en columna en tablets */
-    .banner {
-        flex-direction: column;                 /* Apila imagen y texto verticalmente */
-        text-align: center;                     /* Texto centrado */
-    }
-
-    .banner-content {
-        text-align: center;                     /* Texto centrado en móviles */
-    }
-
-    .banner h2 {
-        font-size: 24px;                        /* Título más pequeño */
-    }
-
-    .banner p {
-        font-size: 16px;                        /* Párrafo más pequeño */
-    }
-
-    /* Cards en 2 columnas en tablets */
-    .cards {
-        grid-template-columns: repeat(2, 1fr);  /* Dos columnas fijas */
-        gap: 20px;                              /* Menos espacio entre cards */
-    }
-
-    /* Footer en columna en tablets */
-    .footer-content {
-        flex-direction: column;                 /* Elementos en columna */
-        text-align: center;                     /* Texto centrado */
-    }
-
-    .footer-links {
-        justify-content: center;                /* Centra los enlaces */
-    }
-}
-
-/* RESPONSIVE - Móviles */
-@media (max-width: 480px) {
-    .busqueda input {
-        width: 200px;                           /* Input más estrecho */
-    }
-
-    /* Cards en 1 columna en móviles */
-    .cards {
-        grid-template-columns: 1fr;             /* Una columna */
-        gap: 20px;                              /* Espacio entre cards */
-    }
-
-    .card img {
-        height: 180px;                          /* Imágenes un poco más pequeñas */
-    }
-
-    /* Footer más compacto en móviles */
-    .footer-links ul {
-        flex-direction: column;                 /* Enlaces en columna */
-        align-items: center;                    /* Centra los enlaces */
-        gap: 10px;                              /* Menos espacio entre enlaces */
-    }
 }

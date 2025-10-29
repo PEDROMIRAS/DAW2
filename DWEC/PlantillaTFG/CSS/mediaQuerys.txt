@@ -1,0 +1,70 @@
+/* RESPONSIVE - Tablets y pantallas medianas */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;                 /* Elementos en columna */
+        padding: 15px 20px;                     /* Menos padding horizontal */
+    }
+
+    nav ul {
+        flex-wrap: wrap;                        /* Permite salto de línea */
+        justify-content: center;                /* Centra los elementos */
+    }
+
+    /* Banner en columna en tablets */
+    .banner {
+        flex-direction: column;                 /* Apila imagen y texto verticalmente */
+        text-align: center;                     /* Texto centrado */
+    }
+
+    .banner-content {
+        text-align: center;                     /* Texto centrado en móviles */
+    }
+
+    .banner h2 {
+        font-size: 24px;                        /* Título más pequeño */
+    }
+
+    .banner p {
+        font-size: 16px;                        /* Párrafo más pequeño */
+    }
+
+    /* Cards en 2 columnas en tablets */
+    .cards {
+        grid-template-columns: repeat(2, 1fr);  /* Dos columnas fijas */
+        gap: 20px;                              /* Menos espacio entre cards */
+    }
+
+    /* Footer en columna en tablets */
+    .footer-content {
+        flex-direction: column;                 /* Elementos en columna */
+        text-align: center;                     /* Texto centrado */
+    }
+
+    .footer-links {
+        justify-content: center;                /* Centra los enlaces */
+    }
+}
+
+/* RESPONSIVE - Móviles */
+@media (max-width: 480px) {
+    .busqueda input {
+        width: 200px;                           /* Input más estrecho */
+    }
+
+    /* Cards en 1 columna en móviles */
+    .cards {
+        grid-template-columns: 1fr;             /* Una columna */
+        gap: 20px;                              /* Espacio entre cards */
+    }
+
+    .card img {
+        height: 180px;                          /* Imágenes un poco más pequeñas */
+    }
+
+    /* Footer más compacto en móviles */
+    .footer-links ul {
+        flex-direction: column;                 /* Enlaces en columna */
+        align-items: center;                    /* Centra los enlaces */
+        gap: 10px;                              /* Menos espacio entre enlaces */
+    }
+}
