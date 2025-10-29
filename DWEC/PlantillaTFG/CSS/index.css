@@ -193,9 +193,10 @@ main {
 }
 /* Card individual de restaurante */
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex;                              /* Layout flexible */
+    flex-direction: column;                     /* Elementos en columna (uno encima del otro) */
+    align-items: center;                        /* Centra verticalmente */
+    justify-content: center;                    /* Centra horizontalmente */
     position: relative;                         /* Para posicionar el nombre absoluto */
     border-radius: 12px;                        /* Bordes redondeados */
     overflow: hidden;                           /* Oculta contenido que sobresale */
@@ -223,7 +224,7 @@ main {
 
 /* Nombre del restaurante (superpuesto) */
 .card p {
-    position:relative;                         /* Posicionamiento relativo */
+    position:relative;                         /* Para posicionar el nombre absoluto */
     background-color: rgba(18, 50, 26, 0.85);  /* Fondo semi-transparente oscuro */
     color: white;                               /* Texto blanco */
     padding: 8px 10px;                          /* Espaciado interno */
@@ -233,7 +234,40 @@ main {
     margin: 20px;                                 /* Margen */
     white-space: nowrap;                        /* Evita saltos de línea */
 }
+/* Boton para desplegar restaurantes */
+.desplegable{
+    display: flex;                              /* Layout flexible */
+    flex-direction: column;                     /* Elementos en columna (uno encima del otro) */
+    align-items: center;                        /* Centra verticalmente */
+    gap: 15px;                                  /* Espacio entre botones */
+    margin-bottom: 40px;                        /* Espacio inferior */
+    padding: 0 10px;                            /* Pequeño padding lateral */
+    width: 100%;                                /* Ancho completo */
+    margin-bottom: 25px;                        /* Espacio inferior*/
+}
 
+/* Botón desplegable */
+.desplegable button {
+    background-color: transparent;               /* Sin fondo */
+    border: none;                               /* Sin borde */
+    color: var(--verde-oscuro);                 /* Color del texto */
+    font-weight: 600;                           /* Texto semi-negrita */
+    padding: 10px 20px;                         /* Espaciado interno */
+    border-radius: 8px;                         /* Bordes redondeados */
+    cursor: pointer;                            /* Cursor de mano */
+    transition: all 0.3s;                       /* Animación suave */
+}
+
+/* Efecto hover en botón desplegable */
+.desplegable button:hover {
+    transform: scale(1.05);                     /* Aumenta el tamaño */
+    background-color: var(--verde-menta);       /* Cambia el fondo */
+    color: var(--verde-oscuro);                 /* Cambia el color del texto */
+}
+/* Estado de las cartas */
+.hidden {
+    display: none;
+}
 /* NOSOTROS */
 .nosotros {
     background-color: var(--verde-pastel);      /* Fondo verde pastel */
@@ -336,4 +370,75 @@ footer a {
 /* Efecto hover en enlaces del footer */
 footer a:hover {
     opacity: 0.7;                               /* Más transparente al pasar el mouse */
+}
+
+/* RESPONSIVE - Tablets y pantallas medianas */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;                 /* Elementos en columna */
+        padding: 15px 20px;                     /* Menos padding horizontal */
+    }
+
+    nav ul {
+        flex-wrap: wrap;                        /* Permite salto de línea */
+        justify-content: center;                /* Centra los elementos */
+    }
+
+    /* Banner en columna en tablets */
+    .banner {
+        flex-direction: column;                 /* Apila imagen y texto verticalmente */
+        text-align: center;                     /* Texto centrado */
+    }
+
+    .banner-content {
+        text-align: center;                     /* Texto centrado en móviles */
+    }
+
+    .banner h2 {
+        font-size: 24px;                        /* Título más pequeño */
+    }
+
+    .banner p {
+        font-size: 16px;                        /* Párrafo más pequeño */
+    }
+
+    /* Cards en 2 columnas en tablets */
+    .cards {
+        grid-template-columns: repeat(1, 1fr);  /* Dos columnas fijas */
+        gap: 20px;                              /* Menos espacio entre cards */
+    }
+
+    /* Footer en columna en tablets */
+    .footer-content {
+        flex-direction: column;                 /* Elementos en columna */
+        text-align: center;                     /* Texto centrado */
+    }
+
+    .footer-links {
+        justify-content: center;                /* Centra los enlaces */
+    }
+}
+
+/* RESPONSIVE - Móviles */
+@media (max-width: 480px) {
+    .busqueda input {
+        width: 200px;                           /* Input más estrecho */
+    }
+
+    /* Cards en 1 columna en móviles */
+    .cards {
+        grid-template-columns: 1fr;             /* Una columna */
+        gap: 20px;                              /* Espacio entre cards */
+    }
+
+    .card img {
+        height: 180px;                          /* Imágenes un poco más pequeñas */
+    }
+
+    /* Footer más compacto en móviles */
+    .footer-links ul {
+        flex-direction: column;                 /* Enlaces en columna */
+        align-items: center;                    /* Centra los enlaces */
+        gap: 10px;                              /* Menos espacio entre enlaces */
+    }
 }
