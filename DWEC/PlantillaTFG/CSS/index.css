@@ -208,8 +208,8 @@ main {
 /* Imagen del restaurante */
 .card img {
     width: 100%;                                /* Ancho completo de la card */
-    height: 200px;                              /* Altura fija */
-    object-fit: cover;                          /* Recorta la imagen para llenar el espacio */
+    height: 400px;                              /* Altura fija */
+    object-fit:cover;                          /* Recorta la imagen para llenar el espacio */
     display: block;                             /* Elimina espacio inferior de imagen */
 }
 
