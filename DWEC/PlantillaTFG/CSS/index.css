@@ -191,7 +191,7 @@ main {
 /* Card individual de restaurante */
 .card {
     position: relative;                         /* Para posicionar el nombre absoluto */
-    border-radius: 12px;                        /* Bordes redondeados */
+    border-radius: 5px;                        /* Bordes redondeados */
     overflow: hidden;                           /* Oculta contenido que sobresale */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra suave */
     cursor: pointer;                            /* Cursor de mano */
@@ -210,22 +210,20 @@ main {
     width: 100%;                                /* Ancho completo de la card */
     height: 400px;                              /* Altura fija */
     object-fit:cover;                          /* Recorta la imagen para llenar el espacio */
-    display: block;                             /* Elimina espacio inferior de imagen */
+    display:block;                             /* Elimina espacio inferior de imagen */
+    border-radius: 5px;
 }
 
 /* Nombre del restaurante (superpuesto) */
 .card p {
-    position:absolute;                         /* Posicionamiento absoluto */
-    top: 10px;                                  /* 10px desde arriba */
-    left: 50%;                                  /* Centrado horizontal */
-    transform: translateX(-50%);                /* Ajuste fino del centrado */
+    position:relative;                         /* Posicionamiento relativo */
     background-color: rgba(18, 50, 26, 0.85);  /* Fondo semi-transparente oscuro */
     color: white;                               /* Texto blanco */
-    padding: 8px 16px;                          /* Espaciado interno */
+    padding: 8px 10px;                          /* Espaciado interno */
     border-radius: 6px;                         /* Bordes redondeados */
     font-weight: 600;                           /* Texto semi-negrita */
     font-size: 15px;                            /* Tamaño de fuente */
-    margin: 0;                                  /* Sin margen */
+    margin: 20px;                                 /* Margen */
     white-space: nowrap;                        /* Evita saltos de línea */
 }
 
