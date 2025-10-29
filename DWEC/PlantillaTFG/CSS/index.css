@@ -186,6 +186,7 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas responsivas */
     gap: 25px;                                  /* Espacio entre cards */
     width: 100%;                                /* Ancho completo */
+    margin-bottom: 25px;                        /* Espacio inferior*/
 }
 .cards a{
     text-decoration: none;                      /* Sin subrayado */
