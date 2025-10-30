@@ -9,25 +9,7 @@
     <title>Acho Q Como</title>
 </head>
 <body>
-    <!-- ===== HEADER ===== -->
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="assets/logo2.png" alt="Logo de Acho Q Como" width="100" height="100">
-            </a>
-        </div>
-
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="restaurantes.html">Restaurantes</a></li>
-                <li><a href="registro.html">Registro</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="carrito.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <!--- <?php include('public/header.php')?>  -->
     <!-- ===== MAIN ===== -->
     <main>
         <!-- ----- BANNER ----- -->
@@ -89,23 +71,7 @@
             <img src="assets/nosotros.jpg" alt="Equipo de Acho K Como">
         </section>
     </main>
-                <!-- ===== FOOTER ===== -->
-                <footer>
-        <div class="footer-content">
-            <div class="logo-footer">
-                <img src="assets/logo2.png" alt="Logo de Acho K Como" width="100" height="100">
-                <h3>Acho Q Como</h3>
-            </div>
-            <div class="footer-links">
-                <ul>
-                    <li><a href="">¿Tienes un restaurante?</a></li>
-                    <li><a href="">Horario</a></li>
-                    <li><a href="">Contacto</a></li>
-                    <li><a href="">Política de privacidad</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    <!--- <?php include('public/footer.php')?>  -->
     <!-- ===== JAVASCRIPT ===== -->
     <script src="JS/index.js"></script>
 </body>
