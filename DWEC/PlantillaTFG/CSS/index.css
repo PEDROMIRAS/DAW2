@@ -214,9 +214,9 @@ main {
 
 /* Imagen del restaurante */
 .card img {
-    margin-top: 40px;
+    margin-top: 40px;                           /* Espacio superior */  
     width: 80%;                                /* Ancho completo de la card */
-    height: 400px;                              /* Altura fija */
+    height: 350px;                              /* Altura fija */
     object-fit:cover;                          /* Recorta la imagen para llenar el espacio */
     display:block;                             /* Elimina espacio inferior de imagen */
     border-radius: 8px;
