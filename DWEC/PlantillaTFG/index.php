@@ -5,28 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/f97389225c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/index.css">
-    <link rel="shortcut icon" href="assets/logo.jpg" type="image/x-icon">
-    <title>Acho K Como</title>
+    <link rel="shortcut icon" href="assets/logo2.png" type="image/png">
+    <title>Acho Q Como</title>
 </head>
 <body>
-    <!-- ===== HEADER ===== -->
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="assets/logo.jpg" alt="Logo de Acho K Como" width="100" height="100">
-            </a>
-        </div>
-
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="restaurantes.html">Restaurantes</a></li>
-                <li><a href="registro.html">Registro</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="carrito.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include('public/header.php')?>
 
     <!-- ===== MAIN ===== -->
     <main>
@@ -90,24 +73,7 @@
         </section>
     </main>
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="footer-content">
-            <div class="logo-footer">
-                <img src="assets/logo.jpg" alt="Logo de Acho K Como" width="100" height="100">
-                <h3>Acho K Como</h3>
-            </div>
-            <div class="footer-links">
-                <ul>
-                    <li><a href="">¿Tienes un restaurante?</a></li>
-                    <li><a href="">Horario</a></li>
-                    <li><a href="">Contacto</a></li>
-                    <li><a href="">Política de privacidad</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-
+    <?php include('public/footer.php')?>
     <!-- ===== JAVASCRIPT ===== -->
     <script src="JS/index.js"></script>
 </body>
