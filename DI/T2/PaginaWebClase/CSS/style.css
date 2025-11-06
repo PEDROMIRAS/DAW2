@@ -1,0 +1,50 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 40px;
+}
+
+/* Logo */
+.logo h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+/* Menú principal */
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Espacio entre elementos */
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* Hover efecto */
+.menu li a:hover {
+    background-color: #fff;
+    color: #333;
+}
