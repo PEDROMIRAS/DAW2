@@ -214,6 +214,7 @@ header {
 /* ============================= */
 /* SECCIÓN SKILLS (TARJETAS) */
 /* ============================= */
+/*
 .skills-title {
     text-align: center; 
     font-size: 2rem; 
@@ -222,7 +223,7 @@ header {
 }
 .skills-container {
     display: grid; 
-    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px; 
 }
 .skills-item {
@@ -259,6 +260,7 @@ header {
     font-weight: 500; 
     text-align: center; 
 }
+*/
 
 /* ============================= */
 /* RESPONSIVE */
