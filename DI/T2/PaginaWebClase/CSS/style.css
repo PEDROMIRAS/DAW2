@@ -55,7 +55,7 @@ header {
     color: var(--color-text-light);             /* Texto claro */
     padding: 20px 40px;                         /* Espaciado interno */
     position: sticky;                           /* Fija al hacer scroll */
-    top: 5px;                                   /* Margen superior */
+    top: 1.5em;                                   /* Margen superior */
     z-index: 1000;                              /* Prioridad de superposición */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);     /* Sombra inferior */
     transition: background-color var(--transition); /* Transición suave */
@@ -99,18 +99,18 @@ header {
 }
 .menu li a {
     color: var(--color-text-light); 
-    text-decoration: none; 
-    font-weight: bold; 
-    padding: 8px 12px; 
-    border-radius: 50px; 
-    display: inline-block; 
-    cursor: pointer; 
-    transition: all var(--transition); 
+    text-decoration: none;       /*a sin subrayado*/
+    font-weight: bold;           /*negrita*/
+    padding: 8px 12px;           /* Espaciado interno */
+    border-radius: 50px;         /* Bordes redondeados */ 
+    display:inline-block;        
+    cursor: pointer;             /* Cambia el cursor al pasar el ratón */
+    transition: all var(--transition);  /* Transición suave */
 }
 .menu li a:hover {
     background-color: var(--color-text-light); 
     color: #333; 
-    transform: translateY(-3px); 
+    transform: translateY(-3px);    /* Desplazamiento vertical */
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
 }
 
@@ -127,11 +127,11 @@ header {
 /* SECCIÓN HOME */
 /* ============================= */
 .home {
-    display: flex; 
+    display: flex;              
     justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    min-height: 90vh; 
+    align-items: center;    /* Alineacion vertical centrada */
+    text-align: center;     
+    min-height: 90vh;       
 }
 .home h2 {
     font-size: 2.5rem; 
@@ -214,7 +214,6 @@ header {
 /* ============================= */
 /* SECCIÓN SKILLS (TARJETAS) */
 /* ============================= */
-/*
 .skills-title {
     text-align: center; 
     font-size: 2rem; 
@@ -260,7 +259,14 @@ header {
     font-weight: 500; 
     text-align: center; 
 }
-*/
+
+/* ============================= */
+/* Proyects */
+/* ============================= */
+.proyects{
+    display: flex; 
+    flex-direction: column; 
+}
 
 /* ============================= */
 /* RESPONSIVE */
