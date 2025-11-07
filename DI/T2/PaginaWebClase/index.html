@@ -1,101 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./CSS/style.css">
-        <script src="https://kit.fontawesome.com/f97389225c.js" crossorigin="anonymous"></script>
-        <title>Portfolio</title>
-    </head>
-    <body>
-        <header>
-            <div class="logo">
-                <h1>Portfolio</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/logo.jpg" type="image/jpg">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="https://kit.fontawesome.com/f97389225c.js" crossorigin="anonymous"></script>
+    <title>Pedro Miras - Web Developer Portfolio</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="./assets/img/logo.jpg" alt="Pedro Miras, Web Developer" loading="lazy">
+            <h1>Pedro Miras</h1>
+        </div>
+        <nav class="menu" aria-label="Main Navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="home">
+            <div class="home-content">
+                <h2>Hello, I'm <span>Pedro Miras</span></h2>
+                <h3>Web Developer</h3>
+                <p>
+                    I am a passionate Web Developer who creates modern, responsive, and high-performance websites.
+                    I focus on clean design, intuitive user experiences, and efficient, maintainable code.
+                    Welcome to my portfolio—explore and get to know my work!
+                </p>
+                <a href="#about" class="btn">Learn More About Me</a>
             </div>
-            <nav class="menu">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section class="about">
-                <div class="about-img">
+        </section>
 
+        <!-- About Section -->
+        <section id="about" class="about">
+            <figure class="about-img">
+                <img src="./assets/img/portfolio-image.JPG" alt="Pedro Miras, Web Developer" loading="lazy">
+            </figure>
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    I’m Pedro Miras, a 25-year-old Web Developer from Lorca, Spain. I recently graduated in Web Application Development and enjoy creating efficient, user-friendly web solutions. 
+                    I am highly motivated to learn new technologies, solve challenges, and grow as a developer while contributing to meaningful projects. 
+                    My goal is to combine creativity and technical skills to build websites that people enjoy using.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" aria-label="Skills">
+            <h2 class="skills-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skills-item">
+                    <i class="fa-brands fa-html5"></i>
+                    <span>HTML5</span>
                 </div>
-                <div class="about-text">
-                    <h2>About Me</h2>
-
+                <div class="skills-item">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <span>CSS3</span>
                 </div>
-            </section>
-            <section class="skills">
-                <h2>Skills</h2>
-                <div class="skills-container">
-                    <div class="skill">
-                        <h3>HTML5</h3>
-
-                    </div>
-                    <div class="skill">
-                        <h3>CSS3</h3>
-
-                    </div>
-                    <div class="skill">
-                        <h3>JavaScript</h3>
-
-                    </div>
-                    <div class="skill">
-                        <h3>React</h3>
-
-                    </div>
-                    <div class="skill">
-                        <h3>Boostrap</h3>
-
-                    </div>
-                    <div class="skill">
-                        <h3>PHP</h3>
-
-                    </div>
-                    <div class="skill">
-                        <h3>Symphony</h3>
-
-                    </div>
+                <div class="skills-item">
+                    <i class="fa-brands fa-js"></i>
+                    <span>JavaScript</span>
                 </div>
-            </section>
-            <section class="projects">
-                <h2>Projects</h2>
-                <div class="projects-container">
-                    <div class="project">
-                        <h3>Project 1</h3>
-                        
-                    </div>
+                <div class="skills-item">
+                    <i class="fa-brands fa-php"></i>
+                    <span>PHP</span>
                 </div>
-            </section>
-            <section class="contact">
-                <h2>Contact</h2>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit">Send</button>
-                    </form>
+                <div class="skills-item">
+                    <i class="fa-brands fa-react"></i>
+                    <span>React</span>
                 </div>
-            </section>
-        </main>
-        <footer>
+                <div class="skills-item">
+                    <i class="fa-brands fa-bootstrap"></i>
+                    <span>Bootstrap</span>
+                </div>
+                <div class="skills-item">
+                    <i class="fa-brands fa-symfony"></i>
+                    <span>Symfony</span>
+                </div>
+                <div class="skills-item">
+                    <i class="fa-brands fa-java"></i>
+                    <span>Java</span>
+                </div>
+            </div>
+        </section>
 
-        </footer>
-    </body>
+        <!-- Projects Section -->
+        <section id="projects" class="projects" aria-label="Projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <article class="project">
+                    <h3>Project 1</h3>
+                    <p>Description of the project...</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <div class="contact-form">
+                <form action="/contact" method="POST" aria-label="Contact Form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Pedro Miras. All rights reserved.</p>
+    </footer>
+</body>
 </html>
