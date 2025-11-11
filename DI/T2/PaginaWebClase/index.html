@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/img/logo.jpg" type="image/jpg">
     <link rel="stylesheet" href="./CSS/style.css">
     <script src="https://kit.fontawesome.com/f97389225c.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./assets/img/p-solid-full.svg" type="image/svg">
     <title>Pedro Miras - Web Developer Portfolio</title>
 </head>
 <body>
@@ -46,7 +46,7 @@
                 <img src="./assets/img/portfolio-image.JPG" alt="Pedro Miras, Web Developer" loading="lazy">
             </figure>
             <div class="about-text">
-                <h2>About Me</h2>
+                <h2>ABOUT ME</h2>
                 <p>
                     I’m Pedro Miras, a 25-year-old Web Developer from Lorca, Spain. I recently graduated in Web Application Development and enjoy creating efficient, user-friendly web solutions. 
                     I am highly motivated to learn new technologies, solve challenges, and grow as a developer while contributing to meaningful projects. 
@@ -57,7 +57,7 @@
 
         <!-- Skills Section -->
         <section class="skills" aria-label="Skills">
-            <h2 class="skills-title">Skills</h2>
+            <h2 class="skills-title">SKILLS</h2>
             <div class="skills-container">
                 <div class="skills-item">
                     <i class="fa-brands fa-html5"></i>
@@ -93,36 +93,80 @@
                 </div>
             </div>
         </section>
-
         <!-- Projects Section -->
-        <section id="projects" class="projects" aria-label="Projects">
-            <h2 class="projects-title">Projects</h2>
+        <section id="projects" class="projects" aria-labelledby="projects-title">
+            <h2 id="projects-title" class="projects-title">Projects</h2>
+            
             <div class="projects-container">
+            
                 <article class="project">
-                    <h3>Project 1</h3>
-                    <p>Description of the project...</p>
+                    <h3 class="project-name">Project 1</h3>
+                    <div class="project-info">
+                    <p>A brief description of the project and what technologies were used.</p> 
+                    <img src="./assets/img/project.webp" alt="Screenshot of Project 1">
+                    </div>
+                    <div class="project-links">
+                    <a href="https://github.com/PEDROMIRAS/DAW2/tree/main/DI/T2/Practica%20HTML" class="btn">View Project</a>
+                    <a href="#" class="btn">View Code</a>
+                    </div>
                 </article>
+        
+                <article class="project">
+                    <h3 class="project-name">Project 2</h3>
+                    <div class="project-info">
+                    <p>A brief description of the project and what technologies were used.</p> 
+                    <img src="./assets/img/project.webp" alt="Screenshot of Project 1">
+                    </div>
+                    <div class="project-links">
+                    <a href="#" class="btn">View Project</a>
+                    <a href="#" class="btn">View Code</a>
+                    </div>
+                </article>
+                <!--
+                <article class="project">
+                    <h3 class="project-name">Project 3</h3>
+                    <div class="project-info">
+                    <p>A brief description of the project and what technologies were used.</p> 
+                    <img src="./assets/img/project.webp" alt="Screenshot of Project 1">
+                    </div>
+                    <div class="project-links">
+                    <a href="#" class="btn">View Project</a>
+                    <a href="#" class="btn">View Code</a>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <h3 class="project-name">Project 4</h3>
+                    <div class="project-info">
+                    <p>A brief description of the project and what technologies were used.</p> 
+                    <img src="./assets/img/project.webp" alt="Screenshot of Project 1">
+                    </div>
+                    <div class="project-links">
+                    <a href="#" class="btn">View Project</a>
+                    <a href="#" class="btn">View Code</a>
+                    </div>
+                </article>
+            -->
             </div>
         </section>
-
         <!-- Contact Section -->
         <section id="contact" class="contact">
-            <h2>Contact</h2>
+            <h2 class="contact-title">Contact</h2>
             <div class="contact-form">
-                <form action="/contact" method="POST" aria-label="Contact Form">
+                <form action="/" method="POST" aria-label="Contact Form">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group full-width">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        <textarea id="message" name="message" placeholder="Your Message" required aria-required="true"></textarea>
                     </div>
-                    <button type="submit" class="btn">Send Message</button>
+                    <button type="submit">Send Message</button>
                 </form>
             </div>
         </section>
@@ -130,7 +174,11 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Pedro Miras. All rights reserved.</p>
+        <p>
+            &copy; 2025 Pedro Miras. All rights reserved. 
+            <a href="https://github.com/PEDROMIRAS" target="_blank" rel="noopener noreferrer">GitHub</a> |
+            <a href="https://www.linkedin.com/in/pedro-miras-p%C3%A9rez-castej%C3%B3n-b9b991151/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </p>
     </footer>
 </body>
 </html>
