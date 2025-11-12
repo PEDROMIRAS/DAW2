@@ -14,11 +14,12 @@
     --color-border: rgba(255,255,255,0.125);   /* Borde suave */
     --radius: 16px;                    /* Radio de bordes global */
     --transition: 0.3s ease;           /* Transición global */
-    --gap-main: 60px;                  /* Espacio vertical entre secciones */
+    --gap-main: 110px;                  /* Espacio vertical entre secciones */
     --bg-alpha-1: rgba(0,188,212,0.1);   /* Fondo ligero para tarjetas */
     --bg-alpha-2: rgba(0,188,212,0.2);   /* Fondo hover para tarjetas */
     --border-alpha-1: rgba(0,188,212,0.3); /* Borde tarjeta normal */
     --border-alpha-2: rgba(0,188,212,0.5); /* Borde hover */
+    --header-offset: 100px;   /* Altura del header */
 }
 
 /* ============================= */
@@ -28,6 +29,10 @@
     margin: 0;               /* Quitar márgenes por defecto */
     padding: 0;              /* Quitar rellenos por defecto */
     box-sizing: border-box;  /* Incluir padding y border en el tamaño */
+}
+
+[id]{
+    scroll-margin-top: var(--header-offset);
 }
 
 /* ============================= */
@@ -128,7 +133,9 @@ header {
 /* ============================= */
 .home,
 .about,
-.skills {
+.skills,
+.projects,
+.contact{
     width: 90%;                     /* Ancho máximo */
     margin: 0 auto;                 /* Centrado horizontal */
     padding-block: var(--gap-main); /* Espaciado vertical */
