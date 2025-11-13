@@ -1,0 +1,282 @@
+/* ============================= */
+/* RESET BÁSICO */
+/* ============================= */
+
+* {
+    margin: 0;              /* Elimina márgenes por defecto */
+    padding: 0;             /* Elimina padding por defecto */
+    box-sizing: border-box; /* Incluye padding y border dentro del tamaño total */
+}
+
+/* ============================= */
+/* VARIABLES DE COLOR */
+/* ============================= */
+
+:root {
+    --color-primary: #c70039;  /* Color rojo principal Ducati */
+    --color-dark: #111;        /* Color oscuro (fondos) */
+    --color-light: #f8f8f8;    /* Color claro (textos) */
+    --color-text: #222;        /* Gris oscuro para textos */
+    --max-width: 1200px;       /* Ancho máximo para centrar contenido */
+    --header-offset: 110px;   /* Offset para scroll al header */
+}
+
+/* ============================= */
+/* BODY */
+/* ============================= */
+
+body {
+    font-family: "Roboto", Arial, sans-serif; /* Fuente base de la web */
+    line-height: 1.7;                         /* Altura de línea legible */
+    color: var(--color-light);                /* Color del texto */
+    background: linear-gradient(#900c27, #c70039); /* Fondo degradado tipo Ducati */
+    background-attachment: fixed;             /* Fondo fijo al hacer scroll */
+    scroll-behavior: smooth;                  /* Scroll suave al navegar */
+}
+[id]{
+    scroll-margin-top: var(--header-offset);
+}
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+header {
+    width: 96%;                                /* Header casi ancho total */
+    max-width: var(--max-width);               /* No pasar de 1200px */
+    margin: 0 auto;                            /* Centrado horizontal */
+    display: flex;                             /* Flexbox para alinear elementos */
+    justify-content: space-between;            /* Separa logo a la izquierda y menú a la derecha */
+    align-items: center;                       /* Alinea verticalmente el contenido */
+    padding: 1.2rem 2rem;                      /* Espaciado interior */
+    background: rgba(0, 0, 0, 0.3);            /* Fondo negro translúcido */
+    backdrop-filter: blur(6px);                /* Efecto cristal difuminado */
+    border-radius: 14px;                       /* Bordes redondeados */
+    position: sticky;                          /* Se queda pegado arriba al hacer scroll */
+    top: 1.2rem;                               /* Separación desde el borde superior */
+    z-index: 1000;                             /* Siempre por encima del contenido */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);/* Sombra elegante */
+}
+
+header h1 {
+    font-size: 1.6rem;              /* Tamaño del título */
+    color: var(--color-light);      /* Color claro */
+    text-transform: uppercase;      /* Mayúsculas para estilo deportivo */
+    letter-spacing: 1px;            /* Espaciado entre letras */
+}
+
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
+
+.navbar ul {
+    display: flex;                  /* Mostrar los <li> en línea */
+    gap: 2rem;                      /* Separación entre enlaces */
+    list-style: none;               /* Quita viñetas */
+}
+
+.navbar a {
+    text-decoration: none;          /* Sin subrayado */
+    color: var(--color-light);      /* Color del enlace */
+    font-weight: 500;               /* Grosor medio */
+    position: relative;             /* Necesario para el subrayado animado */
+    transition: color 0.3s ease;    /* Suavidad al cambiar color */
+}
+
+.navbar a::after {
+    content: "";                    /* Crea una línea debajo del enlace */
+    position: absolute;             /* Posición automática */
+    bottom: -5px;                   /* Justo debajo del texto */
+    left: 0;
+    width: 0%;                      /* Inicialmente sin ancho */
+    height: 2px;                    /* Grosor de la línea */
+    background-color: var(--color-light); /* Color del subrayado */
+    transition: width 0.3s ease;    /* Animación del subrayado */
+}
+
+.navbar a:hover {
+    color: #fff;                    /* Color más blanco al pasar mouse */
+}
+
+.navbar a:hover::after {
+    width: 100%;                    /* Subrayado completo al hacer hover */
+}
+
+/* ============================= */
+/* MAIN LAYOUT */
+/* ============================= */
+
+main {
+    width: 100%;                               /* Ocupa casi todo el ancho */
+    max-width: var(--max-width);              /* No exceder 1200px */
+    margin: 2rem auto 4rem;                   /* Centrado + margen superior e inferior */
+    background: rgba(255, 255, 255, 0.08);    /* Fondo blanco translúcido */
+    border-radius: 16px;                      /* Bordes redondeados */
+    padding: 2rem;                            /* Espaciado interno */
+    backdrop-filter: blur(4px);               /* Efecto cristal suave */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);/* Sombra alrededor */
+}
+
+/* ============================= */
+/* SECCIONES */
+/* ============================= */
+
+.section {
+    margin-bottom: 4rem;          /* Separación entre secciones */
+    color: var(--color-light);    /* Texto claro */
+}
+
+.section-content {
+    display: flex;                /* Texto e imágenes en línea */
+    flex-wrap: wrap;              /* Se adapta si la pantalla es pequeña */
+    align-items: center;          /* Centra verticalmente */
+    gap: 2.5rem;                  /* Espacio entre columnas */
+}
+
+.section-text {
+    flex: 1 1 50%;                /* Ocupa la mitad del espacio */
+}
+
+.section-text h2 {
+    color: #fff;                  /* Títulos blancos */
+    font-size: 1.8rem;            /* Tamaño grande */
+    margin-bottom: 1rem;          /* Separación inferior */
+    border-left: 5px solid var(--color-light); /* Línea decorativa a la izquierda */
+    padding-left: 0.7rem;         /* Separación del texto */
+}
+
+.section-text p {
+    margin-bottom: 1rem;          /* Separación entre párrafos */
+    text-align: justify;          /* Texto justificado estilo Wikipedia */
+}
+
+.section-img {
+    flex: 1 1 40%;                /* Columna de imágenes */
+    display: flex;
+    flex-direction: column;       /* Varias imágenes una debajo de otra */
+    gap: 1.5rem;                  /* Separación entre imágenes */
+    align-items: center;          /* Centra las imágenes */
+}
+
+.section-img img {
+    width: 100%;                  /* Se adapta al contenedor */
+    max-width: 480px;             /* No crece más de 480px */
+    border-radius: 12px;          /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra elegante */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto animado */
+}
+
+.section-img img:hover {
+    transform: scale(1.03);       /* Zoom suave al hacer hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
+}
+
+.section-img figcaption {
+    font-size: 0.9rem;            /* Texto más pequeño */
+    opacity: 0.9;                 /* Un poco transparente */
+    text-align: center;           /* Centrado */
+}
+
+.section-img-motores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+}
+.section-img-motores img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.section-img-motores img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+.section-img-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.section-img-grid img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-img-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+/* Alternar lados imagen/texto */
+.section-content.reverse {
+    flex-direction: row-reverse;  /* Invierte columnas (imagen a la izquierda) */
+}
+
+/* ============================= */
+/* SECCIÓN SIGLO XXI */
+/* ============================= */
+
+#siglo-xxi .section-text p {
+    margin-bottom: 2rem;  /* Más espacio entre párrafos */
+}
+
+#siglo-xxi .section-text {
+    line-height: 2.2;       /* Interlineado más cómodo para lectura */
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer {
+    text-align: center;                           /* Centrado */
+    padding: 2rem;                                /* Espaciado interno */
+    background: rgba(0, 0, 0, 0.4);               /* Fondo oscuro translúcido */
+    color: var(--color-light);                    /* Texto claro */
+    border-top: 1px solid rgba(255, 255, 255, 0.15); /* Línea superior */
+    font-size: 0.9rem;                            /* Texto pequeño */
+    letter-spacing: 0.5px;                        /* Letras ligeramente separadas */
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;    /* Logo y menú uno debajo del otro */
+        gap: 1rem;                 /* Separación vertical */
+        text-align: center;        /* Centra todo */
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;           /* Menú se parte si no cabe */
+        justify-content: center;   /* Centrado */
+    }
+
+    .section-content {
+        flex-direction: column;    /* Texto e imagen uno bajo otro */
+    }
+
+    .section-img img {
+        max-width: 100%;           /* Imagen ocupa todo el ancho disponible */
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 0.95rem;        /* Reduce tamaño general del texto */
+    }
+
+    header h1 {
+        font-size: 1.3rem;         /* Título más pequeño */
+    }
+
+    .navbar ul {
+        gap: 1rem;                 /* Menor espacio entre enlaces */
+    } 
+}

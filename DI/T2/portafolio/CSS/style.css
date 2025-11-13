@@ -121,7 +121,7 @@ header {
     transition: all var(--transition); /* Animación hover */
 }
 
-.menu li a:hover {
+.menu li a:hover, .menu li a:focus {
     background-color: var(--color-text-light); /* Fondo al pasar el mouse */
     color: #333;                               /* Texto oscuro al hover */
     transform: translateY(-3px);               /* Levanta el enlace */
@@ -478,6 +478,17 @@ footer a:hover {
 /* ============================= */
 /* RESPONSIVE */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;    /* Logo y menú uno debajo del otro */
+        gap: 1rem;                 /* Separación vertical */
+        text-align: center;        /* Centra todo */
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;           /* Menú se parte si no cabe */
+        justify-content: center;   /* Centrado */
+    }
+    
     .about {
         flex-direction: column; /* Pila elementos */
         text-align: center;
