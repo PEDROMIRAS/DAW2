@@ -1,3 +1,4 @@
+// Generar tabla de bingo
 function generarTabla() {
     const filas = 8;
     const columnas = 4;
@@ -39,8 +40,23 @@ const tabla2 = generarTabla();
 const tabla3 = generarTabla();
 const tabla4 = generarTabla();
 const tabla5 = generarTabla();
+
 console.table(tabla1);
 console.table(tabla2);
 console.table(tabla3);
 console.table(tabla4);
 console.table(tabla5);
+
+// Generar números del bingo
+function genNum(){
+    const numerosBingo = new Set();
+    while (numerosBingo.size < 90) {
+        const num = Math.floor(Math.random() * 90) + 1;
+        numerosBingo.add(num);
+    }
+}
+
+// Función bingo (a implementar)
+function bingo(...tablas) {
+    
+}

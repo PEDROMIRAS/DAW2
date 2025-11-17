@@ -37,7 +37,7 @@ function noCaracterEspanyol(array){
     
     // Primer filtrado: quedarse solo con palabras que contienen
     // algún carácter NO perteneciente al abecedario español.
-    nuevoArray = array.filter(function(palabra){
+    nuevoArray = array.filter(palabra => {
         // Recorre cada letra de la palabra
         for (const letra of palabra) {
             // Si encuentra un carácter que NO está en el abecedario español...
@@ -49,22 +49,24 @@ function noCaracterEspanyol(array){
     });
 
     // Segundo mapeo: transformar cada palabra en *el primer carácter prohibido* que contiene.
-    return nuevoArray = nuevoArray.map(function(palabra){
+    nuevoArray = nuevoArray.map(palabra => {
+        let caracterNoValido = [];
         // Recorre sus letras nuevamente
         for (const letra of palabra) {
             // Si encuentra un carácter no válido...
             if(!abecedarioEspanyol.includes(letra)){
-                return letra; // ...devuelve ese carácter
+                caracterNoValido.push(letra); // ...lo añade al array temporal      
             }
         }
-        return ''; // En caso extremo de no encontrar nada (no debería suceder)
+        return caracterNoValido; // Devuelve el array con los caracteres no válidos encontrados.
     });
+
+    // Escribe en el documento el resultado final: los caracteres no válidos encontrados.
+    for (const caracteres of nuevoArray) {
+        document.write(caracteres + ' ');
+    }
+
 }
 
 // Ejecuta la función sobre el array de palabras
 noCaracterEspanyol(palabras);
-
-// Escribe en el documento el resultado final: los caracteres no válidos encontrados.
-for (const caracteres of nuevoArray) {
-    document.write(caracteres + ' ');
-}
