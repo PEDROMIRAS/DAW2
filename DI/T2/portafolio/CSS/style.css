@@ -14,12 +14,12 @@
     --color-border: rgba(255,255,255,0.125);   /* Borde suave */
     --radius: 16px;                    /* Radio de bordes global */
     --transition: 0.3s ease;           /* Transición global */
-    --gap-main: 130px;                  /* Espacio vertical entre secciones */
+    --gap-main: 120px;                  /* Espacio vertical entre secciones */
     --bg-alpha-1: rgba(0,188,212,0.1);   /* Fondo ligero para tarjetas */
     --bg-alpha-2: rgba(0,188,212,0.2);   /* Fondo hover para tarjetas */
     --border-alpha-1: rgba(0,188,212,0.3); /* Borde tarjeta normal */
     --border-alpha-2: rgba(0,188,212,0.5); /* Borde hover */
-    --header-offset: 90px;   /* Altura del header */
+    --header-offset: 80px;   /* Altura del header */
 }
 
 /* ============================= */
@@ -301,9 +301,11 @@ header {
 /* ============================= */
 /* PROJECTS */
 .projects-container {
+    width: 90%;
+    height: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 proyectos por fila */
-    gap: 2em;                               /* Espacio entre proyectos */
+    grid-template-columns: repeat(1, 1fr); /* 2 proyectos por fila */
+    gap: 4em;                               /* Espacio entre proyectos */
     margin: 0 2em 60px;                     /* Margen general */
 }
 
@@ -312,6 +314,8 @@ header {
     transform: translateY(20px);            /* Levantar al aparecer */
     animation: fadeUp 0.6s ease forwards;   /* Animación suave */
 }
+
+/* Hover de project junto con hover de skills para sintetizar codigo */
 
 @keyframes fadeUp {
     to {
@@ -357,19 +361,15 @@ header {
     margin: 1em 2em;
 }
 
-.project-links a:first-child {
-    background-color: var(--color-primary);
-}
-
-.project-links a:last-child {
+.project-links a {
     background-color: transparent;
     border: 2px solid var(--color-primary);
     color: var(--color-primary);
 }
-
-.project-links a:last-child:hover {
-    background-color: var(--color-primary);
+.project-links a:hover {
+    background-color: var(--color-primary-dark);
     color: var(--color-text-light);
+    box-shadow: 0 8px 25px rgba(0,188,212,0.4);
 }
 
 /* ============================= */

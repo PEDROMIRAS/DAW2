@@ -2,203 +2,229 @@
 /* RESET BÁSICO */
 /* ============================= */
 
+/* Normaliza márgenes, padding y box-sizing */
 * {
-    margin: 0;              /* Elimina márgenes por defecto */
-    padding: 0;             /* Elimina padding por defecto */
-    box-sizing: border-box; /* Incluye padding y border dentro del tamaño total */
+    margin: 0;              
+    padding: 0;             
+    box-sizing: border-box; 
 }
 
 /* ============================= */
 /* VARIABLES DE COLOR */
 /* ============================= */
 
+/* Definición de colores y valores globales */
 :root {
-    --color-primary: #c70039;  /* Color rojo principal Ducati */
-    --color-dark: #111;        /* Color oscuro (fondos) */
-    --color-light: #f8f8f8;    /* Color claro (textos) */
-    --color-text: #222;        /* Gris oscuro para textos */
-    --max-width: 1200px;       /* Ancho máximo para centrar contenido */
-    --header-offset: 110px;   /* Offset para scroll al header */
+    --color-primary: #c70039;  
+    --color-dark: #111;        
+    --color-light: #f8f8f8;    
+    --color-text: #222;        
+    --max-width: 1200px;       
+    --header-offset: 110px;   
 }
 
 /* ============================= */
 /* BODY */
 /* ============================= */
 
+/* Estilo global del body y comportamiento del scroll */
 body {
-    font-family: "Roboto", Arial, sans-serif; /* Fuente base de la web */
-    line-height: 1.7;                         /* Altura de línea legible */
-    color: var(--color-light);                /* Color del texto */
-    background: linear-gradient(#900c27, #c70039); /* Fondo degradado tipo Ducati */
-    background-attachment: fixed;             /* Fondo fijo al hacer scroll */
-    scroll-behavior: smooth;                  /* Scroll suave al navegar */
+    font-family: "Roboto", Arial, sans-serif;
+    line-height: 1.7;                         
+    color: var(--color-light);                
+    background: linear-gradient(#900c27, #c70039);
+    background-attachment: fixed;             
+    scroll-behavior: smooth;                  
 }
+
+/* Ajuste del scroll para anclas internas */
 [id]{
     scroll-margin-top: var(--header-offset);
 }
+
 /* ============================= */
 /* HEADER */
 /* ============================= */
 
+/* Contenedor principal del header */
 header {
-    width: 96%;                                /* Header casi ancho total */
-    max-width: var(--max-width);               /* No pasar de 1200px */
-    margin: 0 auto;                            /* Centrado horizontal */
-    display: flex;                             /* Flexbox para alinear elementos */
-    justify-content: space-between;            /* Separa logo a la izquierda y menú a la derecha */
-    align-items: center;                       /* Alinea verticalmente el contenido */
-    padding: 1.2rem 2rem;                      /* Espaciado interior */
-    background: rgba(0, 0, 0, 0.3);            /* Fondo negro translúcido */
-    backdrop-filter: blur(6px);                /* Efecto cristal difuminado */
-    border-radius: 14px;                       /* Bordes redondeados */
-    position: sticky;                          /* Se queda pegado arriba al hacer scroll */
-    top: 1.2rem;                               /* Separación desde el borde superior */
-    z-index: 1000;                             /* Siempre por encima del contenido */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);/* Sombra elegante */
+    width: 96%;                                
+    max-width: var(--max-width);               
+    margin: 0 auto;                            
+    display: flex;                             
+    justify-content: space-between;            
+    align-items: center;                      
+    padding: 1.2rem 2rem;                    
+    background: rgba(0, 0, 0, 0.3);          
+    backdrop-filter: blur(6px);                
+    border-radius: 14px;                      
+    position: sticky;                          
+    top: 1.2rem;                               
+    z-index: 1000;                             
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
+/* Título del header */
 header h1 {
-    font-size: 1.6rem;              /* Tamaño del título */
-    color: var(--color-light);      /* Color claro */
-    text-transform: uppercase;      /* Mayúsculas para estilo deportivo */
-    letter-spacing: 1px;            /* Espaciado entre letras */
+    font-size: 1.6rem;              
+    color: var(--color-light);      
+    text-transform: uppercase;      
+    letter-spacing: 1px;            
 }
 
 /* ============================= */
 /* NAVBAR */
 /* ============================= */
 
+/* Lista de enlaces del menú */
 .navbar ul {
-    display: flex;                  /* Mostrar los <li> en línea */
-    gap: 2rem;                      /* Separación entre enlaces */
-    list-style: none;               /* Quita viñetas */
+    display: flex;                  
+    gap: 2rem;                      
+    list-style: none;            
 }
 
+/* Estilo de los enlaces del menú */
 .navbar a {
-    text-decoration: none;          /* Sin subrayado */
-    color: var(--color-light);      /* Color del enlace */
-    font-weight: 500;               /* Grosor medio */
-    position: relative;             /* Necesario para el subrayado animado */
-    transition: color 0.3s ease;    /* Suavidad al cambiar color */
+    text-decoration: none;          
+    color: var(--color-light);      
+    font-weight: 500;               
+    position: relative;             
+    transition: color 0.3s ease;    
 }
 
+/* Subrayado animado de los enlaces */
 .navbar a::after {
-    content: "";                    /* Crea una línea debajo del enlace */
-    position: absolute;             /* Posición automática */
-    bottom: -5px;                   /* Justo debajo del texto */
+    content: "";                    
+    position: absolute;             
+    bottom: -5px;                   
     left: 0;
-    width: 0%;                      /* Inicialmente sin ancho */
-    height: 2px;                    /* Grosor de la línea */
-    background-color: var(--color-light); /* Color del subrayado */
-    transition: width 0.3s ease;    /* Animación del subrayado */
+    width: 0%;                      
+    height: 2px;                    
+    background-color: var(--color-primary); 
+    transition: width 0.3s ease;    
 }
 
+/* Hover en los enlaces */
 .navbar a:hover {
-    color: #fff;                    /* Color más blanco al pasar mouse */
+    color: #fff;                    
 }
 
 .navbar a:hover::after {
-    width: 100%;                    /* Subrayado completo al hacer hover */
+    width: 100%;                    
 }
 
 /* ============================= */
 /* MAIN LAYOUT */
 /* ============================= */
 
+/* Contenedor principal del contenido */
 main {
-    width: 100%;                               /* Ocupa casi todo el ancho */
-    max-width: var(--max-width);              /* No exceder 1200px */
-    margin: 2rem auto 4rem;                   /* Centrado + margen superior e inferior */
-    background: rgba(255, 255, 255, 0.08);    /* Fondo blanco translúcido */
-    border-radius: 16px;                      /* Bordes redondeados */
-    padding: 2rem;                            /* Espaciado interno */
-    backdrop-filter: blur(4px);               /* Efecto cristal suave */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);/* Sombra alrededor */
+    width: 100%;                               
+    max-width: var(--max-width);              
+    margin: 2rem auto 4rem;               
+    padding: 2rem;                           
 }
 
 /* ============================= */
 /* SECCIONES */
 /* ============================= */
 
+/* Contenedor general de cada sección */
 .section {
-    margin-bottom: 4rem;          /* Separación entre secciones */
-    color: var(--color-light);    /* Texto claro */
+    margin-bottom: 4rem;          
+    color: var(--color-light);    
 }
 
+/* Contenedor de contenido dentro de la sección (texto + imágenes) */
 .section-content {
-    display: flex;                /* Texto e imágenes en línea */
-    flex-wrap: wrap;              /* Se adapta si la pantalla es pequeña */
-    align-items: center;          /* Centra verticalmente */
-    gap: 2.5rem;                  /* Espacio entre columnas */
+    display: flex;                
+    flex-wrap: wrap;              
+    align-items: center;          
+    gap: 2.5rem;                  
 }
 
+/* Columna de texto dentro de la sección */
 .section-text {
-    flex: 1 1 50%;                /* Ocupa la mitad del espacio */
+    flex: 1 1 50%;                
 }
 
+/* Títulos dentro de la sección */
 .section-text h2 {
-    color: #fff;                  /* Títulos blancos */
-    font-size: 1.8rem;            /* Tamaño grande */
-    margin-bottom: 1rem;          /* Separación inferior */
-    border-left: 5px solid var(--color-light); /* Línea decorativa a la izquierda */
-    padding-left: 0.7rem;         /* Separación del texto */
+    color: #fff;                  
+    font-size: 1.8rem;            
+    margin-bottom: 1rem;          
+    border-left: 5px solid var(--color-light);
+    padding-left: 0.7rem;         
 }
 
+/* Párrafos dentro de la sección */
 .section-text p {
-    margin-bottom: 1rem;          /* Separación entre párrafos */
-    text-align: justify;          /* Texto justificado estilo Wikipedia */
+    margin-bottom: 1rem;          
+    text-align: justify;          
 }
 
+/* Contenedor de imágenes individuales */
 .section-img {
-    flex: 1 1 40%;                /* Columna de imágenes */
+    flex: 1 1 40%;                
     display: flex;
-    flex-direction: column;       /* Varias imágenes una debajo de otra */
-    gap: 1.5rem;                  /* Separación entre imágenes */
-    align-items: center;          /* Centra las imágenes */
+    flex-direction: column;       
+    gap: 1.5rem;                  
+    align-items: center;          
 }
 
+/* Estilo de cada imagen */
 .section-img img {
-    width: 100%;                  /* Se adapta al contenedor */
-    max-width: 480px;             /* No crece más de 480px */
-    border-radius: 12px;          /* Bordes redondeados */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra elegante */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto animado */
+    width: 100%;                  
+    max-width: 480px;             
+    border-radius: 12px;          
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
+/* Hover sobre las imágenes */
 .section-img img:hover {
-    transform: scale(1.03);       /* Zoom suave al hacer hover */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
+    transform: scale(1.03);       
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* Texto de pie de imagen */
 .section-img figcaption {
-    font-size: 0.9rem;            /* Texto más pequeño */
-    opacity: 0.9;                 /* Un poco transparente */
-    text-align: center;           /* Centrado */
+    font-size: 0.9rem;            
+    opacity: 0.9;                 
+    text-align: center;           
 }
 
+/* Grid de imágenes de motores */
 .section-img-motores {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
     align-items: start;
 }
+
+/* Estilo de imágenes de motores */
 .section-img-motores img {
     width: 100%;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .section-img-motores img:hover {
     transform: scale(1.03);
     box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
+
+/* Grid general de imágenes dentro de una sección */
 .section-img-grid {
+    flex: 1 1 50%;                 /* Ocupa mitad del espacio si se usa flex */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
     justify-items: center;
 }
 
+/* Estilo de imágenes dentro del grid */
 .section-img-grid img {
     width: 100%;
     max-width: 280px;
@@ -211,35 +237,44 @@ main {
     transform: scale(1.03);
     box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
-/* Alternar lados imagen/texto */
+
+/* Alternar lado de imagen y texto */
 .section-content.reverse {
-    flex-direction: row-reverse;  /* Invierte columnas (imagen a la izquierda) */
+    flex-direction: row-reverse;  
 }
 
 /* ============================= */
 /* SECCIÓN SIGLO XXI */
 /* ============================= */
 
+/* Ajustes de párrafos para sección Siglo XXI */
 #siglo-xxi .section-text p {
-    margin-bottom: 2rem;  /* Más espacio entre párrafos */
+    margin-bottom: 2rem;  
 }
 
+/* Interlineado más cómodo en sección Siglo XXI */
 #siglo-xxi .section-text {
-    line-height: 2.2;       /* Interlineado más cómodo para lectura */
+    line-height: 2.2;       
+}
+
+/* Centrado del texto de figcaption en grid */
+.section-img-grid figcaption{
+    text-align: center;
 }
 
 /* ============================= */
 /* FOOTER */
 /* ============================= */
 
+/* Contenedor y estilo del footer */
 footer {
-    text-align: center;                           /* Centrado */
-    padding: 2rem;                                /* Espaciado interno */
-    background: rgba(0, 0, 0, 0.4);               /* Fondo oscuro translúcido */
-    color: var(--color-light);                    /* Texto claro */
-    border-top: 1px solid rgba(255, 255, 255, 0.15); /* Línea superior */
-    font-size: 0.9rem;                            /* Texto pequeño */
-    letter-spacing: 0.5px;                        /* Letras ligeramente separadas */
+    text-align: center;                           
+    padding: 2rem;                                
+    background: rgba(0, 0, 0, 0.4);               
+    color: var(--color-light);                    
+    border-top: 1px solid rgba(255, 255, 255, 0.15); 
+    font-size: 0.9rem;                            
+    letter-spacing: 0.5px;                        
 }
 
 /* ============================= */
