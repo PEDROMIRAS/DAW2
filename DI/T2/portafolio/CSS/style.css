@@ -110,22 +110,34 @@ header {
     gap: 20px;             /* Espacio entre enlaces */
 }
 
-.menu li a {
-    color: var(--color-text-light);  /* Color del enlace */
-    text-decoration: none;           /* Quitar subrayado */
-    font-weight: bold;               /* Negrita */
+.menu a {
+    color: var(--color-text-light);  
+    text-decoration: none;    
+    text-transform:uppercase;      
+    font-weight: bold;               
     padding: 8px 12px;               /* Espaciado interno */
-    border-radius: 50px;             /* Bordes redondeados */
+    border-radius: 50px;            
     display: inline-block;           /* Evitar que ocupe todo el ancho */
-    cursor: pointer;                 /* Cambia el cursor */
-    transition: all var(--transition); /* Animación hover */
+    cursor: pointer;   
+    position:relative;              
+    transition: color var(--transition); /* Animación hover */
+}
+.menu a:after{
+    content:'';
+    position:absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-text-light);
+    transition: width var(--transition);
+}
+.menu a:hover, .menu a:focus {
+    color: var(--color-text-light);
 }
 
-.menu li a:hover, .menu li a:focus {
-    background-color: var(--color-text-light); /* Fondo al pasar el mouse */
-    color: #333;                               /* Texto oscuro al hover */
-    transform: translateY(-3px);               /* Levanta el enlace */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);    /* Sombra */
+.menu a:hover::after{
+    width: 100%;
 }
 
 /* ============================= */
@@ -363,52 +375,64 @@ header {
 
 .project-links a {
     background-color: transparent;
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--color-primary-dark);
     color: var(--color-primary);
 }
-.project-links a:hover {
+.project-links a:hover,
+.project-links a:focus {
     background-color: var(--color-primary-dark);
     color: var(--color-text-light);
     box-shadow: 0 8px 25px rgba(0,188,212,0.4);
 }
 
 /* ============================= */
-/* CONTACT */
+/* CONTACT SECTION SIMPLIFICADA */
+/* ============================= */
 .contact {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;      /* Apila título y formulario */
+    align-items: center;         /* Centrado horizontal */
+    padding: 60px 20px;
+    gap: 1.5rem;                   /* Espacio entre título y formulario */
+}
+
+.contact-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-primary);
 }
 
 .contact-form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap: 2em;
-    margin: 0 2em 60px;
+    width: 100%;
+    max-width: 600px;            /* Tamaño medio */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;                 /* Espacio entre campos */
     padding: 30px;
     background: var(--bg-alpha-1);
     border: 1px solid var(--border-alpha-1);
     border-radius: var(--radius);
     box-shadow: 0 8px 25px rgba(0,188,212,0.2);
-    animation: fadeUp 0.6s ease forwards;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
-    margin-bottom: 1em;
+    gap: 1rem;
 }
 
 .form-group label {
     font-weight: 500;
     color: var(--color-text-light);
+    margin-top:1.5rem;
 }
 
 .form-group input,
 .form-group textarea {
-    padding: 12px 15px;
+    padding: 15px 15px;
     border-radius: var(--radius);
-    border: 1px solid var(--border-alpha-1);
+    border: 0.8px solid var(--border-alpha-1);
     background-color: rgba(255,255,255,0.05);
     color: var(--color-text-light);
     font-size: 1rem;
@@ -429,33 +453,33 @@ textarea {
 }
 
 .contact-form button {
-    grid-column: 1 / -1; /* Ocupa todas las columnas */
-    padding: 0.8em 1.5em;
+    display: block;       /* convertir en bloque */
+    margin: 1rem auto 0;  /* 1rem arriba, auto lateral para centrar */
+    padding: 0.8em 2em;
     border: none;
     border-radius: var(--radius);
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-    color: #fff;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
+    border: 2px solid var(--color-primary-dark);
+    color: var(--color-primary);
 }
 
-.contact-form button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,188,212,0.4);
-}
-
-.form-group.full-width {
-    grid-column: 1 / -1; /* Campo que ocupa toda la fila */
+.contact-form button:hover, 
+.contact-form button:focus{
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    box-shadow: 0 8px 25px rgba(0,188,212,0.4);
 }
 
 /* ============================= */
 /* FOOTER */
 footer {
-    width: 100%;                              /* Ocupa todo el ancho */
-    padding: 20px 0;                          /* Espaciado vertical */
-    text-align: center;                        /* Texto centrado */
+    width: 100%;                              
+    padding: 20px 0;                         
+    text-align: center;                        
     background-color: var(--color-header-bg); /* Fondo translúcido */
     color: var(--color-text-light);           /* Texto claro */
     border-top: 1px solid var(--color-border);/* Borde superior sutil */
@@ -477,46 +501,69 @@ footer a:hover {
 
 /* ============================= */
 /* RESPONSIVE */
-@media (max-width: 768px) {
+/* ============================= */
+
+@media (max-width: 768px) { /* Pantallas medianas */
     header {
-        flex-direction: column;    /* Logo y menú uno debajo del otro */
-        gap: 1rem;                 /* Separación vertical */
-        text-align: center;        /* Centra todo */
+        flex-direction: column;      /* Logo y menú uno debajo del otro */
+        gap: 1rem;
+        text-align: center;
     }
 
-    .navbar ul {
-        flex-wrap: wrap;           /* Menú se parte si no cabe */
-        justify-content: center;   /* Centrado */
+    .menu ul {
+        flex-wrap: wrap;              /* Permite que los enlaces bajen */
+        justify-content: center;
+        gap: 10px;                    /* Más compacto */
     }
-    
+
+    .menu a {
+        padding: 6px 10px;            /* Reducir padding para que no se salgan */
+        font-size: 0.9rem;
+    }
+
     .about {
-        flex-direction: column; /* Pila elementos */
+        flex-direction: column;
         text-align: center;
     }
 
     .skills-container {
-        grid-template-columns: repeat(2,1fr); /* 2 tarjetas por fila */
+        grid-template-columns: repeat(2,1fr);
     }
 
     .projects-container {
-        grid-template-columns: 1fr; /* 1 proyecto por fila */
+        grid-template-columns: 1fr;
     }
 
     .project-info {
-        grid-template-columns: 1fr; /* Imagen y texto apilados */
+        grid-template-columns: 1fr;
         text-align: center;
     }
 
     .contact-form {
-        grid-template-columns: 1fr; /* Formularios apilados */
+        grid-template-columns: 1fr;
         padding: 20px;
     }
 }
 
+
+/* ===== Pantallas ultra pequeñas (<480px) ===== */
 @media (max-width: 480px) {
+
+    .menu ul {
+        flex-direction: column;       /* Una columna para evitar desbordes */
+        gap: 12px;
+    }
+
+    .menu a {
+        padding: 8px 14px;            /* Botones más cómodos en móvil */
+        font-size: 0.95rem;
+        width: 100%;                  /* Ocupa todo el ancho del menú */
+        text-align: center;
+    }
+
     .skills-container,
     .projects-container {
-        grid-template-columns: 1fr; /* 1 tarjeta/proyecto por fila */
+        grid-template-columns: 1fr;
     }
 
     .about {
