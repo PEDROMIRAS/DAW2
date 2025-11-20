@@ -1,0 +1,27 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    font-weight: bold;   /* Negrita */
+    font-size: 20px;     /* Tamaño 20px */
+    text-align: left;    /* Siempre a la izquierda */
+    margin-bottom: 1em;  /* Espacio entre párrafos */
+}
+
+/* Media query solo para pantallas */
+@media screen {
+    /* Los párrafos ya están en negrita y tamaño 20px */
+    img {
+        max-width: 500px;
+        display: block;      
+        margin: 1em auto;    /* Centrado horizontal */
+    }
+}
