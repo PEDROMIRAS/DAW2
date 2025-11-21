@@ -1,0 +1,1 @@
+un tautograma de dos palabras es una frase de dos palabras en la que las dos palabras empiezan por la misma letra.
