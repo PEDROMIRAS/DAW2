@@ -1,7 +1,7 @@
 const matriz = new Object();
     matriz.nFilas = 4,
     matriz.nColumnas = 4,
-    matriz.contenido = Array.from({length: matriz.nFilas}, () => Array(matriz.nColumnas)),
+    matriz.contenido = Array.from({length: matriz.nFilas}, () => Array.from({length: matriz.nColumnas})),
 
     matriz.inicializarMatriz = function(valor){
         for (let i = 0; i < this.nFilas; i++) {
