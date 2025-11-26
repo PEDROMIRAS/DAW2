@@ -1,0 +1,5 @@
+/* Imagen centrada SOLO en pantallas */
+img {
+    display: block;
+    margin: 1em auto;
+}

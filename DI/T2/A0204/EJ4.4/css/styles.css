@@ -1,0 +1,21 @@
+/* Fondo azul con 30% de transparencia */
+body {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor en 3 columnas iguales */
+.contenedor {
+    display: flex;
+}
+
+/* Cada columna ocupa el mismo espacio */
+.columna {
+    flex: 1;                   /* Todas ocupan el mismo ancho */
+    padding: 20px;
+    font-weight: bold;
+    border: 1px solid #000;    /* Solo para que se vea claramente */
+    text-align: center;
+    background: white;         /* Fondo interior opcional */
+}

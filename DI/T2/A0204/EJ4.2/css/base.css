@@ -1,0 +1,17 @@
+/* Hoja de estilos principal para cualquier medio */
+
+/* Importamos los estilos específicos para pantalla */
+@import url("screen.css") screen;
+
+/* Párrafos: negrita, 20px, alineados a la izquierda */
+p {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+}
+
+/* Imagen alineada a la izquierda en medios que no son pantalla */
+img {
+    display: block;
+    margin-left: 0;
+}

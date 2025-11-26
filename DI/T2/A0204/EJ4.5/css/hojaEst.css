@@ -1,0 +1,20 @@
+div{
+    /*color: red: font: Verdana;
+    opacity: 0,5;*/
+    color: red;                                     /*No habia separación con ';'*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /*Sintaxis incorrecta. Debería ser font-family: Verdana;*/
+    opacity: 0.5;                                     /*En CSS se usa punto para decimales, no coma*/
+}
+
+body{
+    /*No se muestra el border
+    border-width: 10px;
+    border-color: blue;
+    color:red;*/
+    border: 10px solid blue; /*solid estilo al borde, tambien puede ponerse border-style:solid;*/
+    color: red;
+}
+
+h1{
+    border:inherit; /*Si no se mostraba el borde del body, h1 aunque lo heredase no se iba a mostrar*/
+}
