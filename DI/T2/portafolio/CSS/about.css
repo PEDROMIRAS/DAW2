@@ -1,8 +1,7 @@
 @import url(variables.css);
 
-/* ============================= */
 /* ABOUT */
-/* ============================= */
+
 .about {
     display: flex; 
     gap: 60px;                  /* Espacio entre imagen y texto */

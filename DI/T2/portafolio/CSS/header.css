@@ -1,31 +1,30 @@
 @import url(variables.css);
 
-/* ============================= */
+
 /* HEADER */
-/* ============================= */
 header {
-    width: 96%;                               /* Ancho del header */
+    width: 96%;                               
     margin: 0 auto;                           /* Centrado horizontal */
     display: flex;                            /* Flexbox para layout */
     justify-content: space-between;           /* Separar logo y menú */
     align-items: center;                      /* Centrado vertical */
     background-color: var(--color-header-bg); /* Fondo translúcido */
     color: var(--color-text-light);           /* Color del texto */
-    padding: 20px 40px;                       /* Espaciado interno */
+    padding: 20px 40px;                       
     position: sticky;                         /* Fijo al hacer scroll */
     top: 1.5em;                               /* Margen superior */
     z-index: 1000;                            /* Prioridad de superposición */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);   /* Sombra inferior */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);   
     transition: background-color var(--transition); /* Suave al cambiar fondo */
     backdrop-filter: blur(10px);              /* Desenfoque de fondo */
     -webkit-backdrop-filter: blur(10px);      /* Compatibilidad Safari */
-    border-radius: 50px;                      /* Bordes redondeados */
-    border: 1px solid var(--color-border);   /* Borde sutil */
+    border-radius: 50px;                      
+    border: 1px solid var(--color-border);  
 }
 
-/* ============================= */
+
 /* LOGO */
-/* ============================= */
+
 .logo {
     display: flex;          /* Mostrar elementos en fila */
     align-items: center;    /* Centrar verticalmente */
@@ -36,9 +35,8 @@ header {
     letter-spacing: 1px;    /* Espaciado entre letras */
 }
 
-/* ============================= */
 /* MENÚ PRINCIPAL */
-/* ============================= */
+
 .menu ul {
     list-style: none;      /* Quitar puntos de lista */
     display: flex;         /* Mostrar elementos en fila */

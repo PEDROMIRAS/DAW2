@@ -1,8 +1,8 @@
 @import url(variables.css);
 
-/* ============================= */
+
 /* HOME */
-/* ============================= */
+
 .home {
     display: flex;              /* Centrar contenido */
     justify-content: center;
@@ -36,10 +36,10 @@
 }
 
 .btn {
-    background-color: var(--color-primary);  /* Fondo botón */
-    color: var(--color-text-secondary);          /* Texto claro */
-    padding: 12px 28px;                       /* Espaciado interno */
-    border-radius: var(--radius);                       /* Bordes redondeados */
+    background-color: var(--color-primary);  
+    color: var(--color-text-secondary);          
+    padding: 12px 28px;                                 /* Espaciado interno */
+    border-radius: var(--radius);                      
     font-weight: bold;
     text-decoration: none;
     transition: background-color var(--transition); /* Animación hover */

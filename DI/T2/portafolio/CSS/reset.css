@@ -1,8 +1,8 @@
 @import url(variables.css);
 
-/* ============================= */
+
 /* RESET BÁSICO */
-/* ============================= */
+
 * {
     margin: 0;               /* Quitar márgenes por defecto */
     padding: 0;              /* Quitar rellenos por defecto */
