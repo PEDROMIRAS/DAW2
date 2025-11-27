@@ -1,0 +1,26 @@
+.title{
+    display: flex;
+    justify-content: center;
+}
+.galeria {
+    display: flex;             
+    justify-content: space-around; 
+    align-items: flex-start;   
+    gap: 20px;                 
+    margin-top: 20px;
+}
+
+.foto {
+    text-align: center;        
+}
+
+.foto img {
+    width: 300px;              /* Ajusta el tamaño de la imagen */
+    height: auto;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
