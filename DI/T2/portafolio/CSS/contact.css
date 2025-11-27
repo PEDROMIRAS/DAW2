@@ -86,4 +86,5 @@ textarea {
 .contact-form button:focus{
     background-color: var(--color-primary-dark);
     color: var(--color-text-light);
+    box-shadow: 0 0 10px var(--color-primary-dark);
 }

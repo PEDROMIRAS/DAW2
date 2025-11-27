@@ -57,5 +57,5 @@
 .btn:hover { 
     background-color: var(--color-primary); /* Hover oscuro */
     color: var(--color-text-light);
-    box-shadow: 0 0 8px var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary);
 }
