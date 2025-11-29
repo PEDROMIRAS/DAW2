@@ -25,12 +25,12 @@ header {
 
 /* LOGO */
 
-.logo {
+.name-title {
     display: flex;          /* Mostrar elementos en fila */
     align-items: center;    /* Centrar verticalmente */
 }
 
-.logo h1 {
+.name-title h1 {
     font-size: 24px;        /* Tamaño del texto del logo */
     letter-spacing: 1px;    /* Espaciado entre letras */
 }

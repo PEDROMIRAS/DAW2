@@ -9,22 +9,16 @@
     align-items: center;
     text-align: center;
     min-height: 90vh;           /* Ocupa casi toda la pantalla */
+    perspective: 12em; /* profundidad 3D */
 }
 
 .home h2 {
-    font-size: 2.5rem;          /* Tamaño principal */
-    margin-bottom: 10px;        /* Separación inferior */
-    perspective: 12em; /* profundidad 3D */
+    font-size: 2.6rem;          
+    margin-bottom: 10px;        
 }
 
 .home h2 span {
     display: inline-flex;
-    color: var(--color-primary-dark);
-    transition: var(--transition);
-}
-
-.home h2 span:hover {
-    transform: translateZ(0.9em);
     color: var(--color-primary);
 }
 
