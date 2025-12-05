@@ -11,9 +11,13 @@ body {
         var(--color-bg-start), 
         var(--color-bg-mid), 
         var(--color-bg-end)
-    );                                         /* Fondo degradado */
-    background-attachment: fixed;             /* Fondo fijo al hacer scroll */
+    );                                          /* Fondo degradado */
+    background-attachment: fixed;               /* Fondo fijo al hacer scroll */
 }
+/* Ocultar Google Translate */
+.goog-te-banner-frame { display: none !important; }
+body { top: 0 !important; }
+.skiptranslate { display: none !important; }
 
 /* SECCION */
 section {
@@ -21,7 +25,6 @@ section {
     margin: 0 auto;
     padding-inline: 40px;
 }
-
 
 /* SECCIONES GENERALES */
 

@@ -12,35 +12,35 @@
     <meta name="robots" content="index, follow">
 
     <!-- VARIABLES Y RESET -->
-    <link rel="stylesheet" href="./CSS/variables.css">
-    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/reset.css">
 
     <!-- ESTILOS BASE -->
-    <link rel="stylesheet" href="./CSS/base.css">
-    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/header.css">
 
     <!-- SECCIONES -->
-    <link rel="stylesheet" href="./CSS/home.css">
-    <link rel="stylesheet" href="./CSS/about.css">
-    <link rel="stylesheet" href="./CSS/skills.css">
-    <link rel="stylesheet" href="./CSS/projects.css">
-    <link rel="stylesheet" href="./CSS/contact.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/skills.css">
+    <link rel="stylesheet" href="./css/projects.css">
+    <link rel="stylesheet" href="./css/contact.css">
 
     <!-- FOOTER Y RESPONSIVE -->
-    <link rel="stylesheet" href="./CSS/footer.css">
-    <link rel="stylesheet" href="./CSS/responsive.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/responsive.css">
     
     <!-- ICONS -->
     <script src="https://kit.fontawesome.com/f97389225c.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./assets/img/moto.png" type="image/svg">
 
+    <!-- EMAILJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="name-title">
-            <h1>Pedro Miras</h1>
-        </div>
         <nav class="menu" aria-label="Main Navigation">
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -50,6 +50,9 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <div class="name-title">
+            <button id="lang-toggle-btn" class="translate-btn" onclick="toggleLanguage()">ES</button>
+        </div>
     </header>
 
     <main>
@@ -103,8 +106,8 @@
                     <span>PHP</span>
                 </div>
                 <div class="skills-item">
-                    <i class="fa-brands fa-react"></i>
-                    <span>React</span>
+                    <i class="fa-brands fa-java"></i>
+                    <span>Java</span>
                 </div>
                 <div class="skills-item">
                     <i class="fa-brands fa-bootstrap"></i>
@@ -115,8 +118,8 @@
                     <span>Symfony</span>
                 </div>
                 <div class="skills-item">
-                    <i class="fa-brands fa-java"></i>
-                    <span>Java</span>
+                    <i class="fa-solid fa-database"></i>
+                    <span>MySQL</span>
                 </div>
             </div>
         </section>
@@ -136,7 +139,7 @@
                             my ability to create attractive and functional pages without the need for JavaScript or additional 
                             frameworks.
                         </p>
-                    <img src="./assets/img/ducatiPage.png" alt="Pagina de la historia de Ducati">
+                    <a href="./ducati/index.html" target="_blank"><img src="./assets/img/ducatiPage.png" alt="Pagina de la historia de Ducati"></a>
                     </div>
                     <div class="project-links">
                     <a href="./ducati/index.html" target="_blank" class="btn">View Project</a>
@@ -149,7 +152,7 @@
         <section id="contact" class="contact">
             <h2 class="contact-title">CONTACT</h2>
             <div class="contact-form">
-                <form action="/" method="POST" aria-label="Contact Form">
+                <form aria-label="Contact Form">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
@@ -163,6 +166,7 @@
                         <textarea id="message" name="message" placeholder="Your Message" required aria-required="true"></textarea>
                     </div>
                     <button type="submit">Send Message</button>
+                    
                 </form>
             </div>
         </section>
@@ -171,11 +175,15 @@
     <!-- Footer -->
     <footer>
         <p>
-            &copy; 2025 Pedro Miras. All rights reserved. 
+            &copy; 2025 Pedro Miras. 
             <a href="https://github.com/PEDROMIRAS" target="_blank" rel="noopener noreferrer">GitHub</a> |
             <a href="https://www.linkedin.com/in/pedro-miras-p%C3%A9rez-castej%C3%B3n-b9b991151/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </p>
     </footer>
+    <div id="google_translate_element" style="display: none;"></div>
     <script src="./js/nav.js"></script>
+    <script src="./js/emailJS-contact.js"></script>
+    <script src="./js/translate.js"></script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
