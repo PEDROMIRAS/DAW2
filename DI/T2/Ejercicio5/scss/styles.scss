@@ -1,0 +1,126 @@
+//Variables
+$color-principal: #4f46e5;
+$color-secundario: #06b6d4;
+$color-texto: #333;
+$color-fondo: #f5f5f5;
+
+$espaciado: 20px;
+
+//General
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $color-fondo;
+    color: $color-texto;
+}
+
+//Header 
+header{
+    background-color: $color-principal;
+    color: white;
+    padding: $espaciado;
+    text-align: center;
+
+    h1{
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    nav{
+        margin-top: 15px;
+        a{
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+        }
+    }
+}
+
+//Hero section
+.hero {
+    text-align: center;
+    padding: $espaciado * 4;
+    background: linear-gradient(to right, $color-principal, $color-secundario);
+    color: white;
+
+    h2 {
+        font-size: 2.5em;
+        margin-bottom: $espaciado;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-bottom: $espaciado * 2;
+    }
+}
+
+//Boton
+.boton {
+    background-color: white;
+    color: $color-principal;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-secundario;
+        color: white;
+        transform: scale(1.05);
+    }
+}
+
+//Tarjetas
+.tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: $espaciado;
+    padding: $espaciado * 3;
+    flex-wrap: wrap;
+}
+.tarjeta {
+    background-color: white;
+    padding: $espaciado * 2;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    h3 {
+        color: $color-principal;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+    }
+
+    p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+}
+
+//Footer
+footer {
+    background-color: $color-texto;
+    color: white;
+    text-align: center;
+    padding: $espaciado * 2;
+    margin-top: $espaciado * 3;
+}

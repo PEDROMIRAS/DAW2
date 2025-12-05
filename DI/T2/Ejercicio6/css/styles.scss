@@ -1,0 +1,99 @@
+// 1. VARIABLES
+$primary-color: #3498db;
+$secondary-color: #e74c3c;
+$font-family: Arialfo;
+$base-font-size: 16px;
+
+// 4. MAPA DE ESTILOS PARA BOTONES
+$button-styles: (
+    primary-button: $primary-color,
+    secondary-button: #2ecc71,
+    buy-button: #f39c12
+);
+
+// 5. MIXIN PARA CENTRAR ELEMENTOS
+@mixin center-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// 3. ESTILOS GENERALES
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: $font-family;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: $primary-color;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+h3 {
+    font-size: 1.5rem;    
+}
+
+// PRODUCTO
+.product {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+    }
+}
+
+// Imagen
+img {
+    width: 100%;
+    height: auto;
+}
+
+// Texto importante
+.important-text {
+    font-weight: bold;
+    color: $secondary-color;
+}
+
+// 3. BOTONES
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+// 4. GENERAR AUTOMÁTICAMENTE LOS BOTONES SEGÚN EL MAPA
+@each $btn, $color in $button-styles {
+    .#{$btn} {
+        background-color: $color;
+
+        &:hover {
+            background-color: darken($color, 10%);
+        }
+    }
+}
+
+// .centered para productos centrados
+.centered {
+    @include center-element;
+    flex-direction: column; // mantiene los elementos ordenados verticalmente
+}
