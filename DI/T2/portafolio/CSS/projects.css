@@ -17,6 +17,9 @@
     opacity: 0;                              /* Para animación inicial */
     transform: translateY(20px);            /* Levantar al aparecer */
     animation: fadeUp 0.6s ease forwards;   /* Animación suave */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 /* Hover de project junto con hover de skills para sintetizar codigo */
@@ -41,6 +44,7 @@
     flex-direction: column;              /* Apilar verticalmente */
     align-items: center;
     gap: 1.5em;
+    flex: 1;
 }
 
 .project-info p {
@@ -49,14 +53,22 @@
     color: var(--color-text-secondary);
     text-align: justify;
     margin: 0 1rem;
+    flex-shrink: 0;
+}
+
+.project-info > a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .project-info img {
     width: 100%;
     max-width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: var(--radius);
-    object-fit: cover;
+    object-fit: fill;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     transition: transform var(--transition), box-shadow var(--transition);
 }
@@ -71,6 +83,7 @@
     justify-content: center;
     gap: 1em;
     margin-top: 1.5em;
+    flex-shrink: 0;
 }
 
 .project-links a {
