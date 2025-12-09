@@ -1,55 +1,67 @@
 @import url(variables.css);
 
-
-/* HOME */
-
 .home {
-    display: flex;              /* Centrar contenido */
-    justify-content: center;
-    align-items: center;
+    background: linear-gradient(135deg, var(--color-bg-start), #1a051a);
+    z-index: 1;
     text-align: center;
-    min-height: 90vh;           /* Ocupa casi toda la pantalla */
-    perspective: 12em; /* profundidad 3D */
 }
 
 .home h2 {
-    font-size: 2.6rem;          
-    margin-bottom: 10px;        
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 10px;
 }
 
+/* EFECTO 3D SÓLIDO PARA EL NOMBRE */
 .home h2 span {
-    display: inline-flex;
-    color: var(--color-primary);
+    display: inline-block;
+    background: none;
+    -webkit-text-fill-color: initial;
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    
+    /* Color base */
+    color: var(--color-text-ligth);
+    
+    /* La magia del 3D: Capas de sombra sólida */
+    text-shadow: 
+        1px 1px 0px #8e44ad,
+        2px 2px 0px #8e44ad,
+        3px 3px 0px #6f2d91,
+        4px 4px 0px #6f2d91,
+        5px 5px 0px #4a1c61,
+        6px 6px 0px #4a1c61,
+        8px 8px 15px rgba(0, 0, 0, 0.6); /* Sombra final suave */
+        
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Animación opcional: El texto "salta" al pasar el mouse */
+.home h2 span:hover {
+    transform: translateY(-5px) scale(1.03);
+    text-shadow: /*Capas de sombra haciendo un degradado*/
+        1px 1px 0px #8e44ad,
+        2px 2px 0px #8e44ad,
+        3px 3px 0px #6f2d91,
+        4px 4px 0px #6f2d91,
+        5px 5px 0px #4a1c61,
+        6px 6px 0px #4a1c61,
+        7px 7px 0px #4a1c61,
+        8px 8px 0px #300b40,
+        9px 9px 0px #300b40,
+        10px 10px 0px #300b40,
+        15px 15px 30px rgba(0, 0, 0, 0.8);
+}
 
 .home h3 {
-    font-size: 1.5rem;          
-    font-weight: 400;           
+    font-size: 1.5rem;
+    font-weight: 400;
     color: var(--color-text-secondary);
     margin-bottom: 20px;
 }
 
 .home p {
-    font-size: 1.1rem;          
-    line-height: 1.8;           
-    max-width: 700px;           
-    margin: 0 auto 40px;        /* Centrado + separación inferior */
-    color: var(--color-text-light);
-}
-
-.btn {
-    background-color: var(--color-primary-dark);  
-    color: var(--color-text-secondary);          
-    padding: 12px 28px;                                 /* Espaciado interno */
-    border-radius: var(--radius);                      
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color var(--transition); /* Animación hover */
-}
-
-.btn:hover { 
-    background-color: var(--color-primary); /* Hover oscuro */
-    color: var(--color-text-light);
-    box-shadow: 0 0 10px var(--color-primary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 40px;
 }

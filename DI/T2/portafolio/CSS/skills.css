@@ -1,71 +1,51 @@
 @import url(variables.css);
 
-/* SKILLS */
-
-.skills-title,
-.projects-title,
-.contact-title {
-    text-align: center;         /* Centrar títulos */
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin-bottom: 30px;
+.skills {
+    background-color: var(--color-bg-start);
+    overflow: hidden;
 }
+
+/* Luces de fondo */
+.skills::before, .skills::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--color-primary);
+    filter: blur(150px);
+    opacity: 0.15;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+.skills::before { top: -200px; left: -200px; }
+.skills::after { bottom: -200px; right: -200px; }
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
-    gap: 20px;   
-    padding: 40px clamp(20px, 4vw, 60px);                         /* Espacio entre tarjetas */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    position: relative;
+    z-index: 1;
 }
 
-.skills-item,
-.project {
+.skills-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 30px 20px;
-    background: var(--bg-alpha-1);
-    border: 1px solid var(--border-alpha-1);
-    border-radius: var(--radius);
-    cursor: pointer;
-    transition: all 0.35s ease;
-}
-
-.skills-item:hover,
-.project:hover {
-    transform: translateY(-8px);
-    background: var(--bg-alpha-2);
-    border-color: var(--border-alpha-2);
-    box-shadow: 0 8px 25px var(--color-primary-dark);
-}
-
-/* BLUR entre tarjetas */
-.skills-container:hover .skills-item {
-    filter: blur(2px);
-    opacity: 0.5;
-}
-/* Solo la HOVERED queda visible */
-.skills-container .skills-item:hover {
-    filter: none;
-    opacity: 1;
+    gap: 15px;
+    padding: 40px 20px;
 }
 
 .skills-item i {
-    font-size: 3rem;
-    color: var(--color-primary);
-    transition: color 0.35s ease, transform 0.35s ease;
+    font-size: 3.5rem;
+    color: var(--color-text-secondary);
+    transition: all 0.3s ease;
 }
 
 .skills-item:hover i {
-    color: var(--color-primary-dark);
-    transform: scale(1.15);
-}
-
-.skills-item span {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    font-weight: 500;
-    text-align: center;
+    color: var(--color-text-light);
+    transform: scale(1.2);
+    text-shadow: 0 0 20px var(--color-primary);
 }
