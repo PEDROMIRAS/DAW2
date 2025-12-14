@@ -7,7 +7,7 @@ let p = document.getElementsByTagName('p').length;
 let span = document.getElementsByTagName('span').length;
 
 // Obtiene una colección de todos los elementos <a> (enlaces) en el documento.
-// La propiedad .length devuelve el número de elementos <a> (hipervínculos) encontrados.
+// La propiedad .length devuelve el número de elementos <a> encontrados.
 let a = document.getElementsByTagName('a').length;
 
 // Muestra el número total de párrafos encontrados en el documento.

@@ -7,8 +7,6 @@ function añadirFilas() {
     // Crea un nuevo elemento de fila de tabla (<tr>) en memoria.
     let fila = document.createElement('tr');
     
-    // Opcional: agregar celdas a la fila
-    
     // Crea un nuevo elemento de celda de tabla (<td>) en memoria.
     let celda = document.createElement('td');
     
@@ -28,4 +26,4 @@ let button = document.getElementsByTagName('button')[0]; // Accedemos al primer 
 
 // Agrega un "escuchador de eventos" al botón. 
 // Cuando se haga "click" en él, se ejecutará la función 'añadirFilas'.
-button.addEventListener("click", añadirFilas);
+button.addEventListener("click", añadirFilas); 
