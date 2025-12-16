@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El generador de productos</title>
+    <style>
+        .ficha{
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn-crear">Nuevo producto</button>
+    <br><br>
+    <div id="contenedor-productos"></div>
+
+    <script>
+        const crearProducto = document.getElementById('btn-crear');
+        const contenedor = document.getElementById('contenedor-productos');
+        let cont = 0;
+        crearProducto.addEventListener('click',()=>{
+            const tarjeta = document.createElement('div');
+            tarjeta.classList.add('ficha');
+            const titulo = document.createElement('h3');
+            titulo.textContent = 'Producto ' + cont;
+            cont++;
+            const btn = document.createElement('button');
+            btn.textContent='Borrar este producto';
+
+            tarjeta.appendChild(titulo);
+            tarjeta.appendChild(btn);
+            contenedor.appendChild(tarjeta);
+
+            btn.addEventListener('click', ()=>{
+                tarjeta.remove();
+            });
+        })
+    </script>
+</body>
+</html>

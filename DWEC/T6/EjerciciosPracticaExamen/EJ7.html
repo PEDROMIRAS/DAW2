@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordar al Usuario</title>
+</head>
+<body>
+    <div id="panel-login">
+        <input type="text" id="usuario">
+        <button id="btn-guardar">Guardar</button>
+    </div>
+
+    <h2 id="saludo"></h2>
+    
+    <button id="btn-borrar" style="display:none">Olvídame</button>
+
+    <script>
+        const userElement = document.getElementById('usuario');
+        const guardar = document.getElementById('btn-guardar');
+        const saludo = document.getElementById('saludo');
+        const borrar = document.getElementById('btn-borrar');
+        const panelLogin = document.getElementById('panel-login');
+
+        if (!document.cookie.includes('nombre=')) {
+            
+            guardar.addEventListener('click', () => {
+
+                const nombreEscrito = userElement.value;
+                if (nombreEscrito) {
+                    // Guardamos cookie 60 segundos
+                    document.cookie = `nombre=${nombreEscrito};max-age=60;path=/`; 
+                    location.reload(); 
+                }
+            });
+
+        } else {
+            
+            // Ocultamos el formulario de entrada
+            panelLogin.style.display = 'none';
+            // Mostramos el botón de borrar
+            borrar.style.display = 'block';
+
+            // LEER COOKIE: "nombre=Pepe" -> split('=') -> ["nombre", "Pepe"]
+            const partes = document.cookie.split('=');
+            const nombreGuardado = partes[1]; // El valor está en la posición 1
+
+            saludo.textContent = "Hola de nuevo, " + nombreGuardado;
+
+            // BORRAR COOKIE
+            borrar.addEventListener('click', () => {
+                // Para borrar: max-age=0 [cite: 229]
+                document.cookie = "nombre=;max-age=0;path=/";
+                location.reload();
+            });
+        }
+    </script>
+</body>
+</html>
