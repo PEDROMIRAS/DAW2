@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas Inteligente</title>
+</head>
+<body>
+    <h1>Gestor de tareas inteligentes</h1>
+    <ul id="lista">
+
+    </ul>
+    <br>
+    <button id="btnAdd">Añadir tarea</button>
+    <script>
+        document.getElementById('btnAdd').addEventListener('click', ()=>{
+            const texto = prompt('¿Qué tienes que hacer?');
+            if(!texto) return;
+
+            const lista = document.getElementById('lista');
+
+            const li = document.createElement('li');
+            const btnBorrar = document.createElement('button');
+            const spanTexto = document.createElement('span');
+            
+            spanTexto.textContent = texto + " ";
+            btnBorrar.textContent = 'X';
+            li.dataset.fecha = new Date().toLocaleString();
+
+            btnBorrar.addEventListener('click', ()=>{
+                li.remove();
+            });
+
+            spanTexto.addEventListener('click', ()=>{
+                alert("Creado el: " + li.dataset.fecha);
+            })
+
+            li.appendChild(spanTexto);
+            li.appendChild(btnBorrar);
+            lista.appendChild(li);
+
+        })
+    </script>
+</body>
+</html>

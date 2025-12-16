@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL JEFE FINAL: La Lista de la Compra Contrarreloj</title>
+</head>
+<body>
+    <input type="text" id="texto">
+    <button id="add">Añadir</button>
+    <ul id="lista-compra"></ul> 
+    <br>
+    <button id="finalizar">FINALIZAR COMPRA</button>
+
+    <script>
+        if (!document.cookie.includes('usuario=')) {
+            const user = prompt("¿Cual es su nombre?");
+            document.cookie = `usuario=${user};max-age=${60*60*24}`;
+            location.reload();
+        } else {
+            const texto = document.getElementById('texto');
+            const add = document.getElementById('add');
+            const lista = document.getElementById('lista-compra');
+
+            const nombre = document.cookie.split('=');
+            const titulo = document.createElement('h1');
+
+            titulo.textContent = 'Bienvenido, ' + nombre[1];
+            document.body.insertBefore(titulo, texto);
+            
+            let cont = 30;
+            let contador = document.createElement('span');
+            contador.textContent = "Tiempo restante: " + cont;
+            contador.style.fontWeight = "bold"; 
+            contador.style.marginRight = "10px";
+            document.body.insertBefore(contador, texto);
+
+            let temporizador = setInterval(() => {
+                cont--;
+                contador.textContent = "Tiempo restante: " + cont;
+
+                if (cont <= 0) {
+                    alert('¡Oferta caducada!');
+                    clearInterval(temporizador);
+                    add.setAttribute('disabled', 'true'); 
+                    document.body.style.backgroundColor = 'red'; 
+                }
+            }, 1000);
+
+            add.addEventListener('click', () => {
+                if(texto.value === "") return;
+
+                const lItem = document.createElement('li');
+                
+                const btnBorrar = document.createElement('button');
+                btnBorrar.textContent = "Eliminar";
+
+                const spanProducto = document.createElement('span');
+                spanProducto.textContent = texto.value + " ";
+
+                lItem.appendChild(spanProducto);
+                lItem.appendChild(btnBorrar);
+                lista.appendChild(lItem);
+
+                btnBorrar.addEventListener('click', () => {
+                    let seguro = confirm("¿Seguro que quieres borrar?"); 
+                    if (seguro) {
+                        lItem.remove();
+                    }
+                });
+
+                texto.value = "";
+            });
+
+            const fin = document.getElementById('finalizar');
+            fin.addEventListener('click', () => {
+                if (navigator.onLine) {
+                    alert('Pedido enviado.');
+                } else {
+                    alert('Error: no hay conexion.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
