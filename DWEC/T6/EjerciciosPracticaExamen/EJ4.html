@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Recordador de Nombres</title>
+    <style>
+        .disable { display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="formulario" class="disable">
+        <input type="text" placeholder="¿COMO TE LLAMAS?">
+        <button id="btnEnviar">Enviar</button>
+    </div>
+
+    <button id="btnBorrar" class="disable">Borrar Cookie y Reiniciar</button>
+
+    <script>
+        if (!document.cookie.includes('usuario=')) {
+            
+            document.getElementById('formulario').classList.remove('disable');
+            
+            const inputElement = document.querySelector('input');
+            const btn = document.getElementById('btnEnviar');
+            
+            btn.addEventListener('click', () => {
+                document.cookie = `usuario=${inputElement.value};max-age=${60*60*24*7};path=/`;
+                location.reload();
+            });
+
+        } else {
+            let partesCookie = document.cookie.split('='); 
+            
+            let titulo = document.createElement('h2');
+            
+            titulo.textContent = "Hola " + partesCookie[1]; 
+            
+            document.body.insertBefore(titulo, document.getElementById('formulario'));
+
+            const btnBorrar = document.getElementById('btnBorrar');
+            btnBorrar.classList.remove('disable');
+            btnBorrar.addEventListener('click', () => {
+                document.cookie = "usuario=;max-age=0;path=/";
+                location.reload();
+            });
+        }
+    </script>
+</body>
+</html>
