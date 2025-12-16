@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El inspector de propiedades</title>
+    <style>
+        #cuadrado{
+            width: 200px;
+            height: 200px;
+            background-color: grey;
+        }
+        .redondo{
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="cuadrado">
+
+    </div>
+    <p>Introduce un color para cambiar el fondo del cuadrado</p>
+    <input type="text"><br><br>
+    <button id="color">Aplicar</button><br><br>
+    <button id="forma">Redondo/Cuadrado</button>
+    <script>
+        const cuadrado = document.getElementById('cuadrado');
+        const texto = document.querySelector('input');
+        const aplicar = document.getElementById('color');
+        const forma = document.getElementById('forma');
+
+        aplicar.addEventListener('click', () => {
+            cuadrado.style.backgroundColor = texto.value;
+        })
+        forma.addEventListener('click', () => {
+            cuadrado.classList.toggle('redondo');
+        })
+    </script>
+</body>
+</html>
