@@ -1,6 +1,19 @@
 const texto = document.getElementById('texto');
 const lista = document.getElementById('lista');
 const btnAdd = document.getElementById('btn-add');
+const btnOrder = document.getElementById('btn-order');
+
+function ordenarLista() {
+    // Convertimos los <li> en un Array para poder usar .sort()
+    const elementos = Array.from(lista.getElementsByTagName('li'));
+
+    // Ordenamos el array basándonos en el texto de cada <li>
+    elementos.sort((a, b) => a.textContent.localeCompare(b.textContent));
+
+    // Limpiamos la lista y volvemos a añadir los elementos ordenados
+    lista.innerHTML = "";
+    elementos.forEach(li => lista.appendChild(li));
+}
 
 btnAdd.addEventListener('click', (e) => {
     e.preventDefault()
@@ -27,3 +40,5 @@ btnAdd.addEventListener('click', (e) => {
         item.remove();
     })
 })
+
+btnOrder.addEventListener('click', ordenarLista);

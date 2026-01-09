@@ -1,0 +1,62 @@
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2, #clock {
+    color: white;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#clock {
+    font-size: 2rem;
+    font-family: monospace;
+    display: none;
+}
+
+#game-container {
+    display: grid;
+    grid-template-columns: repeat(6, 120px); /* Columnas fijas para que sean cuadrados */
+    grid-template-rows: repeat(5, 120px);
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: grab;
+    font-size: 1.5rem;
+    transition: all 0.2s ease;
+    background-color: black;
+}
+
+/* Efecto al pasar el ratón */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo cuando la carta está siendo arrastrada */
+.card:active {
+    cursor: grabbing;
+    opacity: 0.5;
+}
+
+/* Clase para cartas ya emparejadas */
+.revealed {
+    cursor: default;
+    border: 2px solid gold;
+    pointer-events: none; /* Evita que se vuelvan a arrastrar */
+}

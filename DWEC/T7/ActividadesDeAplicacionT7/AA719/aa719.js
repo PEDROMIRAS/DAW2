@@ -1,25 +1,17 @@
-const teclasPermitidas = ['0','1','2','3','4','5','6','7','8','9'];
-const teclas = {
-    0:'./images/num0.png',
-    1:'./images/num1.png',
-    2:'./images/num2.png',
-    3:'./images/num3.png',
-    4:'./images/num4.png',
-    5:'./images/num5.png',
-    6:'./images/num6.png',
-    7:'./images/num7.png',
-    8:'./images/num8.png',
-    9:'./images/num9.png'
-}
+const imagenNodo = document.querySelector('img');
 
-const image = document.querySelector('img');
+document.addEventListener('keydown', (event) => {
+    const tecla = event.key;
 
-document.addEventListener('keydown',(keyPress)=>{
-    if (teclasPermitidas.includes(keyPress.key)) {
-        const nuevaImagen = teclas[keyPress.key];
-        if (nuevaImagen) {
-            image.src = nuevaImagen;
-            console.log(keyPress.key);
-        }
+    // Comprobamos si la tecla es un número entre 0 y 9
+    if (tecla >= '0' && tecla <= '9') {
+        // "Vaciamos" el contenedor
+        imagenNodo.src = "";
+        
+        // Cargamos la nueva imagen usando el número de la tecla
+        // Usamos template literals para no escribir las 10 rutas
+        imagenNodo.src = `./images/num${tecla}.png`;
+        
+        console.log(`Cargando imagen del número: ${tecla}`);
     }
 });
