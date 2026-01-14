@@ -1,0 +1,44 @@
+# =======================================================
+# 1. SEGURIDAD Y CONFIGURACIÓN LOCAL (¡CRÍTICO!)
+# =======================================================
+# Ignoramos tu archivo de conexión real.
+# Aunque no tengas contraseña, esto evita conflictos de puertos/sockets entre Mac y Windows.
+#src/config/conexion-db.php
+
+# Archivos de variables de entorno (por si usáis en el futuro)
+.env
+.env.local
+
+# =======================================================
+# 2. SISTEMA OPERATIVO (BASURA)
+# =======================================================
+# Archivos que genera Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archivos que genera Windows
+Thumbs.db
+desktop.ini
+
+# =======================================================
+# 3. EDITOR DE CÓDIGO (IDE)
+# =======================================================
+# Carpeta de configuración de VS Code
+.vscode/
+# Carpeta de configuración de PhpStorm
+.idea/
+
+# =======================================================
+# 4. DEPENDENCIAS
+# =======================================================
+# Carpeta de librerías externas (Composer)
+/vendor/
+
+# =======================================================
+# 5. ARCHIVOS SUBIDOS (UPLOADS)
+# =======================================================
+# Ignoramos las fotos de prueba que subas tú en local,
+# pero mantenemos la estructura de carpetas para que existan.
+#public/uploads/*
+#!public/uploads/.gitkeep
