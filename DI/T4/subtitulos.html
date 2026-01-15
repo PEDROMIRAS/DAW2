@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Audio Multilingüe</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 50px; background-color: #f0f2f5; }
+        .audio-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; }
+        h2 { color: #333; margin-bottom: 20px; }
+        audio { width: 300px; }
+        audio::cue { background: rgba(0, 0, 0, 0.8); color: white; font-size: 18px;}
+    </style>
+</head>
+<body>
+
+    <div class="audio-card">
+        <h2>Práctica: Subtítulos en Audio</h2>
+        
+        <audio controls>
+            <source src="audio/478758__audeption__welcome-to-this-podcast.wav" type="audio/wav">
+            
+            <track kind="subtitles" label="Español" src="subtitles/subtitles_es.vtt" srclang="es" default>
+            <track kind="subtitles" label="English" src="subtitles/subtitles_en.vtt" srclang="en">
+            <track kind="subtitles" label="Deutsch" src="subtitles/subtitles_de.vtt" srclang="de">
+            
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        
+        <p><small>Usa el menú de tres puntos (o el icono de subtítulos) en el reproductor para cambiar el idioma.</small></p>
+    </div>
+</body>
+</html>
