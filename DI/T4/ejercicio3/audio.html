@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativa de Audio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+        .contenedor-audio {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Formatos de Audio Web</h1>
+
+    <div class="contenedor-audio">
+        <h2>Archivo MP3 (MPEG)</h2>
+        <audio controls>
+            <source src="audio/relaxing-guitar.mp3" type="audio/mpeg">
+            Tu navegador no soporta el formato MP3.
+        </audio>
+    </div>
+
+    <div class="contenedor-audio">
+        <h2>Archivo OGG (Vorbis)</h2>
+        <audio controls>
+            <source src="audio/guitar.ogg" type="audio/ogg">
+            Tu navegador no soporta el formato OGG.
+        </audio>
+    </div>
+
+</body>
+</html>

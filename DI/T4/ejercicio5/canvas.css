@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    background: #000;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Animación Keyframes para el resplandor del título */
+@keyframes neonPulse {
+    0% { text-shadow: 0 0 5px #fff, 0 0 10px #c834db; opacity: 0.8; }
+    50% { text-shadow: 0 0 20px #fff, 0 0 30px #5f0f66; opacity: 1; }
+    100% { text-shadow: 0 0 5px #fff, 0 0 10px #c834db; opacity: 0.8; }
+}
+
+.glow-text {
+    animation: neonPulse 2s infinite ease-in-out;
+    letter-spacing: 5px;
+}
+
+.main-container { text-align: center; width: 90%; }
+
+canvas {
+    width: 100%;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.controls { margin-top: 30px; }

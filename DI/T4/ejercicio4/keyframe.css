@@ -1,0 +1,35 @@
+/* Definimos la animación con @keyframes */
+@keyframes pulsoResplandor {
+    0% {
+        transform: scale(1);
+        background-color: #db34d8; /* Rosa */
+        box-shadow: 0 0 0px rgba(52, 152, 219, 0);
+    }
+    50% {
+        transform: scale(1.05);
+        background-color: #591151; /* Cambia de color */
+        box-shadow: 0 0 20px rgba(73, 13, 63, 0.6);
+    }
+    100% {
+        transform: scale(1);
+        background-color: #db34d8; /* Vuelve al color principal */
+        box-shadow: 0 0 0px rgba(52, 152, 219, 0);
+    }
+}
+
+/* Aplicamos la animación al elemento */
+.alerta-animada {
+    width: fit-content;
+    padding: 15px 25px;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    margin: 20px auto;
+    cursor: pointer;
+    
+    /* Propiedades de la animación */
+    animation-name: pulsoResplandor;    /* Nombre del keyframe */
+    animation-duration: 3s;            /* Duración del ciclo */
+    animation-iteration-count: infinite; /* Se repite por siempre */
+    animation-timing-function: ease-in-out; /* Movimiento suave */
+}
