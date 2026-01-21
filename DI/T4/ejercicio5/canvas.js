@@ -49,7 +49,7 @@ function renderFrame() {
     let barHeight;
     let x = 0;
 
-    // 5. DIBUJAR BARRAS: Recorremos los datos de sonido
+    // DIBUJAR BARRAS: Recorremos los datos de sonido
     for (let i = 0; i < bufferLength; i++) {
         // La altura de la barra depende del volumen en esa frecuencia
         barHeight = dataArray[i];
@@ -57,7 +57,7 @@ function renderFrame() {
         // COLOR: Creamos un color RGB dinámico que cambia según la posición
         const r = barHeight + (25 * (i / bufferLength)); // Rojo
         const g = 250 * (i / bufferLength);              // Verde
-        const b = 90;                                    // Azul fijo
+        const b = 190;                                    // Azul fijo
 
         ctx.fillStyle = `rgb(${r},${g},${b})`;
         
