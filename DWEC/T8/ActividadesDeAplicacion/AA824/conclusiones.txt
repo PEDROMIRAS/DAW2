@@ -1,0 +1,10 @@
+Prioridad del bloque finally: El bloque finally se ejecuta siempre, independientemente de 
+si el código entró en el try (éxito) o en el catch (error). Es la última etapa del ciclo.
+
+Sobrescritura del Valor de Retorno: Si existe un return dentro del bloque finally, 
+este anula y sobrescribe cualquier otro return previo. Aunque el catch haya generado un resultado, 
+el motor de JavaScript lo descarta en favor del resultado del finally.
+
+Interrupción del flujo: El uso de return en finally puede ser peligroso, ya que "silencia" 
+el procesamiento de errores. Si el catch intenta devolver un mensaje de error y el finally devuelve 
+otra cosa, el usuario nunca se enterará de que algo falló.
