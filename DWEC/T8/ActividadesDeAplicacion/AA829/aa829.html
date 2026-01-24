@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 8.29</title>
+        <style>
+            /* Configuramos el cuerpo para que permita elementos lado a lado */
+            body { 
+                display: flex; 
+                flex-wrap: wrap; /* Permite que el h1 salte de línea */
+                justify-content: center; 
+                gap: 20px; 
+                font-family: sans-serif; 
+            }
+        
+            /* Forzamos al h1 a ocupar el 100% para que se quede arriba solo */
+            h1 { 
+                width: 100%; 
+                text-align: center; 
+            }
+        
+            /* El formulario en columna */
+            section { 
+                display: flex; 
+                flex-direction: column; 
+                gap: 5px; 
+                width: 300px; 
+            }
+        
+            /* El cuadro de texto */
+            #pantalla { 
+                border: 1px solid #000; 
+                padding: 10px; 
+                width: 400px; 
+                background: #f0f0f0; 
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Actividad de aplicación 8.29</h1>
+        <section>
+            <h3>Datos Vehículo</h3>
+            <input id="marca" placeholder="Marca">
+            <input id="modelo" placeholder="Modelo">
+            <input id="bastidor" placeholder="Nº Bastidor">
+            <input id="cilindrada" placeholder="Cilindrada">
+            <input id="puertas" type="number" placeholder="Nº Puertas">
+            <input id="color" placeholder="Color">
+
+            <h3>Datos Propietario</h3>
+            <input id="nombre" placeholder="Nombre">
+            <input id="apellidos" placeholder="Apellidos">
+            <input id="direccion" placeholder="Dirección">
+            <input id="telefono" placeholder="Teléfono">
+            <input id="correo" placeholder="Correo electrónico">
+
+            <button onclick="procesar()">Guardar y Mostrar</button>
+        </section>
+
+        <div id="pantalla">Los datos aparecerán aquí...</div>
+
+        <script src="aa829.js"></script>
+    </body>
+</html>
