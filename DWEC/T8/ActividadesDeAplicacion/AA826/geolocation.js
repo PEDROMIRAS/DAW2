@@ -1,48 +1,49 @@
+// geolocation.js
+
+// Esta variable guardará los datos para que no haya que pedirlos varias veces
+let posicionCache = null; 
+
+const opciones = { timeout: 15000, enableHighAccuracy: false };
+
 /**
- * Solicita permiso al usuario para acceder al GPS del dispositivo.
- * Esta función no devuelve datos, solo dispara el aviso del navegador.
+ * Pide permiso y guarda el resultado en 'posicionCache'
  */
 export function askPermision() {
-    navigator.geolocation.getCurrentPosition(
-        () => console.log("Permiso concedido"),
-        () => console.warn("Permiso denegado")
-    );
-}
+    return new Promise((resolve, reject) => {
+        // Si ya lo tenemos de una llamada anterior, lo devolvemos directo
+        if (posicionCache) return resolve(posicionCache);
 
-/**
- * Obtiene la longitud geográfica.
- * Para evitar el 'undefined', devolvemos una Promesa que "promete" 
- * entregar el valor cuando el satélite responda.
- */
-export function getLongitude() {
-    return new Promise((resolve) => {
-        navigator.geolocation.getCurrentPosition((posicion) => {
-            // 'resolve' es la función que envía el dato hacia afuera de la promesa
-            resolve(posicion.coords.longitude);
-        });
+        navigator.geolocation.getCurrentPosition(
+            (pos) => {
+                posicionCache = pos; // <--- AQUÍ RECOGEMOS LOS DATOS
+                resolve(pos);
+            },
+            (err) => reject(err),
+            opciones
+        );
     });
 }
 
 /**
- * Obtiene la latitud geográfica.
+ * Reutiliza el dato guardado para devolver la longitud
  */
-export function getLatitude() {
-    return new Promise((resolve) => {
-        navigator.geolocation.getCurrentPosition((posicion) => {
-            // Una vez que el GPS responde, liberamos el valor de la latitud
-            resolve(posicion.coords.latitude);
-        });
-    });
+export async function getLongitude() {
+    const p = await askPermision(); // Llama a la función de arriba (que usa caché)
+    return p.coords.longitude;
 }
 
 /**
- * Obtiene la altitud geográfica (si el dispositivo lo permite).
+ * Reutiliza el dato guardado para devolver la latitud
  */
-export function getAltitude() {
-    return new Promise((resolve) => {
-        navigator.geolocation.getCurrentPosition((posicion) => {
-            // Si el dispositivo no tiene sensor de altitud, devolverá null
-            resolve(posicion.coords.altitude);
-        });
-    });
+export async function getLatitude() {
+    const p = await askPermision(); 
+    return p.coords.latitude;
+}
+
+/**
+ * Reutiliza el dato guardado para devolver la altitud
+ */
+export async function getAltitude() {
+    const p = await askPermision();
+    return p.coords.altitude;
 }

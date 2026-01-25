@@ -1,25 +1,33 @@
 // aa826.js
-
-// Importamos todas las funciones del módulo bajo el alias 'geo'
 import * as geo from './geolocation.js';
 
-// Invocación de todas las funciones del alias geo
-console.log("--- Iniciando pruebas de geolocalización ---");
+const btn = document.getElementById('btnGeo');
+const pantalla = document.getElementById('resultado');
 
-// Solicitar permiso
-geo.askPermision();
-console.log("Llamada a geo.askPermision() realizada.");
+btn.onclick = async () => {
+    pantalla.innerHTML = "Consultando datos de GPS...";
 
-// Intentar obtener Longitud
-const lon = geo.getLongitude();
-console.log("Llamada a geo.getLongitude(). Valor devuelto:", lon);
+    try {
+        // Invocamos TODAS las funciones
+        
+        // La primera llamada activa el GPS y guarda los datos
+        await geo.askPermision();
+        console.log("GPS activado y datos guardados en caché.");
 
-// Intentar obtener Latitud
-const lat = geo.getLatitude();
-console.log("Llamada a geo.getLatitude(). Valor devuelto:", lat);
+        // Las siguientes llamadas son instantáneas porque leen de la memoria interna
+        const lat = await geo.getLatitude();
+        const lon = await geo.getLongitude();
+        const alt = await geo.getAltitude();
 
-// Intentar obtener Altitud
-const alt = geo.getAltitude();
-console.log("Llamada a geo.getAltitude(). Valor devuelto:", alt);
+        pantalla.innerHTML = `
+            <p><b>Latitud:</b> ${lat}</p>
+            <p><b>Longitud:</b> ${lon}</p>
+            <p><b>Altitud:</b> ${alt !== null ? alt : "No disponible"}</p>
+        `;
 
-console.log("--- Fin de las invocaciones ---");
+        console.log("Invocaciones completadas con éxito.");
+
+    } catch (error) {
+        pantalla.innerHTML = "Error: " + error.message;
+    }
+};

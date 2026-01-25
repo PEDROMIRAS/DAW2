@@ -4,7 +4,7 @@
 function procesarPerfilUsuario(jsonString) {
     console.log("--- Inicio del proceso ---");
 
-    // EL AVISO (Warning)
+    // Warning
     // No detiene la ejecución, solo informa de algo que podría ser un problema.
     const datosBase = { nombre: "Invitado", edad: null };
     if (!jsonString.includes("edad")) {
@@ -12,7 +12,7 @@ function procesarPerfilUsuario(jsonString) {
     }
 
     try {
-        // LA EXCEPCIÓN (Exception)
+        // Exception
         // Es un error previsto que podemos "atrapar" para que la app no muera.
         console.log("Intentando parsear JSON...");
         let usuario = JSON.parse(jsonString); // Si el JSON está mal formado, lanza una excepción.
@@ -24,7 +24,7 @@ function procesarPerfilUsuario(jsonString) {
         // La ejecución continúa gracias al bloque try-catch.
     }
 
-    // EL ERROR (Runtime Error)
+    // Runtime Error
     // Un fallo crítico (ej. referencia a algo que no existe) que, si no se controla,
     // detiene por completo el hilo de ejecución.
     console.log("Intentando renderizar interfaz...");
