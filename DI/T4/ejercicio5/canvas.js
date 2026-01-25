@@ -57,7 +57,7 @@ function renderFrame() {
         // COLOR: Creamos un color RGB dinámico que cambia según la posición
         const r = barHeight + (25 * (i / bufferLength)); // Rojo
         const g = 250 * (i / bufferLength);              // Verde
-        const b = 190;                                    // Azul fijo
+        const b = 150;                                    // Azul fijo
 
         ctx.fillStyle = `rgb(${r},${g},${b})`;
         
