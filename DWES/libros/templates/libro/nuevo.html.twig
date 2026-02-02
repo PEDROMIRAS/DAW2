@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nuevo libro{% endblock %}
+
+{% block body %}
+    <h1>Añadir libro</h1>
+    {# form_start genera la etiqueta <form> con el método POST y la acción correcta #}
+    {{ form_start(formulario) }}
+        {# form_row es la forma más rápida: pinta el label, el input y los errores juntos #}
+        <div>
+            {{ form_row(formulario.isbn) }}
+        </div>
+        <div>
+            {{ form_row(formulario.titulo) }}
+        </div>
+        <div>
+            {{ form_row(formulario.autor) }}
+        </div>
+        <div>
+            {{ form_row(formulario.paginas) }}
+        </div>
+        <div>
+            {{ form_row(formulario.editorial)}}
+        </div>
+        {# Pintamos el botón de guardado que definiste en el FormBuilder #}
+        <div style="margin-top: 10px;">
+            {{ form_widget(formulario.save) }}
+        </div>
+    {# form_end cierra el formulario y añade campos ocultos de seguridad (CSRF) #}
+    {{ form_end(formulario) }}
+    <br>
+    <a href="{{ path('inicio') }}">Inicio</a>
+
+{% endblock %}

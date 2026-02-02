@@ -1,0 +1,126 @@
+====================================================================
+MANUAL MAESTRO: SYMFONY 7.4 PARA ENTORNOS XAMPP (PHP 8.2.x)
+Desarrollo de Aplicaciones Web (DAW) - Entorno Servidor
+====================================================================
+
+Este manual utiliza nombres genéricos [PROYECTO] y [ENTIDAD] que 
+deben sustituirse según la práctica correspondiente.
+
+--------------------------------------------------------------------
+I. INSTALACIÓN LIMPIA Y COMPATIBILIDAD
+--------------------------------------------------------------------
+
+1. PREPARAR COMPOSER (Evitar bloqueos de seguridad)
+    composer config -g audit.block-insecure false
+
+2. CREAR EL PROYECTO (Versión 7.4 para PHP 8.2)
+   Situarse en la carpeta 'htdocs' de XAMPP:
+    composer create-project "symfony/skeleton:7.4.*" [nombre-proyecto] --no-audit
+
+3. FORZAR COMPATIBILIDAD CON XAMPP
+   Entrar en la carpeta y bloquear la versión de PHP:
+    cd [nombre-proyecto]
+    composer config platform.php 8.2.4
+
+4. INSTALACIÓN DE COMPONENTES CORE (Versiones fijas)
+   Para evitar conflictos con PHP 8.4, instalamos estas versiones:
+    composer require twig "doctrine/orm:^3.3" "doctrine/doctrine-bundle:^2.13" "doctrine/doctrine-migrations-bundle:^3.4" "phpunit/phpunit:^11.0" --no-audit
+
+5. PACK WEBAPP Y APACHE PACK
+   Instala herramientas de desarrollo (Profiler, Forms, Validator):
+    composer require webapp --no-audit (Responder 'n' a Docker)
+    composer config extra.symfony.allow-contrib true
+    composer require symfony/apache-pack
+
+--------------------------------------------------------------------
+II. CONFIGURACIÓN DE LA BASE DE DATOS (XAMPP/MariaDB)
+--------------------------------------------------------------------
+
+1. CONFIGURACIÓN DEL .ENV
+   Busca DATABASE_URL y ajústala para MariaDB (XAMPP estándar):
+   DATABASE_URL="mysql://root@127.0.0.1:3306/[nombre_bd]?serverVersion=10.4.28-MariaDB&charset=utf8mb4"
+
+2. CREACIÓN DE LA BASE DE DATOS
+    php bin/console doctrine:database:create
+
+--------------------------------------------------------------------
+III. MODELO DE DATOS: ENTIDADES Y MIGRACIONES
+--------------------------------------------------------------------
+
+1. CREAR ENTIDAD 
+    php bin/console make:entity [NombreEntidad]
+   (Añadir campos siguiendo el asistente)
+
+2. ACTUALIZAR ESQUEMA (MIGRACIONES)
+   Siempre que cambies la Entidad, ejecuta estos dos comandos:
+    php bin/console make:migration
+    php bin/console doctrine:migrations:migrate (Escribe 'yes')
+
+--------------------------------------------------------------------
+IV. CONTROLADORES, FORMULARIOS Y PERSISTENCIA
+--------------------------------------------------------------------
+
+Asegúrate de incluir siempre los 'use' necesarios para evitar errores 500.
+
+ARCHIVO: src/Controller/[Nombre]Controller.php
+----------------------------------------------
+namespace App\Controller;
+
+use App\Entity\[TuEntidad];
+use App\Form\[TuEntidad]Type;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request; // Vital para formularios 
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
+
+class [Nombre]Controller extends AbstractController 
+{
+    #[Route('/nuevo', name: 'app_nuevo')]
+    public function nuevo(Request $request, EntityManagerInterface $em): Response 
+    {
+        $objeto = new [TuEntidad]();
+        $form = $this->createForm([TuEntidad]Type::class, $objeto);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->persist($objeto); //
+            $em->flush();          //
+            return $this->redirectToRoute('app_inicio');
+        }
+
+        return $this->render('[nombre]/nuevo.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+}
+
+--------------------------------------------------------------------
+V. VALIDACIÓN (Constraint Rules)
+--------------------------------------------------------------------
+
+En la Entidad (src/Entity/[Entidad].php), añade reglas sobre las propiedades:
+
+use Symfony\Component\Validator\Constraints as Assert;
+
+#[Assert\NotBlank(message: "Este campo es obligatorio")]
+#[Assert\Length(min: 3, minMessage: "Mínimo {{ limit }} caracteres")]
+private ?string $campo = null;
+
+--------------------------------------------------------------------
+VI. S.O.S: SOLUCIÓN DE ERRORES FRECUENTES EN XAMPP
+--------------------------------------------------------------------
+
+1. EL CSS/JS NO SE VE (Rutas en subcarpetas)
+   Si usas XAMPP, la ruta absoluta puede fallar. En base.html.twig usa:
+   <link rel="stylesheet" href="{{ app.request.basepath }}/css/style.css">
+
+2. ERROR DE PERMISOS EN MAC (Carpeta Var)
+   chmod -R 777 var
+
+3. LIMPIEZA DE CACHÉ (Tras cambios en .env o rutas)
+   php bin/console cache:clear
+
+4. URL DE ACCESO EN XAMPP (Sin servidor interno)
+   http://localhost/[nombre-proyecto]/public/index.php/
+====================================================================

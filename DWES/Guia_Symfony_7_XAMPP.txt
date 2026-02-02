@@ -1,0 +1,162 @@
+====================================================================
+GUÍA DEFINITIVA: INSTALACIÓN DE SYMFONY 7.4 PARA XAMPP (PHP 8.2.4)
+(Compatible con Windows y macOS - Versión Actualizada)
+====================================================================
+
+Esta guía permite instalar Symfony 7.4 evitando los errores de 
+seguridad y los conflictos de PHP que bloquean la instalación en XAMPP.
+
+--------------------------------------------------------------------
+I. PREPARACIÓN E INSTALACIÓN
+--------------------------------------------------------------------
+
+1. DESACTIVAR BLOQUEO DE SEGURIDAD (GLOBAL)
+   Ejecuta este comando para permitir la instalación de versiones con 
+   avisos de seguridad menores:
+   
+   composer config -g audit.block-insecure false
+
+2. CREAR EL PROYECTO (VERSIÓN 7.4)
+   Sitúate en la carpeta 'htdocs' de tu XAMPP y ejecuta (usa comillas):
+   
+   composer create-project "symfony/skeleton:7.4.*" mi-proyecto --no-audit
+
+3. CONFIGURAR LA VERSIÓN DE PHP (8.2.4)
+   Entra en la carpeta y bloquea la versión para que el proyecto sea 
+   siempre compatible con tu XAMPP:
+   
+   cd mi-proyecto
+   composer config platform.php 8.2.4
+
+4. INSTALACIÓN DE LIBRERÍAS COMPATIBLES (PASO CRUCIAL)
+   Instalamos Twig y las versiones de Doctrine que SÍ funcionan con 
+   PHP 8.2.4, evitando que se instale la versión para PHP 8.4:
+
+   composer require twig "doctrine/orm:^3.3" "doctrine/doctrine-bundle:^2.13" "doctrine/doctrine-migrations-bundle:^3.4" "phpunit/phpunit:^11.0" --no-audit
+
+5. INSTALAR EL PACK WEBAPP (EQUIVALENTE A WEBSITE-SKELETON)
+   Para tener todas las herramientas (barra de depuración, 
+   formularios, etc.), instala el resto de componentes:
+
+   composer require webapp --no-audit
+
+   IMPORTANTE: Cuando pregunte "Do you want to include Docker 
+   configuration?", responde siempre "n" (No).
+
+6. ACTUALIZACIÓN FINAL
+   Sincroniza todas las dependencias con tu versión de PHP:
+
+   composer update --no-audit
+
+7. CONFIGURACIÓN DE RUTAS AMIGABLES
+   Desde la carpeta raiz de nuestro proyecto.
+
+   composer config extra.symfony.allow-contrib true
+   composer req symfony/apache-pack
+   
+--------------------------------------------------------------------
+II. CONFIGURACIÓN Y USO
+--------------------------------------------------------------------
+
+1. ESTRUCTURA DEL PROYECTO EN VS CODE
+   - src/: Donde programarás los controladores (PHP).
+   - templates/: Donde harás las plantillas .html.twig.
+   - public/: Carpeta de acceso para el navegador.
+
+2. CÓMO VER LA WEB
+   Asegúrate de que Apache esté encendido en XAMPP y entra en:
+   http://localhost/mi-proyecto/public/
+
+3. PERMISOS (SOLO PARA MAC)
+   Si ves una pantalla blanca o error de permisos al cargar, ejecuta:
+   chmod -R 777 var
+
+4. CONEXIÓN A BASE DE DATOS (XAMPP)
+   Abre el archivo .env y busca la línea DATABASE_URL. Cámbiala por:
+   DATABASE_URL="mysql://root:@127.0.0.1:3306/db_name?serverVersion=8.0.x&charset=utf8mb4"
+
+   ¡Importante, 'serverVersion' debe coincidir con tu version de servidor en phpmyadmin!
+
+--------------------------------------------------------------------
+III. COMANDOS BÁSICOS (CHEAT SHEET)
+--------------------------------------------------------------------
+
+GENERACIÓN DE CÓDIGO (MAKER BUNDLE):
+- Crear un controlador: php bin/console make:controller Nombre
+- Crear una entidad (Tabla BD): php bin/console make:entity Nombre
+- Crear un formulario:   php bin/console make:form NombreType
+
+GESTIÓN DE BASE DE DATOS (DOCTRINE):
+- Crear la BD en XAMPP:  php bin/console doctrine:database:create
+- Generar migración:     php bin/console make:migration
+- Ejecutar migración:    php bin/console doctrine:migrations:migrate
+
+UTILIDADES:
+- Ver todas las rutas:   php bin/console debug:router
+- Limpiar la caché:      php bin/console cache:clear
+- Listar comandos:       php bin/console
+
+====================================================================
+NOTAS TÉCNICAS:
+- Forzamos Doctrine 2.13 porque la 3.0 requiere PHP 8.4.
+- El pack 'webapp' activa la barra negra de depuración (Profiler).
+====================================================================
+
+--------------------------------------------------------------------
+IV. TRABAJANDO CON LA BASE DE DATOS (ENTITY & DOCTRINE)
+--------------------------------------------------------------------
+
+1. CREAR UNA ENTIDAD (TABLA)
+   Para definir la estructura de una tabla, usa el asistente interactivo:
+   
+   php bin/console make:entity NombreDeLaEntidad
+
+   * Ejemplo para 'Libro':
+     - New property name: titulo  -> string (255) -> nullable: no
+     - New property name: autor   -> string (255) -> nullable: no
+     - New property name: paginas -> integer      -> nullable: yes
+     - (Pulsa ENTER para finalizar)
+
+   * Esto genera dos archivos clave:
+     - src/Entity/Nombre.php: Define la estructura y campos.
+     - src/Repository/NombreRepository.php: Para hacer consultas (SELECT).
+
+2. GENERAR LA MIGRACIÓN
+   Una vez creada o modificada la entidad, genera el archivo de cambios SQL:
+   
+   php bin/console make:migration
+
+   * El archivo se guardará en la carpeta /migrations.
+
+3. APLICAR LOS CAMBIOS A XAMPP (MIGRATE)
+   Para que la tabla se cree físicamente en tu base de datos 'contactos':
+   
+   php bin/console doctrine:migrations:migrate 
+
+   * ⚠️ Escribe "yes" cuando el sistema te pida confirmación.
+
+4. VERIFICACIÓN MANUAL
+   - Abre tu panel de XAMPP y asegúrate de que MySQL esté "Running".
+   - Entra en http://localhost/phpmyadmin/ y abre la BD 'contactos'. 
+   - Deberías ver la nueva tabla creada con sus columnas correspondientes.
+
+
+====================================================================
+--------------------------------------------------------------------
+V. CONSEJOS PARA EL DÍA A DÍA
+--------------------------------------------------------------------
+
+1. MODIFICAR UNA TABLA EXISTENTE
+   Si necesitas añadir un campo nuevo a una tabla que ya existe, vuelve 
+   a ejecutar el mismo comando:
+   php bin/console make:entity NombreExistente
+
+2. LIMPIEZA DE ERRORES (XAMPP)
+   Si cambias algo en el archivo .env o en las entidades y no se refleja, 
+   limpia siempre la caché:
+   php bin/console cache:clear
+
+3. ERRORES DE PERMISOS (SOLO MAC)
+   Si tras crear la entidad Symfony no puede escribir en la carpeta /var:
+   chmod -R 777 var
+

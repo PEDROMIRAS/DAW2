@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar libro{% endblock %}
+
+{% block body %}
+    <h1>Editar libro: </h1>
+
+    {{ form_start(formulario) }}
+        
+        <div>
+            {{ form_row(formulario.isbn) }}
+        </div>
+        <div>
+            {{ form_row(formulario.titulo) }}
+        </div>
+        <div>
+            {{ form_row(formulario.autor) }}
+        </div>
+        <div>
+            {{ form_row(formulario.paginas) }}
+        </div>
+        <div>
+            {{ form_row(formulario.editorial)}}
+        </div>
+        <div style="margin-top: 10px;">
+            {# El widget pintará el botón "Guardar cambios" que definimos en el controlador #}
+            {{ form_widget(formulario.save) }}
+        </div>
+    {{ form_end(formulario) }}
+    <br>
+    <a href="{{ path('inicio') }}">Cancelar y volver al inicio</a>
+
+{% endblock %}

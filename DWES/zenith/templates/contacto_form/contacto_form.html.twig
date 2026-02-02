@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nuevo Contacto{% endblock %}
+
+{% block body %}
+    <h1>Añadir nuevo contacto</h1>
+
+    {# form_start genera la etiqueta <form> con el método POST y la acción correcta #}
+    {{ form_start(formulario) }}
+
+        {# form_row es la forma más rápida: pinta el label, el input y los errores juntos #}
+        <div>
+            {{ form_row(formulario.nombre) }}
+        </div>
+
+        <div>
+            {{ form_row(formulario.telefono) }}
+        </div>
+
+        <div>
+            {{ form_row(formulario.email) }}
+        </div>
+
+        {# Pintamos el botón de guardado que definiste en el FormBuilder #}
+        <div style="margin-top: 10px;">
+            {{ form_widget(formulario.save) }}
+        </div>
+
+    {# form_end cierra el formulario y añade campos ocultos de seguridad (CSRF) #}
+    {{ form_end(formulario) }}
+
+    <p><a href="{{ path('inicio') }}">Volver al listado</a></p>
+{% endblock %}

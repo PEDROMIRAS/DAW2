@@ -1,0 +1,15 @@
+{# templates/contacto/ficha_contacto.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Ficha de {{ contacto.nombre }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Ficha de contacto</h1>
+        {% if contacto %}
+            {{ include('datos_contacto.html.twig',{'contacto' : contacto}) }}
+        {% else %}
+            <p>Contacto no encontrado</p>
+        {% endif %}
+    </div>
+{% endblock %}

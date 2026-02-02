@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ficha del Libro{% endblock %}
+
+{% block body %}
+    {% if libro %}
+        <h1>Ficha de libro</h1>
+        <ul>
+            {# Usamos el filtro 'upper' para las mayúsculas #}
+            <li><strong>{{ libro.titulo|upper }}</strong> </li>
+            {# Usamos la etiqueta <em> para la cursiva #}
+            <li><em>{{ libro.autor }}</em></li>
+            <li>{{ libro.paginas }}</li>
+        </ul>
+    {% else %}
+        <h1>Ficha de libro</h1>
+        <p>Libro no encontrado</p>
+    {% endif %}
+{% endblock %}

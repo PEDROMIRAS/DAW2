@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block body %}
+    <div id="container">
+        <h1>Biblioteca particular</h1>
+        <p>Página de inicio</p>
+        
+        <a href="{{ path('libro_nuevo') }}">Añadir nuevo libro</a>
+
+        {% if libros %}
+            <ul>
+            {% for libro in libros %}
+                <li>
+                    <strong>ISBN:</strong> {{ libro.isbn }} | 
+                    <strong>Título:</strong> {{ libro.titulo }} |
+                    {# El botón de editar con el parámetro ISBN #}
+                    <a href="{{ path('editar_libro', {'isbn': libro.isbn}) }}">[ Editar Libro ]</a>
+                </li>
+                <br>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No hay libros en la biblioteca.</p>
+        {% endif %}
+    </div>
+{% endblock %}
