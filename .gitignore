@@ -42,3 +42,4 @@ desktop.ini
 # pero mantenemos la estructura de carpetas para que existan.
 #public/uploads/*
 #!public/uploads/.gitkeep
+/DWES/libros/nbproject/private/
