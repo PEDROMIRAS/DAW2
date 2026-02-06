@@ -1,0 +1,26 @@
+Como profesor de desarrollo web en entorno cliente de segundo año de daw, desarrolla los apuntes 
+del Tema 9: Programacón asincrona, con los siguientes objetivos y contenidos.
+
+-Objetivos: 
+    -Entender la diferencia entre sincronía y asincronía.
+    -Identificar los problemas inherentes a la naturaleza asincrona de JavaScript.
+    -Descubrir las desventajas de usar 'callback hell'.
+    -Analizar las posibilidades que ofrecen las promesas. 
+    -Estudiar las ventajas dque ofrecen las funciones async.
+    -Conocer las diferencuas entre la asincronía de la ejecución y la asincronía de las peticiones a un servidor.
+    -Profudizar en la tencologia AJAX.
+    -Hallar las diferentes formas de realizar peticiones a un servidor.
+    -Aprender a manejar las respuestas ofrecidas por un servidor a peticiones AJAX.
+    -Combinar las asincronía de la ejecución con la asincronía de las comunicaciones http.
+
+
+-Contenidos:
+    -9.1. Sincronia y asincronía.
+    -9.2. Orquestar la asincronía.
+        -9.2.1.La solucion infernal (callback hell).
+        -9.2.2.Promesas (Situaciones: rejected, resolved o fullfilled, pending, settled; promise con .then y .catch; promseas con metodos, promise.resolve, promise.reject y promise.all).
+        -9.2.3.Funciones async (tipo AsyncFunction, uso de await en las promesas)
+    -9.3. AJAX (http request, http response).
+
+
+-El objetivo es crear uno apuntes en los que se explique cada apartado y se pongan ejemplos de uso donde sea necesario.
