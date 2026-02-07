@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.32 - Star Wars Promise.all</title>
+</head>
+<body>
+
+    <h1>Ejercicio 9.32: Star Wars API</h1>
+    <p>Haz clic para traer información de 3 recursos diferentes simultáneamente.</p>
+
+    <button id="btnCargar">Cargar Datos de la Galaxia</button>
+    
+    <br><br>
+
+    <table border="1" cellpadding="10" width="100%">
+        <thead>
+            <tr>
+                <th>PERSONAJE 1</th>
+                <th>PLANETA 1</th>
+                <th>NAVE 9*</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="col-persona" valign="top">Esperando petición...</td>
+                <td id="col-planeta" valign="top">Esperando petición...</td>
+                <td id="col-nave" valign="top">Esperando petición...</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><small>*Nota: Se pide la nave 9 porque la nave 1 no existe en la API.</small></p>
+
+    <script src="aa932.js"></script>
+
+</body>
+</html>
