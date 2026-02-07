@@ -1,5 +1,5 @@
 Como profesor de desarrollo web en entorno cliente de segundo año de daw, desarrolla los apuntes 
-del Tema 9: Programacón asincrona, con los siguientes objetivos y contenidos.
+del Tema 9: Programación asíncrona, con los siguientes objetivos y contenidos.
 
 -Objetivos: 
     -Entender la diferencia entre sincronía y asincronía.
@@ -18,9 +18,22 @@ del Tema 9: Programacón asincrona, con los siguientes objetivos y contenidos.
     -9.1. Sincronia y asincronía.
     -9.2. Orquestar la asincronía.
         -9.2.1.La solucion infernal (callback hell).
-        -9.2.2.Promesas (Situaciones: rejected, resolved o fullfilled, pending, settled; promise con .then y .catch; promseas con metodos, promise.resolve, promise.reject y promise.all).
+        -9.2.2.Promesas (Situaciones: rejected, resolved o fullfilled, pending, settled; promise con .then y .catch; 
+                            promseas con metodos, promise.resolve, promise.reject y promise.all).
         -9.2.3.Funciones async (tipo AsyncFunction, uso de await en las promesas)
-    -9.3. AJAX (http request, http response).
-
+    -9.3. AJAX (Explicacion basica, http request, http response, tabla con ventajas y desventajas de AJAX).
+        -9.3.1.Peticiones (API para todo, CORS, API Fetch).
+        -9.3.2.Peticiones con Fetch (uso de .then, uso de .catch y objeto Response).
+        -9.3.3.Respuestas (tabla de propiedades y métodos del objeto response: headers, body, status, statusText, ok, redirected,
+                             url, type, redirect(), clone(), error(), text(), json(), blob(); respuestas en formato texto (uso del 
+                             metodo text()); respuestas den formato JSON (uso del metodo json())).
+        -9.3.4.Peticiones personalizadas (uso del objeto Request, tabla de propiedades del objeto Request: url, method, headers, 
+                                            mode, cache, redirect, credentials, integrity; metodos del objeto Headers: append, 
+                                            delete, entries, get, has, keys, set, values; envio de datos en un formulario (explicacion 
+                                            de get y post para enviar datos, enviar contenido con application/multipart/form-data y el 
+                                            objeto FormData); envio de datos en formato JSON (uso de stringify y application/json))
+        -9.3.5.Funciones asíncronas con Fetch (uso de await en funciones async, sustituir .then por await y .catch por la estructura try...catch)
+    
+    (Matizar que comandos HTTP hay para peticiones, GET, POST, PUT, DELETE)
 
 -El objetivo es crear uno apuntes en los que se explique cada apartado y se pongan ejemplos de uso donde sea necesario.
