@@ -1,0 +1,6 @@
+Ventajas de async / await:
+
+La principal ventaja es la legibilidad: permite escribir código asíncrono de forma lineal (de arriba a abajo),
+como si fuera código síncrono, eliminando la complejidad de encadenar múltiples .then(). Además, facilita el
+manejo de errores al permitir el uso de la estructura estándar try/catch para capturar tanto fallos de red 
+como errores de código en un mismo bloque.
