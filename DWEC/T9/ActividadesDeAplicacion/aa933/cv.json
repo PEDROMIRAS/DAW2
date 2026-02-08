@@ -1,0 +1,26 @@
+{
+    "datos_personales": {
+        "nombre": "Pedro Miras",
+        "profesion": "Desarrollador Web Full Stack",
+        "email": "pedro.miras@ejemplo.com",
+        "ciudad": "Lorca, Murcia"
+    },
+    "experiencia": [
+        {
+        "puesto": "Desarrollador Junior",
+        "empresa": "Tech Solutions",
+        "anio": "2023 - Actualidad",
+        "descripcion": "Desarrollo de interfaces con JavaScript y consumo de APIs."
+        },
+        {
+        "puesto": "Prácticas de Programación",
+        "empresa": "Consultora Informática",
+        "anio": "2022",
+        "descripcion": "Mantenimiento de bases de datos y soporte técnico."
+        }
+    ],
+    "formacion": [
+        "Grado Superior en Desarrollo de Aplicaciones Web",
+        "Curso de Especialización en JavaScript"
+    ] 
+}
